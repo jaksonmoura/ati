@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portal do Tocantins</title>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/css/portal.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/application.css">
+	<script src="assets/js/vendors.min.js"></script>
+	<script src="assets/js/materialize.js"></script>
+</head>
+<body class="portal">
+
+
+	<header>
+
+		<nav>
+			<div class="row">
+				<div class="container">
+					<div class="col s12">
+						<div class="nav-wrapper">
+							<a href="index.html" class="togov-logo"><img src="assets/img/logo_blue.png"></a>
+							<a href="#" data-target="mobile-demo" class="menu-trigger"><i class="material-icons">menu</i></a>
+							<ul id="nav-mobile" class="right hide-on-med-and-down">
+								<li><a href="http://transparencia.to.gov.br">Portal da Transparência</a></li>
+								<li><a href="acessoinfo.html">Acesso à informação</a></li>
+								<li><a href="governo.html">O governo</a></li>
+<li><a href="orgaos.html">Órgãos</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div class="overlay-menu" style="display: none;">
+			<div class="overlay-content">
+				<a href="index.html" class="logo"><img class="logo" src="assets/img/logo_blue.png"></a>
+				<div class="menu">MENU <div class="close"><i class="material-icons-outlined">close</i></div></div>
+				<ul id="mobile-demo">
+					<li><a href="http://transparencia.to.gov.br">Portal da Transparência</a></li>
+					<li><a href="acessoinfo.html">Acesso à informação</a></li>
+					<li><a href="governo.html">O governo</a></li>
+<li><a href="orgaos.html">Órgãos</a></li>
+				</ul>
+			</div>
+		</div>
+
+	</header>
+
+
+	<section class="acessoinfo">
+		<div class="container">
+			<div class="row">
+				<h1>Acesso à informação</h1>
+					<div class="acesso-itens">
+						<div class="acesso-item">
+							<div class="card-panel">
+								<img src="assets/img/palacio_b.png" alt="Institucional">
+								<h2>Institucional</h2>
+								<ul>
+									<li><a href="https://portal.to.gov.br/governo/">Competências, organograma, relações de cargos e seus respectivos ocupantes.</a></li>
+								</div>
+							</div>
+							<div class="acesso-item">
+								<div class="card-panel">
+									<img src="assets/img/despesas_b.png" alt="Despesas">
+									<h2>Despesas</h2>
+									<ul>
+										<li><a href="http://www.transparencia.to.gov.br/#!despesas">Informações sobre a Execução orçamentária e financeira</a></li>
+										<li><a href="http://transparencia.to.gov.br/diarias/">Diárias</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="acesso-item">
+								<div class="card-panel">
+									<img src="assets/img/servidores_b.png" alt="Servidores">
+									<h2>Servidores</h2>
+									<ul>
+										<li><a href="http://www.transparencia.to.gov.br/#!servidores">Relação dos servidores públicos lotados ou em exercício.</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="acesso-item">
+								<div class="card-panel">
+									<img src="assets/img/convenios_b.png" alt="Convênios">
+									<h2>Convênios</h2>
+									<ul>
+										<li><a href="http://www.transparencia.to.gov.br/#!Conv%C3%AAnios%20e%20Parcerias">Detalhes sobre repasses e transferências de recursos financeiros pelo Estado.</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="acesso-item">
+								<div class="card-panel">
+									<img src="assets/img/licitacoes_b.png" alt="Licitações e Contratos">
+									<h2>Licitações e Contratos</h2>
+									<ul>
+										<li><a href="http://www.sgl.to.gov.br/scripts/nwwcgi.exe/cpl2/listedit">Informações detalhadas sobre licitações, contratos, contratações e atas de registros de preços.</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="acesso-item solicitar">
+								<a class="btn center amarelo-to black-text" href="#http://www.gestao.cge.to.gov.br/ouvidoria/menuAciona/">
+									<span>Solicitar <br/> mais informação</span> <i class="material-icons">arrow_forward</i>
+								</a>
+								<p>
+									Caso não encontrou o que precisava faça uma solicitação ao governo.
+								</p>
+							</div>
+						</div>
+				</div>
+			</div>
+		</section>
+
+
+		<script type="text/javascript" charset="utf-8" src="https://barra.web.secom.to.gov.br/base.js?k=ssuikx"></script>
+
+		<script>
+			$(document).ready(function(){
+				$('.menu-trigger').on('click', function(){
+					$('.overlay-menu').slideDown();
+				});
+				$('.overlay-content .menu .close').on('click', function(){
+					$('.overlay-menu').slideUp();
+				});
+
+			});
+		</script>
+	</body>
+	</html>

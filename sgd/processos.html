@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html class="loading" lang="pt-br" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="SGD - Sistema de Gestão de Documentos">
+  <meta name="keywords" content="governo, tocantins">
+  <meta name="author" content="ATI - Agência de Tecnologia da Informação - TO">
+  <title>SGD</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/custom.css">
+  <link rel="stylesheet" type="text/css" href="assets/application.css">
+  <link rel="stylesheet" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.0/css/buttons.dataTables.min.css">
+</head>
+<!-- END: Head-->
+<body class="vertical-layout page-header-light vertical-menu-collapsible 2-columns  " data-open="click" data-menu="vertical-dark-menu" data-col="2-columns">
+
+  
+
+  <!-- BEGIN: Header-->
+  <header class="page-topbar" id="header">
+    <div class="navbar navbar-fixed"> 
+      <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-light">
+        <div class="nav-wrapper">
+          <div class="header-search-wrapper hide-on-med-and-down"><i class="material-icons">search</i>
+            <input class="header-search-input z-depth-2" type="search" name="Search" placeholder="Busca rápida. Ex.:(2019/12345/123)">
+            <span class="header-search-error">Nenhum resultado para essa busca!</span>
+          </div>
+          <ul class="navbar-list right">
+            <li class="hide-on-large-only"><a class="waves-effect waves-block waves-light search-button" href="javascript:void(0);"><i class="material-icons">search</i></a></li>
+            <!-- <li class="hide-on-small-only"><a class="waves-effect waves-block waves-light" href="#"><i class="material-icons">timer<small class="badge red circle notification-badge">5</small></i></a></li> -->
+            <li class="hide-on-small-only"><a class="waves-effect waves-block waves-light" href="#"><span><i class="material-icons">phone</i></a></li>
+              <li class="hide-on-small-only"><a class="waves-effect waves-block waves-light" href="#"><span><i class="material-icons">help</i></a></li>
+                <li>
+                  <a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);" data-target="profile-dropdown">
+                  <span class="avatar-status">
+                    <img src="assets/profile.png" alt="avatar">
+                  </span>
+                </a>
+              </li>
+              </ul>
+              <!-- profile-dropdown-->
+              <ul class="dropdown-content" id="profile-dropdown">
+                <li><a class="grey-text text-darken-1" href="#">Nikola Tesla Nikola Tesla</a></li>
+                <li id="profile-dropdown--unidade">
+                  <span class="p-4">
+                    <select class="browser-default" name="sss">
+                    <option value="">GDS-ATI</option>
+                    <option value="">DDs-ATI</option>
+                  </select>
+                  </span>
+                </li>
+                <li><a class="grey-text text-darken-1" href="#"><i class="material-icons">edit</i> Configuração pessoal</a></li>
+                <li><a class="red white-text text-darken-1" href="#"><i class="material-icons">keyboard_tab</i> Sair</a></li>
+              </ul>
+            </div>
+            <nav class="display-none search-sm">
+              <div class="nav-wrapper">
+                <form>
+                  <div class="input-field">
+                    <input class="search-box-sm" type="search" required="">
+                    <i class="material-icons search-sm-close">close</i>
+                  </div>
+                </form>
+              </div>
+            </nav>
+          </nav>
+        </div>
+      </header>
+      <!-- END: Header-->
+
+      <!-- BEGIN: SideNav-->
+      <aside class="sidenav-main transition-slide-right nav-expanded nav-lock nav-collapsible sidenav-dark sidenav-active-rounded">
+        <div class="brand-sidebar">
+          <h1 class="logo-wrapper"><a id="brasao-sgd-logo" class="brand-logo darken-1" href="home.html"><img src="images/brasao.svg" alt="Brasão do Governo do Tocantins"/><span class="logo-text hide-on-med-and-down">SGD</span></a><a class="navbar-toggler" href="#"><i class="material-icons">radio_button_checked</i></a></h1>
+        </div>
+        <ul class="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow" id="slide-out" data-menu="menu-navigation" data-collapsible="menu-accordion">
+          <li class="navigation-header"><a class="navigation-header-text">SGD </a><i class="navigation-header-icon material-icons">more_horiz</i>
+          </li>
+          <li class="bold"><a class="waves-effect waves-light " href="home.html"><i class="material-icons">settings_input_svideo</i><span class="menu-title" data-i18n="">Início</span><span class="badge new badge pill pink accent-2 float-right mr-10 hide">5</span></a>
+          </li>
+
+          <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i class="material-icons">folder</i><span class="menu-title" data-i18n="">Processos</span></a>
+            <div class="collapsible-body">
+              <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+
+                <li><a class="collapsible-body waves-effect waves-light" href="proc_cadastrar.html" data-i18n=""><i class="material-icons">add_circle_outlined</i><span>Incluir</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="processos.html" data-i18n=""><i class="material-icons">list</i><span>Listagem</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="proc_acompanhamento.html" data-i18n=""><i class="material-icons">dashboard</i><span>Painel de acompanhamento</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">search_plus</i><span>Busca avançada</span></a>
+                </li>
+                <li><a class="collapsible-body collapsible-header waves-effect waves-light" href="#" data-i18n="" tabindex="0"><i class="material-icons">radio_button_unchecked</i><span>Guias</span></a>
+                  <div class="collapsible-body">
+                    <ul class="collapsible" data-collapsible="accordion">
+                      <li><a class="collapsible-body" href="ui-basic-buttons.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Guia de tramitação</span></a>
+                      </li>
+                      <li><a class="collapsible-body" href="ui-extended-buttons.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Guia de expedição</span></a>
+                      </li>
+                      <li><a class="collapsible-body" href="ui-extended-buttons.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Guia de expedição - outros protocolos</span></a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i class="material-icons">insert_drive_file</i><span class="menu-title" data-i18n="">Documentos</span></a>
+            <div class="collapsible-body">
+              <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+
+                <li><a class="collapsible-body waves-effect waves-light" href="doc_cadastrar.html" data-i18n=""><i class="material-icons">add_circle_outlined</i><span>Incluir</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="documentos.html" data-i18n=""><i class="material-icons">list</i><span>Listagem</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="doc_acompanhamento.html" data-i18n=""><i class="material-icons">dashboard</i><span>Painel de acompanhamento</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">description</i><span>Modelos e minutas</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">search_plus</i><span>Busca avançada</span></a>
+                </li>
+                <li><a class="collapsible-body collapsible-header waves-effect waves-light" href="#" data-i18n="" tabindex="0"><i class="material-icons">radio_button_unchecked</i><span>Guias</span></a>
+                  <div class="collapsible-body">
+                    <ul class="collapsible" data-collapsible="accordion">
+                      <li><a class="collapsible-body" href="ui-basic-buttons.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Guia de tramitação</span></a>
+                      </li>
+                      <li><a class="collapsible-body" href="ui-extended-buttons.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Guia de expedição</span></a>
+                      </li>
+                      <li><a class="collapsible-body" href="ui-extended-buttons.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Guia de expedição - outros protocolos</span></a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i class="material-icons">storage</i><span class="menu-title" data-i18n="">Arquivos</span></a>
+            <div class="collapsible-body">
+              <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+
+                <li><a class="collapsible-body waves-effect waves-light" href="proc_cadastrar.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Alterar</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="processos.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Arquivo digital</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="proc_acompanhamento.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Arquivo setorial</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Comentar</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Criar caixa</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Emprestar</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Etiquetas</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Guia de transferência</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Lista de transferência</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Busca avançada</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Pesquisa simples</span></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i class="material-icons">work</i><span class="menu-title" data-i18n="">Mala Direta</span></a>
+            <div class="collapsible-body">
+              <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+
+                <li><a class="collapsible-body waves-effect waves-light" href="proc_cadastrar.html" data-i18n=""><i class="material-icons">group_add</i><span>Incluir grupo</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="processos.html" data-i18n=""><i class="material-icons">person_add</i><span>Incluir pessoa</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="proc_cadastrar.html" data-i18n=""><i class="material-icons">group</i><span>Grupos</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="processos.html" data-i18n=""><i class="material-icons">person</i><span>Pessoas</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">search_plus</i><span>Busca avançada</span></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i class="material-icons">receipt</i><span class="menu-title" data-i18n="">Relatórios</span></a>
+            <div class="collapsible-body">
+              <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+
+                <li><a class="collapsible-body waves-effect waves-light" href="proc_cadastrar.html" data-i18n=""><i class="material-icons">folder</i><span>Processos</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="processos.html" data-i18n=""><i class="material-icons">insert_drive_file</i><span>Documentos</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="proc_acompanhamento.html" data-i18n=""><i class="material-icons">storage</i><span>Arquivos</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">work</i><span>Mala direta</span></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="bold"><a class="waves-effect waves-light " href="manuais.html" tabindex="0"><i class="material-icons">photo_filter</i><span class="menu-title" data-i18n="">Manuais e normas</span></a>
+          </li>
+
+          <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i class="material-icons">gesture</i><span class="menu-title" data-i18n="">Assinatura digital</span></a>
+            <div class="collapsible-body">
+              <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+                <li><a class="collapsible-body waves-effect waves-light" href="assinararquivo.html" data-i18n=""><i class="material-icons">create</i><span>Assinar arquivo</span></a>
+                </li>
+                <li><a class="collapsible-body waves-effect waves-light" href="assinaturadigital.html" data-i18n=""><i class="material-icons">gesture</i><span>Assinatura digital</span></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+
+
+        <div class="navigation-background"></div><a class="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only" href="#" data-target="slide-out"><i class="material-icons">menu</i></a>
+      </aside>
+      <!-- END: SideNav-->
+
+
+
+      <div id="main">
+        <div class="row transition-fade">
+          <div id="breadcrumbs-wrapper" class="pb-1">
+            <!-- Search for small screen-->
+            <div class="container">
+              <div class="row">
+                <div class="col s12 m6 l6 breadcrumbs-left">
+                  <h5 class="breadcrumbs-title mt-0 mb-0 display-inline">Processos</h5>
+                  <ol class="breadcrumbs mb-0 mt-1 hide-on-small-and-down">
+                    <li class="breadcrumb-item"><a href="home.html">Início</a>
+                    </li>
+                    <li class="breadcrumb-item active">Processos
+                    </li>
+                  </ol>
+                </div>
+                <div class="col s12 m6 l6 page-actions">
+                  <a href="proc_cadastrar.html" class="btn azul-to waves-effect waves-light "><i class="material-icons">add_circle</i> Cadastrar</a>
+                  <a href="#" data-target="busca-avancada-form" class="btn white black-text waves-effect waves-light  busca-avancada-btn"><i class="material-icons">zoom_in</i> Busca avançada</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12">
+            <div id="main-content" class="container transition-fade">
+              <div class="card-panel">
+                <div class="datatabled">
+                  <table id="page-length-option" class="display">
+                    <thead>
+                      <tr>
+                        <th>Número/Ação</th>
+                        <th>Tipo</th>
+                        <th>Identificação</th>
+                        <th>Assunto</th>
+                        <th><abbr title="Prazo de atendimento">Prazo</abbr></th>
+                        <th>Aos cuidados</th>
+                        <th>Trâmite</th>
+                        <th>Prioridade</th>
+                        <th data-priority="1">Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><a href="processo.html">2019/30559/023968</a><br/>PAPEL</td>
+                        <td>Ofício</td>
+                        <td>2249/2019/SES/GASEC</td>
+                        <td>Procedimento de aquisição do SISTEMA DE CONVÊNIOS E INSTRUMENTOS CONGÊNERES PARA O ESTADO DO TOCANTINS.</td>
+                        <td>-</td>
+                        <td>GABRIEL LACERDA DOS SANTOS</td>
+                        <td>03/07/19<br/>18:26</td>
+                        <td>Baixa</td>
+                        <td>
+                          <div class="table_hover_menu">
+                            <ul>  
+                              <li class="waves-effect"><a class="tooltipped" data-tooltip="Tramitar" data-position="top" href="#"><i class="material-icons">trending_flat</i></a></li>
+                              <li class="waves-effect"><a class="tooltipped" data-tooltip="Distribuir" data-position="top" href="#"><i class="material-icons" style="transform: rotate(135deg)">call_missed</i></a></li>
+                              <li class="waves-effect show_item"><a class="tooltipped" data-tooltip="Ver arquivos" data-position="top" href="documento.html"><i class="material-icons">picture_as_pdf</i></a></li>
+                            </ul>
+                          </div>
+                          <a class="hide-on-small-only btn table_more_actions dropdown-settings btn-floating btn-small waves-effect waves-light breadcrumbs-btn right" href="#!" data-target="dropdown001"><i class="material-icons">more_vert</i></a>
+                          <ul class="dropdown-content" id="dropdown001" tabindex="0" >  
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">trending_flat</i> Tramitar</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left" style="transform: rotate(135deg)">call_missed</i> Distribuir</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">edit</i> Alterar</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">attach_file</i> Anexar</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">folder_open</i> Arquivar</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">gesture</i> Assinar</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">gavel</i> Definir assinatura</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">file_copy</i> Copiar dados</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">plus_one</i> Gerar cópias</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">reply</i> Responder</a></li>
+                          </ul>
+                          <!-- Menu Mobile -->
+                          <a class="hide-on-med-and-up btn table_more_actions dropdown-settings btn-floating btn-small waves-effect waves-light breadcrumbs-btn right" href="#!" data-target="dropdownm001"><i class="material-icons">more_vert</i></a>
+                          <ul class="dropdown-content" id="dropdownm001" tabindex="0" >
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="processo.html"><i class="material-icons left">remove_red_eye</i> Visualizar</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">trending_flat</i> Tramitar</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">edit</i> Alterar</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">edit</i> Assinar</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">gavel</i> Definir assinatura</a></li>
+                          </ul>
+                          <!-- Fim Menu Mobile -->
+                        </td>
+                      </tr>
+                      <tr>
+                        <td rowspan="2"><a href="processo.html">2019/30559/023968</a><br/>PAPEL</td>
+                        <td>Ofício</td>
+                        <td>2249/2019/SES/GASEC</td>
+                        <td>Procedimento de aquisição do SISTEMA DE CONVÊNIOS E INSTRUMENTOS CONGÊNERES PARA O ESTADO DO TOCANTINS.</td>
+                        <td>-</td>
+                        <td>GABRIEL LACERDA DOS SANTOS</td>
+                        <td>03/07/19<br/>18:26</td>
+                        <td>Baixa</td>
+                        <td >
+                          <div class="table_hover_menu">
+                            <ul>  
+                              <li class="waves-effect"><a class="tooltipped" data-tooltip="Tramitar" data-position="top" href="#"><i class="material-icons">trending_flat</i></a></li>
+                              <li class="waves-effect"><a class="tooltipped" data-tooltip="Distribuir" data-position="top" href="#"><i class="material-icons" style="transform: rotate(135deg)">call_missed</i></a></li>
+                              <li class="waves-effect show_item"><a class="tooltipped" data-tooltip="Ver arquivos" data-position="top" href="documento.html"><i class="material-icons">picture_as_pdf</i></a></li>
+                            </ul>
+                          </div>
+                          <a class="hide-on-small-only btn table_more_actions dropdown-settings btn-floating btn-small waves-effect waves-light breadcrumbs-btn right" href="#!" data-target="dropdown360"><i class="material-icons">more_vert</i></a>
+                          <ul class="dropdown-content" id="dropdown360" tabindex="0" >  
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">trending_flat</i> Tramitar</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left" style="transform: rotate(135deg)">call_missed</i> Distribuir</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">edit</i> Alterar</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">attach_file</i> Anexar</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">folder_open</i> Arquivar</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">gesture</i> Assinar</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">gavel</i> Definir assinatura</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">file_copy</i> Copiar dados</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">plus_one</i> Gerar cópias</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">reply</i> Responder</a></li>
+                          </ul>
+                          <!-- Menu Mobile -->
+                          <a class="hide-on-med-and-up btn table_more_actions dropdown-settings btn-floating btn-small waves-effect waves-light breadcrumbs-btn right" href="#!" data-target="dropdownm002"><i class="material-icons">more_vert</i></a>
+                          <ul class="dropdown-content" id="dropdownm002" tabindex="0">
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="documento.html"><i class="material-icons left">remove_red_eye</i> Visualizar</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">trending_flat</i> Tramitar</a></li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">edit</i> Alterar</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">edit</i> Assinar</a></li>
+                            <li tabindex="0"><a class="grey-text text-darken-2" href="#"><i class="material-icons left">gavel</i> Definir assinatura</a></li>
+                          </ul>
+                          <!-- Fim Menu Mobile -->
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="page-footer footer footer-static footer-light navbar-border navbar-shadow">
+        <div class="footer-copyright">
+          <div class="container">Diretoria de Sistemas de Informação <span>&copy; 2019          <a href="http://www.ati.to.gov.br/" target="_blank">ATI</a></span></div>
+        </div>
+      </footer>
+
+
+      <div id="busca-avancada-form">
+
+        <div class="close"><i class="material-icons">close</i></div>
+        <div class="busca-avancada-content">
+          <h5>BUSCA AVANÇADA</h5>
+          <form action="processos.html">
+
+            <div class="row">
+              <div class="col s12">
+                <div class="check-filters-list card-panel grey lighten-4">
+                  <label>
+                    <input type="checkbox" class="filled-in" />
+                    <span>Incluir documentos na pesquisa</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" class="filled-in" />
+                    <span>Incluir todos os órgãos na pesquisa</span>
+                  </label>
+                  <label>
+                    <input type="checkbox" class="filled-in" />
+                    <span>Exibir unidades inativas</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="label-block" for="unidade_atual">UNIDADE ATUAL:</label>
+              <div class="col s10">
+                <select id="unidade_atual">
+                  <option value="" disabled selected>SELECIONE</option>
+                  <option value="1">UNIDADE 1</option>
+                  <option value="2">UNIDADE 2</option>
+                  <option value="3">UNIDADE 3</option>
+                </select>
+              </div>
+
+              <div class="col s2 pl-0">
+                <div class="btn btn-large waves-effect btn-icon-only white black-text"><i class="material-icons">help_outline</i></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="label-block" for="unidade_gestora">UNIDADE GESTORA:</label>
+              <div class="col s12">
+                <select id="unidade_gestora">
+                  <option value="" disabled selected>SELECIONE</option>
+                  <option value="1">UNIDADE GESTORA 1</option>
+                  <option value="2">UNIDADE GESTORA 2</option>
+                  <option value="3">UNIDADE GESTORA 3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="divider mt-1 mb-2"></div>
+
+            <div class="row">
+              <label class="label-block">DATA DO PROCESSO:</label>
+              <div class="data-filter">
+                <div class="input-prefix-field">
+                  <i class="material-icons">event_note</i>
+                  <input type="datetime" id="processo_data_inicio">
+                </div>
+                <span>A</span>
+                <div class="input-prefix-field">
+                  <i class="material-icons">event_note</i>
+                  <input type="datetime" id="processo_data_fim">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="label-block">DATA DE ABERTURA: <span class="red-text">*</span></label>
+              <div class="data-filter">
+                <div class="input-prefix-field">
+                  <i class="material-icons">event_note</i>
+                  <input type="datetime" id="abertura_data_inicio">
+                </div>
+                <span>A</span>
+                <div class="input-prefix-field">
+                  <i class="material-icons">event_note</i>
+                  <input type="datetime" id="abertura_data_fim">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="label-block">DATA DE RECEBIMENTO:</label>
+              <div class="data-filter">
+                <div class="input-prefix-field">
+                  <i class="material-icons">event_note</i>
+                  <input type="datetime" id="recebimento_data_inicio">
+                </div>
+                <span>A</span>
+                <div class="input-prefix-field">
+                  <i class="material-icons">event_note</i>
+                  <input type="datetime" id="recebimento_data_fim">
+                </div>
+              </div>
+            </div>
+
+            <div class="divider mt-1 mb-2"></div>
+
+            <div class="row">
+              <label class="label-block">TIPO DE SUPORTE:</label>
+              <div class="col s12">
+                <div class="input-group">
+                  <label>
+                    <input name="group1" type="radio" checked />
+                    <span><span class="center-content">DIGITAL</span></span>
+                  </label>
+                  <label>
+                    <input name="group1" type="radio" />
+                    <span><span class="center-content">PAPEL</span></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s6">
+                <label class="label-block" for="especie_documental">PRIORIDADE:</label>
+                <select id="especie_documental">
+                  <option value="" disabled selected>SELECIONE</option>
+                  <option value="1">BAIXA</option>
+                  <option value="2">MÉDIA</option>
+                  <option value="3">ALTA</option>
+                </select>
+              </div>
+              <div class="col s6">
+                <label class="label-block" for="especie_documental">SITUAÇÃO:</label>
+                <select id="especie_documental">
+                  <option value="" disabled selected>TODAS</option>
+                  <option value="1">CADASTRADO</option>
+                  <option value="2">TRAMITANDO</option>
+                  <option value="10">ARQUIVADOS</option>
+                  <option value="12">CANCELADOS</option>
+                  <option value="13">EXPEDIDOS</option>
+                  <option value="14">SOBRESTADOS</option>
+                  <option value="15">ELIMINADOS</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="label-block" for="cadastrado_por">CADASTRADO POR:</label>
+              <div class="col s12">
+                <select id="cadastrado_por">
+                  <option value="" disabled selected>SELECIONE</option>
+                  <option value="1">PESSOA 1</option>
+                  <option value="2">PESSOA 2</option>
+                  <option value="3">PESSOA 3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="label-block">COMENTÁRIO:</label>
+              <div class="col s12">
+                <input type="text" id="comentario">
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="label-block">INTERESSADO:</label>
+              <div class="col s12">
+                <input type="text" id="interessao">
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="label-block">PALAVRA-CHAVE:</label>
+              <div class="col s12">
+                <input type="text" id="palavra_chave">
+              </div>
+            </div>
+
+
+            <div class="row">
+              <label class="label-block">DISTRIBUIÇÃO:</label>
+              <div class="col s12">
+                <input type="text" id="distribuicao">
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="label-block">CPF/CNPJ:</label>
+              <div class="col s12">
+                <input type="text" id="cpf_cnpj">
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="label-block">CAMPO LIVRE:</label>
+              <div class="col s12">
+                <input type="text" id="campolivre">
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="label-block">ORIGEM:</label>
+              <div class="col s12">
+                <div class="input-group">
+                  <label>
+                    <input name="origem" type="radio" checked />
+                    <span><span class="center-content">TODOS</span></span>
+                  </label>
+                  <label>
+                    <input name="origem" type="radio" />
+                    <span><span class="center-content">PRODUZIDOS <br/> (INTERNOS)</span></span>
+                  </label>
+                  <label>
+                    <input name="origem" type="radio" />
+                    <span><span class="center-content">RECEBIDOS <br/> (EXTERNOS)</span></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <label class="label-block" for="tipo_remessa">TIPO DE REMESSA:</label>
+              <div class="col s12">
+                <select id="tipo_remessa">
+                  <option value="" disabled selected>SELECIONE</option>
+                  <option value="1">REMESSA 1</option>
+                  <option value="2">REMESSA 2</option>
+                  <option value="3">REMESSA 3</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="divider mt-1 mb-2"></div>
+
+            <div class="row">
+              <div class="col s12">
+                <label class="label-block" for="atributo_especifico">ATRIBUTO ESPECÍFICO:</label>
+                <select id="atributo_especifico">
+                  <option value="" disabled selected>SELECIONE</option>
+                  <option value="12">ANO CONVENIO / FINANCIAMENTO</option>
+                  <option value="3">ÁREA</option>
+                  <option value="10">ASSUNTO/BENEFÍCIO IGEPREV</option>
+                  <option value="5">CONVENIO</option>
+                  <option value="14">FUNDO</option>
+                  <option value="4">LOTE</option>
+                  <option value="9">NUMERO DO CONVENIO / FINANCIAMENTO</option>
+                  <option value="15">OBSERVAÇÃO</option>
+                  <option value="6">PROCESSOS</option>
+                  <option value="2">QUADRA</option>
+                  <option value="8">TIPO CONVENIO / FINANCIAMENTO</option>
+                  <option value="16">TIPO DE PROCESSO</option>
+                  <option value="11">UNIDADE ORÇAMENTARIA</option>
+                </select>
+              </div>
+              <div class="col s12">
+                <label class="label-block" for="especie_documental">VALOR DO ATRIBUTO:</label>
+                <input type="text" id="valor_atributo">
+              </div>
+            </div>
+
+
+          </form>
+        </div>
+        <div class="submit_search">
+          <button class="btn waves-effect verde-to right">Pesquisar</button>
+        </div>
+
+      </div>
+
+
+
+
+      <!-- Conteúdo dos botões do data table -->
+      <div class="conteudo_mover_dt_sgd" style="display: none">
+        <label>Ano:
+          <select name="ano">
+            <option selected="selected" value="19">2019</option>
+            <option value="18">2018</option>
+            <option value="17">2017</option>
+            <option value="16">2016</option>
+            <option value="15">2015</option>
+          </select>
+        </label>
+
+        <label>Situação:
+          <select name="situacao">
+            <option selected="selected" value="0">CORRENTES</option>
+            <option value="10">ARQUIVADOS</option>
+            <option value="12">CANCELADOS</option>
+            <option value="13">EXPEDIDOS</option>
+            <option value="9">RECUSADOS</option>
+            <option value="14">SOBRESTADOS</option>
+          </select>
+        </label>
+      </div>
+      <!-- FIM do Conteúdo dos botões do data table -->
+
+
+
+
+      <!-- jquery -->
+      <script src="assets/vendors.min.js" type="text/javascript"></script>
+      <!-- Outros -->
+      <script src="assets/jquery.mask.min.js" type="text/javascript"></script>
+      <script src="assets/application.js" type="text/javascript"></script>
+      <script src="assets/plugins.js" type="text/javascript"></script>
+      <script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+      <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+      <script src="https://cdn.datatables.net/buttons/1.6.0/js/dataTables.buttons.min.js"></script>
+
+      <script>
+        $(document).ready(function(){
+
+          $(".busca-avancada-btn").on('click', function(){
+            $("#busca-avancada-form").toggleClass("show");
+          });
+          $("#busca-avancada-form .close").on('click', function(){
+            $("#busca-avancada-form").removeClass("show");
+          });
+
+          $("#busca-avancada-form .submit_search button").on('click', function(){
+            $("#busca-avancada-form form").submit();
+          });
+
+          $.fn.DataTable.ext.pager.numbers_length = 6;
+          $(".datatabled table").DataTable({
+            "dom": "<'row dt_main_filters'<'dt_sgd_filtros'><'dt_processing_data'r><'dt_sgd_search'f>>" +
+            "<'row'<'col s12't>>" +
+            "<'row'<'col s2 dt_sgd_qtd_rows'l><'col s5'i><'col s5'p>>",
+            retrieve: true,
+            responsive: true,
+            "language": {
+              "sEmptyTable": "Nenhum registro encontrado",
+              "sInfo": "Mostrando de _START_ a _END_ de _TOTAL_ registros",
+              "sInfoEmpty": "Mostrando 0 a 0 de 0 registros",
+              "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+              "sInfoPostFix": "",
+              "sInfoThousands": ".",
+              "sLengthMenu": "_MENU_ registros/página",
+              "sLoadingRecords": "Carregando...",
+              "sProcessing": "Processando...",
+              "sZeroRecords": "Nenhum registro encontrado",
+              "sSearch": "_INPUT_",
+              "searchPlaceholder": "Filtrar",
+              "oPaginate": {
+                "sNext": "Próximo",
+                "sPrevious": "Anterior",
+                "sFirst": "Primeiro",
+                "sLast": "Último"
+              },
+              "oAria": {
+                "sSortAscending": ": Ordenar colunas de forma ascendente",
+                "sSortDescending": ": Ordenar colunas de forma descendente"
+              },
+              "select": {
+                "rows": {
+                  "_": "Selecionado %d linhas",
+                  "0": "Nenhuma linha selecionada",
+                  "1": "Selecionado 1 linha"
+                }
+              }
+            }
+          });
+
+          $('<div><label>Ano:' + 
+            '<select name="ano">' + 
+            '<option selected="selected" value="19">2019</option>' + 
+            '<option value="18">2018</option>' + 
+            '<option value="17">2017</option>' + 
+            '<option value="16">2016</option>' + 
+            '<option value="15">2015</option>' + 
+            '</select>' + 
+            '</label></div>' + 
+
+            '<div><label>Situação:' + 
+            '<select name="situacao">' + 
+            '<option selected="selected" value="0">CORRENTES</option>' + 
+            '<option value="10">ARQUIVADOS</option>' + 
+            '<option value="12">CANCELADOS</option>' + 
+            '<option value="13">EXPEDIDOS</option>' + 
+            '<option value="9">RECUSADOS</option>' + 
+            '<option value="14">SOBRESTADOS</option>' + 
+            '</select>'+
+            '</label>' +
+
+            '<div class="filtro-checkbox">' +
+            '<label>' +
+            '<input type="checkbox" class="filled-in" />' +
+            '<span>Pessoal</span>' +
+            '</label>' +
+            '<label>' +
+            '<input type="checkbox" class="filled-in" />' +
+            '<span>Mostrar Apensados</span>' +
+            '</label>' +
+            '</div></div>'
+
+            ).appendTo('.datatabled .dt_sgd_filtros');
+        });
+//           var $table = $('.acompanhamentos table'),
+//           $bodyCells = $table.find('tbody tr:first').children(),
+//           colWidth;
+
+// // Get the tbody columns width array
+// colWidth = $bodyCells.map(function() {
+//   return $(this).width();
+// }).get();
+
+// // Set the width of thead columns
+// $table.find('thead tr').children().each(function(i, v) {
+//   $(v).width(colWidth[i]);
+// });   
+
+// });
+
+</script>
+</body>
+</html>

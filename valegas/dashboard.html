@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/materialize.min.css">
+        <link rel="stylesheet" href="assets/css/valegas.css">
+        <title>Programa Vale-Gás - Painel do benefíciário</title>
+    </head>
+
+    <body class="dashboard">
+        <div>
+            <script type="text/javascript" charset="utf-8" src="https://barra.to.gov.br/topo.js?k=mazcdx"></script>
+        </div>
+
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#">12309712381723</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a class="logout" href="#!">Sair <i class="material-icons">logout</i></a></li>
+        </ul>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="index.html"><img class="logo" src="assets/img/gas.svg" alt="Vale Gás"></a>
+                <ul class="right">
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i
+                                class="material-icons">account_circle</i><i class="material-icons">arrow_drop_down</i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div>
+
+            <div class="container center-align">
+                <h1>Lista de códigos de validação</h1>
+
+                <ul class="cupons">
+                    <li class="cupom --resgatado">
+                        <div>
+                            <img src="assets/img/vale.png" alt="" tabindex="-1">
+                            <div class="cupom-info">
+                                <h2>Outubro/2021</h2>
+                                <p class="cupom-validade">código válido até 31/10/21</p>
+                                <div class="cupom-status">Resgatado</div>
+                            </div>
+                        </div>
+                        <ul class="cupom-bottom-grid">
+                            <li><label>Distribuidor</label>Jãozim do Gás LTDA.</li>
+                            <li><label>Entrega</label>20/20/2200</li>
+                            <li><label>Série</label>PU*&!#JSDJ123123123LL</li>
+                        </ul>
+                    </li>
+                    <li class="cupom --gerado">
+                        <a href="#">
+                            <img src="assets/img/vale.png" alt="" tabindex="-1">
+                            <div class="cupom-info">
+                                <h2>Novembro/2021</h2>
+                                <p class="cupom-validade">código válido até 30/11/21</p>
+                                <div class="cupom-status">Gerado</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="cupom --disponivel">
+                        <a href="#">
+                            <img src="assets/img/vale.png" alt="" tabindex="-1">
+                            <div class="cupom-info">
+                                <h2>Dezembro/2021</h2>
+                                <p class="cupom-validade">código válido até 31/12/21</p>
+                                <div class="cupom-status">Disponível</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="vlib">
+            <div vw class="enabled">
+                <div vw-access-button class="active"></div>
+                <div vw-plugin-wrapper>
+                    <div class="vw-plugin-top-wrapper"></div>
+                </div>
+            </div>
+            <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+            <script>
+                new window.VLibras.Widget('https://vlibras.gov.br/app');
+            </script>
+        </div>
+
+        <script type="text/javascript" charset="utf-8"
+            src="https://barra.web.secom.to.gov.br/base.js?k=v6nsbx"></script>
+        <script src="assets/js/materialize.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var selects = document.querySelectorAll('select');
+                var instancesselect = M.FormSelect.init(selects);
+                var sidenavs = document.querySelectorAll('.sidenav');
+                var instancesside = M.Sidenav.init(sidenavs);
+                var dropdowns = document.querySelectorAll('.dropdown-trigger');
+                var instancesdrop = M.Dropdown.init(dropdowns, {
+                    coverTrigger: false,
+                    alignment: 'right',
+                    constrainWidth: false
+                });
+            });
+        </script>
+    </body>
+
+</html>

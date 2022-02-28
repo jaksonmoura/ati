@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Audiências Públicas do Projeto de Concessão de Serviços Turísticos em núcleos do Parque Estadual do
+            Jalapão</title>
+        <link rel="stylesheet" href="assets/css/materialize.css">
+        <link rel="stylesheet" href="assets/css/audiencias.css">
+    </head>
+
+    <body class="--mateiros">
+
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m8 offset-m2  xl6 offset-xl3">
+
+                    <header>
+                        <a href="index.html">
+                            <img src="assets/img/brasao.svg" alt="Governo do Tocantins">
+                            <h1>
+                                Audiências Públicas do Projeto de Concessão de Serviços Turísticos em núcleos do Parque
+                                Estadual do
+                                Jalapão
+                            </h1>
+                        </a>
+                    </header>
+                </div>
+            </div>
+
+            <div class="row">
+                <h2 class="center-align">Mateiros</h2>
+                <div class="card-panel --warning yellow lighten-3 center-align">
+                    <h6>Atenção! Sua posição final pode mudar!
+                        Podem haver cadastros simultâneos, fazendo com que a de confirmação de inscrição seja alterada.
+                    </h6>
+                </div>
+                <div class="col s12 m8 offset-m2  m6 offset-xl">
+                    <div class="card">
+
+                        <div class="row">
+                            <form action="success.html">
+                                <div class="input-field col s12">
+                                    <select name="" id="">
+                                        <option value="1">Público Geral</option>
+                                        <option value="1">Público Geral</option>
+                                        <option value="1">Público Geral</option>
+                                    </select>
+                                    <label for="">Categoria:</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input type="text">
+                                    <label for="">CPF:</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input type="text">
+                                    <label for="">Nome:</label>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <input type="email">
+                                    <label for="">Email:</label>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <input type="text">
+                                    <label for="">Telefone:</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input type="text">
+                                    <label for="">Instituição:</label>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <input type="text">
+                                    <label for="">Cargo:</label>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <input type="text">
+                                    <label for="">Função:</label>
+                                </div>
+                            </form>
+                        </div>
+
+
+                    </div>
+                    <div class="row center-align">
+                        <button class="cta">Confirmar inscrição</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/bin/materialize.min.js"></script>
+        <script src="assets/js/select.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var elemsSelect = document.querySelectorAll('select');
+                var instancesSelect = M.FormSelect.init(elemsSelect);
+            });
+
+        </script>
+    </body>
+
+</html>

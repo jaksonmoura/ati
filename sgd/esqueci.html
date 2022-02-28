@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class="loading" lang="pt-br" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="SGD - Sistema de Gestão de Documentos">
+  <meta name="keywords" content="governo, tocantins">
+  <meta name="author" content="ATI - Agência de Tecnologia da Informação - TO">
+  <title>SGD</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/login.css">
+  <link rel="stylesheet" type="text/css" href="assets/application.css">
+</head>
+
+<body class="login-sgd-page">
+
+  <section class="login-wrapper ">
+    <div class="login-box --small">
+      <div class="login-form">
+        <div class="logo"><img src="images/logo_to.svg" alt=""><h1>Sistema de Gestão de Documentos</h1></div>
+        <form action="home.html">
+          <div class="input identificacao">
+            <label for="identificacao">Identificação:</label>
+            <input type="text" name="identificacao">
+          </div>
+          <div class="input senha">
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha">
+          </div>
+          <button class="btn azul-to wave-effect wave-light right">Entrar</button>
+        </form>
+        <div class="assinatura">
+          <a href="#"><span>Assinar arquivo</span></a><a href="#"><span>Verificar assinatura</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="assets/vendors.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.show-avisos-trigger').on('click', function(){
+        if($('.login-avisos').hasClass('show-avisos')){
+          $('.login-avisos').removeClass('show-avisos');
+        } else {
+        $('.login-avisos').addClass('show-avisos');
+        }
+      });
+    })
+  </script>
+  
+</body>
+</html>

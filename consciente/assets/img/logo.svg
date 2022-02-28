@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 325 99" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-442.836,-432.783)">
+        <g transform="matrix(0.1264,-0.820231,0.820231,0.1264,509.334,735.336)">
+            <path d="M296.607,206.888C296.607,206.888 286.77,199.026 297.984,190.817C311.345,181.037 336.277,192.883 336.277,192.883L339.635,168.633C339.635,168.633 304.045,152.111 290.546,184.343C277.047,216.575 296.607,206.888 296.607,206.888Z" style="fill:rgb(9,93,54);fill-rule:nonzero;"/>
+        </g>
+        <g>
+            <g transform="matrix(1,0,0,1,6,0)">
+                <path d="M436.836,509.659L436.836,472.833L727.399,472.833L727.399,509.659L436.836,509.659Z" style="fill:rgb(254,197,3);"/>
+            </g>
+            <g transform="matrix(4.04001,0,0,4.04001,-548.423,-398.739)">
+                <text x="251.165px" y="215.052px" style="font-family:'MuktaMahee-Bold', 'Mukta Mahee', sans-serif;font-weight:700;font-size:12px;fill:rgb(48,45,146);">T<tspan x="257.021px " y="215.052px ">O</tspan>CANTINS</text>
+            </g>
+            <g transform="matrix(4.04001,0,0,4.04001,-598.775,-525.066)">
+                <text x="260.707px" y="255.342px" style="font-family:'MuktaMahee-Bold', 'Mukta Mahee', sans-serif;font-weight:700;font-size:12px;fill:rgb(64,49,0);">C<tspan x="267.247px " y="255.342px ">O</tspan>NSCIENTE</text>
+            </g>
+        </g>
+        <g transform="matrix(0.1264,-0.820231,0.820231,0.1264,509.334,735.336)">
+            <path d="M401.086,219.985L350.499,202.934C348.268,202.182 346.057,204.118 346.508,206.429L347.035,209.131C347.629,212.175 345.911,215.203 342.984,216.226C338.527,217.785 332.323,218.596 323.807,217.34C297.326,213.435 291.786,199.219 292.888,187.374C293.533,180.441 297.151,175.348 300.04,172.316C300.056,172.299 300.087,172.267 300.087,172.267L299.936,171.932C299.936,171.932 299.906,171.957 299.891,171.969C291.395,178.959 272.859,197.945 285.312,222.636C296.553,244.923 330.548,247.786 349.34,247.57C352.347,247.536 354.943,249.647 355.519,252.598L356.232,256.25C356.674,258.514 359.363,259.499 361.163,258.056L402.026,225.286C403.918,223.769 403.385,220.759 401.086,219.985Z" style="fill:rgb(17,172,101);fill-rule:nonzero;"/>
+        </g>
+    </g>
+</svg>

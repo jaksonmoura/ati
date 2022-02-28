@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'togov';
+  src:  url('fonts/togov.eot?g2k8rw');
+  src:  url('fonts/togov.eot?g2k8rw#iefix') format('embedded-opentype'),
+    url('fonts/togov.ttf?g2k8rw') format('truetype'),
+    url('fonts/togov.woff?g2k8rw') format('woff'),
+    url('fonts/togov.svg?g2k8rw#togov') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'togov' !important;
+  font-size: 24px;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gov-menu:before {
+  content: "\e912";
+}
+.gov-arrow_drop_down:before {
+  content: "\e90d";
+}
+.gov-arrow_left:before {
+  content: "\e90e";
+}
+.gov-arrow_right:before {
+  content: "\e90f";
+}
+.gov-close:before {
+  content: "\e910";
+}
+.gov-arrow_down:before {
+  content: "\e911";
+}
+.gov-logo_topo .path1:before {
+  content: "\e909";
+  color: rgb(46, 48, 146);
+}
+.gov-logo_topo .path2:before {
+  content: "\e90a";
+  margin-left: -2.8544921875em;
+  color: rgb(255, 196, 11);
+}
+.gov-logo_footer .path1:before {
+  content: "\e90b";
+  color: rgb(46, 48, 146);
+}
+.gov-logo_footer .path2:before {
+  content: "\e90c";
+  margin-left: -1.2998046875em;
+  color: rgb(255, 196, 11);
+}
+.gov-sic:before {
+  content: "\e900";
+}
+.gov-facebook:before {
+  content: "\e901";
+  color: #2d3092;
+}
+.gov-flickr:before {
+  content: "\e902";
+  color: #2d3092;
+}
+.gov-instagram:before {
+  content: "\e903";
+  color: #2d3092;
+}
+.gov-ouvidoria:before {
+  content: "\e904";
+}
+.gov-transparencia:before {
+  content: "\e905";
+}
+.gov-ai:before {
+  content: "\e906";
+}
+.gov-twitter:before {
+  content: "\e907";
+  color: #2d3092;
+}
+.gov-youtube:before {
+  content: "\e908";
+  color: #2d3092;
+}

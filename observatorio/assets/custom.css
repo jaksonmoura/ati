@@ -1,0 +1,68 @@
+.header-main{
+    width: 100%;
+    padding: 40px 10px;
+    color: white;
+    float: left;
+}
+.header-title{
+    font-size: 30px;
+    line-height: 20px;
+}
+
+.icon-mega{
+    font-size: 150px;
+    opacity: 0.2;
+}
+
+.mega-title{
+    font-size: 100px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    
+}
+
+.divider-t {
+    height: 20px;
+    width: 55%;
+}
+
+.list > li{
+    font-size: 30px;
+    color: #333333;
+    padding:  12px 0 ;
+}
+
+.inner-list > li{
+    font-size: 20px;
+    color: #333333;
+    padding:  12px 0 ;
+    list-style-type: disc !important;
+}
+
+
+.boletim{
+    color: #0095FF;
+}
+
+.boletim-div{
+    background-color: #0095FF;
+}
+
+.indicador{
+    background-color: #2E338E;
+}
+
+.grafico-prot{
+    display: flex;
+    height: 400px;
+    background-color: grey;
+    justify-content: center;
+    color: honeydew;
+    padding-top: 190px;
+}
+.divider {
+    height: 1px;
+    color: black;
+    width: 100%;
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOAUTH</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/application.css">
+    <link rel="stylesheet" href="assets/css/toauth.css">
+</head>
+<body>
+
+    <header>
+        <div class="brand_name"><a href="dashboard.html" title="Início">TOAUTH </a> <span class="page">Início</span></div>
+        <a href="#userconfig" class="user" tabindex="1">
+            <img src="assets/imgs/user.jpg" alt="FOTO DE NOME DO USUÁRIO" title="NOME DO USUÁRIO" class="user__photo">
+            <i class="material-icons">keyboard_arrow_down</i>
+        </a>
+    </header>
+
+    <div class="user-profile">
+        <div class="user-main">
+            <img src="assets/imgs/user.jpg" alt="FOTO DO USUÁRIO" class="user-main__photo">
+            <div class="user-main__info">
+                <h4 class="user-main__name">FULANO DE BELTRANO E TAL</h4>
+                <span class="user-main__cpf">005.669.789-12</span>
+                <span class="user-main__type">Concursado</span>
+            </div>
+            <div class="user-main__actions">
+                <a class="btn btn-changepass white grey-text text-darken-2" href="edit.html"><i class="material-icons">vpn_key</i> Alterar senha</a>
+                <a class="btn btn-logout materialize-red darken-1" href="#logout"><i class="material-icons">login</i> Sair</a>
+            </div>
+        </div>
+        <div class="user-data">
+            <div class="user-data__email">
+                <i class="material-icons">email</i>
+                <p>fulanobeltrano@to.gov.br</p>
+            </div>
+            <div class="user-data__phone">
+                <i class="material-icons">phone</i>
+                <p>(63) 98888-9987</p>
+            </div>
+            <div class="user-data__datein">
+                <i class="material-icons">today</i>
+                <p>01/04/1500</p>
+            </div>
+        </div>
+        <div class="user-lotacao">
+            <h4>Lotação</h4>
+            <div class="card">
+                <div class="card__title">Gerência de Assuntos Sigilosos</div>
+                <div class="card__body">
+                    <h5>Responsável pelo setor</h5>
+                    <h6>Cicrano Sipriano</h6>
+                    <p><i class="material-icons">phone</i> (63) 98888-9987</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="user-profile-overlay"></div>
+
+    <section class="welcome">
+        <img src="assets/imgs/brasao.png" alt="Brasão do Estado" class="brasao">
+        <h1 class="welcome__msg">Olá, FULANO.</h1>
+    </section>
+
+    <section class="systems">
+        <div class="systems__header">
+            <h2>Sistemas utilizados</h2>
+
+            <div class="systems__search">
+                <form action="">
+                    <div class="input-field mb-0 mt-0">
+                        <input id="sistema-input" name="sistema-input"  class="mb-0 search-input" type="search">
+                        <label for="sistema-input">Buscar</label>
+                    </div>
+                    <button tabindex="3"><i class="material-icons">search</i></button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="systems__list">
+            <a href="#sistema" tabindex="4" class="system waves-effect">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/browser-256.png" alt="Logo do sistema" class="system__logo">
+                <span class="system__name">Bloqueios Procon</span>
+            </a>
+            <a href="#sistema" class="system waves-effect">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/browser-256.png" alt="Logo do sistema" class="system__logo">
+                <span class="system__name">Diárias</span>
+            </a>
+            <a href="#sistema" class="system waves-effect">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/browser-256.png" alt="Logo do sistema" class="system__logo">
+                <span class="system__name">Sistema de Gestão de Frequência</span>
+            </a>
+            <a href="#sistema" class="system waves-effect">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/browser-256.png" alt="Logo do sistema" class="system__logo">
+                <span class="system__name">Outro nome de sistema</span>
+            </a>
+            <a href="#sistema" class="system waves-effect">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/browser-256.png" alt="Logo do sistema" class="system__logo">
+                <span class="system__name">Bloqueios Procon</span>
+            </a>
+            <a href="#sistema" class="system waves-effect">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/browser-256.png" alt="Logo do sistema" class="system__logo">
+                <span class="system__name">Diárias</span>
+            </a>
+            <a href="#sistema" class="system waves-effect">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/browser-256.png" alt="Logo do sistema" class="system__logo">
+                <span class="system__name">Sistema de Gestão de Frequência </span>
+            </a>
+            <a href="#sistema" class="system waves-effect">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/browser-256.png" alt="Logo do sistema" class="system__logo">
+                <span class="system__name">Outro nome de sistema</span>
+            </a>
+            <a href="#sistema" class="system waves-effect">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/browser-256.png" alt="Logo do sistema" class="system__logo">
+                <span class="system__name">Bloqueios Procon</span>
+            </a>
+            <a href="#sistema" class="system waves-effect">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/browser-256.png" alt="Logo do sistema" class="system__logo">
+                <span class="system__name">Diárias</span>
+            </a>
+            <a href="#sistema" class="system waves-effect">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/browser-256.png" alt="Logo do sistema" class="system__logo">
+                <span class="system__name">Sistema de Gestão de Frequência </span>
+            </a>
+            <a href="#sistema" class="system waves-effect">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/browser-256.png" alt="Logo do sistema" class="system__logo">
+                <span class="system__name">Outro nome de sistema</span>
+            </a>
+            <a href="#sistema" class="system waves-effect">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/browser-256.png" alt="Logo do sistema" class="system__logo">
+                <span class="system__name">Bloqueios Procon</span>
+            </a>
+            <a href="#sistema" class="system waves-effect">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/browser-256.png" alt="Logo do sistema" class="system__logo">
+                <span class="system__name">Diárias</span>
+            </a>
+            <a href="#sistema" class="system waves-effect">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/browser-256.png" alt="Logo do sistema" class="system__logo">
+                <span class="system__name">Sistema de Gestão de Frequência </span>
+            </a>
+            <a href="#sistema" class="system waves-effect">
+                <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/browser-256.png" alt="Logo do sistema" class="system__logo">
+                <span class="system__name">Outro nome de sistema</span>
+            </a>
+
+        </div>
+        <!-- <a href="#" class="systems__showall">Ver todos <i class="material-icons">keyboard_arrow_down</i></a> -->
+        
+    </section>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    <script src="assets/js/vendors.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector("header a.user").addEventListener("click", function (e) {
+                this.classList.toggle("active");
+                document.querySelector(".user-profile").classList.toggle("show");
+                document.querySelector(".user-profile-overlay").classList.toggle("show");
+                document.querySelector("body").style.overflow = "hidden";
+                e.preventDefault();
+            });
+
+            document.addEventListener("click", function (e) {
+                var btn = document.querySelector("a.user");
+                var card = document.querySelector(".user-profile.show");
+                // Se não é o card com .show nem nada dentro do card
+                if (!Object.is(e.target, card)
+                    && !Object.is(e.target, btn) 
+                    && e.composedPath().indexOf(card) < 0
+                    && e.composedPath().indexOf(btn) < 0
+                    ) {
+                        document.querySelector(".user-profile").classList.remove("show");
+                        document.querySelector(".user-profile-overlay").classList.remove("show");
+                        document.querySelector("body").style = "";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+$azul-to: #2E5790;
+$azul-accent: #00B1FF;
+$amarelo-to: #F6C62D;
+$verde-to: #259551;
+
+body.login-sgd-page{
+	background: $verde-to !important;
+	height: 100%;
+
+	&:before{
+		content:"";
+		position: fixed;
+		width: 900px;
+		height: 110vh;
+		background: url("../images/brasao.svg") no-repeat;
+		opacity: .15;
+		z-index: 1;
+		top: -20px;
+		right: calc(50vw - 80vh);
+	}
+
+	@media screen and (min-height: 660px) {
+		overflow: hidden;
+	}
+}
+
+section.login-wrapper{
+	*{
+		box-sizing: border-box;
+	}
+
+	height: 100%;
+	width: 100%;
+	float: left;
+	position: relative;
+	z-index: 2;
+
+	@media screen and (max-width: 1000px) {
+		.login-box{
+			width: 90% !important;
+			height: auto !important;
+			display: flex;
+			flex-direction: column;
+
+			.login-avisos{
+				width: 100% !important;
+				position: relative;
+				border-radius: 4px 4px 0 0 !important; 
+
+				*{
+					transition: all .3s ease-in-out;
+				}
+				
+
+				h2{
+					border-radius: 4px 4px 0 0 !important; 
+				}
+
+				&.show-avisos{
+					.login-avisos--content{
+						transition: all .3s ease-in-out;
+						height: 300px !important;
+						opacity: 1;
+					}
+					.show-avisos-trigger:before{
+						content: "keyboard_arrow_up" !important;
+					}
+				}
+
+				.show-avisos-trigger{
+					opacity: 1 !important;
+					display: inline-flex !important;
+					align-items: center;
+					justify-content: center;
+					font-size: 30px;
+					position: absolute;
+					width: 30px;
+					height: 30px;
+					line-height: 30px;
+					border-radius: 50%;
+					text-align: center;
+					background: rgba(black, .2);
+					cursor: pointer;
+					z-index: 1;
+					top: 10px;
+					right: 15px;
+					transition: all .3s ease-in-out;
+					-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        &:hover{
+        	background: rgba(black, .3);
+        }
+        &:before{
+        	content: "keyboard_arrow_down";
+        	font-family: 'Material Icons'; 
+        	height: 30px;
+        	width: 30px;
+        	position: absolute;
+        	z-index: 1;
+
+        }
+      }
+
+      .login-avisos--content{
+      	height: 0px !important;
+      	opacity: 0;
+
+
+      }
+    }
+    .login-form{
+    	width: 100% !important;
+
+    	.logo{
+    		padding: 15px 0 0 0;
+    	}
+    }
+  }
+}
+
+.login-box{
+	width: 970px;
+	border-radius: 4px;
+	box-shadow: 0 0 30px rgba(black, .5);
+	height: 560px;
+	background: #fff;
+	z-index: 10;
+	margin: 10vh auto;
+
+	&.--small{
+		width: 100% !important;
+		max-width: 450px;
+		.login-form{
+			width: 100%;
+		}
+	}
+
+	.login-avisos{
+		height: 100%;
+		float: left;
+		width: 60%;
+		padding: 0;
+		background: #eef2f3;
+		border-radius: 4px 0 0 4px;
+		color: #555;
+
+		.show-avisos-trigger{
+			display: none;
+			opacity: 0;
+		}
+
+		h2{
+			background: #DCE7EA;
+			height: 50px;
+			padding: 0 20px;
+			margin: 0;
+			font-size: 20px;
+			line-height: 60px;
+			border-radius: 4px 0 0 0;
+			color: $azul-to;
+			font-weight: 700;
+		}
+
+		.login-avisos--content{
+			padding: 10px 20px;
+			height: calc(100% - 51px);
+			overflow-y: scroll;
+			box-shadow: 0 3px 5px rgba(0,0,0,.1) inset;
+			font-size: 16px;
+			line-height: 150%;
+		}
+	}
+
+	.login-form{
+		float: left;
+		width: 40%;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+
+		.logo{
+			height: 25%;
+			align-self: center;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			h1{
+				font-size: 20px;
+				width: 100%;
+				font-weight: 700;
+				margin: 12px 0 0 0;
+				color: $azul-to;
+			}
+		}
+		form{
+			height: 60%;
+			padding: 16px;
+
+			label{
+				font-size: 14px;
+			}
+
+			.senha{
+				input[type="password"]{
+					font-size: 30px !important;
+				}
+			}
+
+		}
+		.assinatura{
+			height: 84px;
+
+			a{
+				float: left;
+				width: 50%;
+				height: 100%;
+				background: $azul-to;
+				font-size: 16px;
+				display: block;
+				color: #fff;
+				text-align: center;
+				display: inline-flex;
+				text-align: center;
+				align-items: center;
+				justify-content: center;
+
+				@media screen and (max-width: 1000px) {
+					&:last-of-type{
+					border-radius: 0 !important;
+				}
+				}
+
+				&:hover{
+					background: lighten($azul-to, 15%) !important;
+				}
+
+				&:last-of-type{
+					background: lighten($azul-to, 10%);
+					border-radius: 0 0 4px 0;
+				}
+			}
+		}
+	}
+}
+}

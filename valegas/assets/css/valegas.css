@@ -1,0 +1,441 @@
+*, *:before, *:after {
+  box-sizing: border-box !important;
+}
+
+html {
+  min-height: 100%;
+  height: 100%;
+  font-size: 18px;
+}
+
+body {
+  font-family: "Roboto", Helvetica, Arial, Helvetica, sans-serif;
+  min-height: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 100px auto;
+}
+body.login h1 {
+  font-size: 2rem;
+}
+body.login form {
+  margin-bottom: 1rem;
+}
+body.login form button {
+  margin-top: 1rem;
+}
+body.login .login-field label {
+  color: #2F3190;
+  font-weight: 500;
+  font-size: 1rem;
+}
+body.login input {
+  background: #fff !important;
+  border: 0;
+  border-radius: 4px !important;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  text-indent: 1rem;
+  box-sizing: border-box !important;
+}
+body.login input:focus {
+  border: 2px solid #2F3190;
+}
+
+#main {
+  background: radial-gradient(ellipse at 106% 108%, #4562a6 0%, #04113d 13%, #04113d 92%, #861b67 101%, #ece3e4 100%);
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-bottom: -100px;
+  z-index: 10;
+  position: relative;
+}
+#main .container {
+  padding-bottom: 50px;
+  max-width: 55ch;
+}
+#main .logo {
+  padding-top: 3rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+}
+#main .logo.--small {
+  height: 120px;
+}
+
+body:not(.dashboard) {
+  color: #fff;
+}
+body:not(.dashboard) h1, body:not(.dashboard) h2, body:not(.dashboard) h3, body:not(.dashboard) h4, body:not(.dashboard) h5, body:not(.dashboard) h6 {
+  color: #06B7FF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-top: 0;
+}
+
+.card-beneficio {
+  background: #FFC40B;
+  border-radius: 4px;
+  padding: 10px;
+}
+.card-beneficio.error input {
+  border: 2px solid red;
+}
+.card-beneficio form {
+  display: grid;
+  grid-template-columns: auto 100px;
+  grid-template-rows: 20px auto;
+  gap: 8px;
+}
+.card-beneficio label {
+  color: #2F3190;
+  font-weight: 500 !important;
+  grid-column: 1/3;
+  grid-row: 1/2;
+  font-size: 0.9rem;
+}
+.card-beneficio label.error {
+  color: red;
+}
+.card-beneficio input {
+  border: 0;
+  border-radius: 4px !important;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  text-indent: 1rem;
+  box-sizing: border-box !important;
+}
+.card-beneficio input:not(.select-dropdown) {
+  background: #fff !important;
+}
+.card-beneficio input[type=date] {
+  text-indent: 0.5rem !important;
+}
+.card-beneficio input:focus {
+  border: 2px solid #2F3190;
+}
+.card-beneficio button {
+  color: #FFC40B;
+  background: #2F3190;
+  border: none;
+  padding: 15px;
+  border-radius: 4px !important;
+  height: 54px;
+  line-height: 1;
+  cursor: pointer;
+}
+.card-beneficio button:hover {
+  background: #3c3eb6;
+}
+
+form.perguntas {
+  display: flow-root;
+}
+form.perguntas .card-beneficio {
+  margin-bottom: 24px;
+}
+
+.nis-encontrado {
+  text-align: center;
+  margin-top: 1rem;
+}
+.nis-encontrado i.material-icons {
+  font-size: 80px;
+  color: #5DBA7D;
+}
+.nis-encontrado h1 {
+  font-size: 1rem;
+  margin: 0;
+}
+.nis-encontrado h2 {
+  font-size: 2rem;
+  color: #fff !important;
+  margin: 0;
+}
+
+.btn-step {
+  color: #2F3190;
+  background: #06B7FF;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 4px;
+  float: right;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-step:hover {
+  background: #53cdff;
+}
+
+.dashboard {
+  display: inherit !important;
+}
+.dashboard nav {
+  background-color: #eef2f3;
+}
+.dashboard nav a {
+  color: #000 !important;
+}
+.dashboard nav a.dropdown-trigger {
+  display: inline-flex;
+  background: rgba(0, 0, 0, 0.1);
+}
+.dashboard nav .logo {
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+@media screen and (max-width: 600px) {
+  .dashboard nav .logo {
+    margin-top: 5px;
+  }
+}
+.dashboard nav .logout {
+  background: #e51c23;
+  color: #fff !important;
+}
+.dashboard h1 {
+  font-size: 2rem;
+  color: #000;
+}
+.dashboard ul.cupons {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 20px;
+  justify-content: center;
+}
+.dashboard .cupom {
+  border-radius: 6px;
+  width: 100%;
+  max-width: 400px;
+  background: #FFD44D;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.dashboard .cupom a, .dashboard .cupom > div:not(.cupom-info) {
+  padding: 10px;
+  color: #333;
+  display: inline-flex;
+  text-align: left;
+  height: 170px;
+  align-items: flex-start;
+}
+.dashboard .cupom a img, .dashboard .cupom > div:not(.cupom-info) img {
+  height: 150px;
+  margin-right: 0.5rem;
+}
+.dashboard .cupom a h2, .dashboard .cupom > div:not(.cupom-info) h2 {
+  color: #000;
+  margin: 0;
+}
+.dashboard .cupom .cupom-bottom-grid {
+  display: grid;
+  grid-template-columns: auto 100px 120px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: hidden;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  padding: 5px 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.dashboard .cupom .cupom-bottom-grid li {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0 5px;
+  word-break: break-all;
+}
+.dashboard .cupom .cupom-bottom-grid li:not(label) {
+  font-weight: 500;
+}
+.dashboard .cupom .cupom-bottom-grid li:not(:last-of-type) {
+  border-right: 1px dashed rgba(0, 0, 0, 0.1);
+}
+.dashboard .cupom-info {
+  display: grid;
+  grid-template-rows: 22px 22px auto;
+  height: 100%;
+}
+.dashboard .cupom-status {
+  align-self: end;
+  justify-self: flex-end;
+  background: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.dashboard .cupom.--resgatado {
+  background: #e8e8e8;
+}
+.dashboard .cupom.--resgatado .cupom-bottom-grid {
+  background: #e8e8e8;
+}
+.dashboard .cupom.--resgatado .cupom-status {
+  background: #999;
+}
+.dashboard .cupom.--gerado .cupom-status {
+  background: #2F3190;
+  color: #fff;
+}
+.dashboard .cupom.--disponivel .cupom-status {
+  background: #29823C;
+  color: #fff;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+  color: #06B7FF;
+}
+
+.select-wrapper input {
+  z-index: 2;
+}
+.select-wrapper:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 24px);
+  height: 100%;
+  background: #fff;
+  z-index: 0;
+  border-radius: 6px 0 0 6px;
+}
+.select-wrapper .caret {
+  z-index: 0;
+  background: #fff;
+  height: 100%;
+  border-radius: 0 6px 6px 0;
+  border-top: 1px solid #dedede !important;
+  border-right: 1px solid #dedede !important;
+  border-bottom: 1px solid #dedede !important;
+}
+
+label {
+  font-weight: 500;
+  color: #333;
+}
+
+input {
+  border: 1px solid #dedede !important;
+  border-radius: 6px !important;
+}
+
+.btn {
+  text-transform: unset !important;
+  font-weight: 500;
+}
+
+.wizard-progress {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  position: relative;
+  margin: 2rem 0 3rem 0;
+}
+.wizard-progress .step {
+  display: table-cell;
+  text-align: center;
+  vertical-align: top;
+  overflow: visible;
+  position: relative;
+  font-size: 14px;
+  color: #fff;
+}
+.wizard-progress .step:not(.complete) {
+  font-weight: bold;
+}
+.wizard-progress .step:not(:last-child):before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 37px;
+  background-color: #fff;
+  height: 6px;
+  width: 100%;
+}
+.wizard-progress .step .node {
+  display: inline-block;
+  border: 6px solid #fff;
+  background-color: #fff;
+  border-radius: 18px;
+  height: 26px;
+  width: 26px;
+  position: absolute;
+  top: 27px;
+  left: 50%;
+  margin-left: -10px;
+}
+.wizard-progress .step.complete {
+  color: rgba(255, 255, 255, 0.85);
+}
+.wizard-progress .step.complete:before {
+  background-color: #07c;
+}
+.wizard-progress .step.complete .node {
+  border-color: #07c;
+  background-color: #07c;
+}
+.wizard-progress .step.complete .node:before {
+  font-family: "Material Icons";
+  content: "check";
+  top: -8px;
+  left: -3px;
+  position: absolute;
+  font-size: 20px;
+  color: white;
+}
+.wizard-progress .step.in-progress:before {
+  background: #07c;
+  background: linear-gradient(to right, #07c 0%, #fff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#07c", endColorstr="#fff",GradientType=1 );
+}
+.wizard-progress .step.in-progress .node {
+  border-color: #07c;
+}
+
+.alert {
+  border-radius: 6px;
+  padding: 10px;
+  display: inline-flex;
+  align-items: flex-start;
+  text-align: left;
+  border: 2px solid #fff;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.alert i {
+  font-size: 3.5rem;
+  margin-right: 0.9rem;
+}
+.alert p {
+  margin-bottom: 0;
+}
+.alert.--info {
+  color: #06B7FF;
+  border-color: #06B7FF;
+}
+.alert.--error {
+  color: #ff6565;
+  border-color: #ff6565;
+}/*# sourceMappingURL=valegas.css.map */

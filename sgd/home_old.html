@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html class="loading" lang="pt-br" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="SGD - Sistema de Gestão de Documentos">
+  <meta name="keywords" content="governo, tocantins">
+  <meta name="author" content="ATI - Agência de Tecnologia da Informação - TO">
+  <title>SGD</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/custom.css">
+  <link rel="stylesheet" type="text/css" href="assets/application.css">
+</head>
+<!-- END: Head-->
+<body class="vertical-layout page-header-light vertical-menu-collapsible 2-columns  " data-open="click" data-menu="vertical-dark-menu" data-col="2-columns">
+  
+
+  <!-- BEGIN: Header-->
+  <header class="page-topbar" id="header">
+    <div class="navbar navbar-fixed"> 
+      <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-light">
+        <div class="nav-wrapper">
+          <div class="header-search-wrapper hide-on-med-and-down"><i class="material-icons">search</i>
+            <input class="header-search-input z-depth-2" type="search" name="Search" placeholder="Busca rápida. Ex.:(2019/12345/123)">
+            <span class="header-search-error">Nenhum resultado para essa busca!</span>
+          </div>
+          <ul class="navbar-list right">
+            <li class="hide-on-large-only"><a class="waves-effect waves-block waves-light search-button" href="javascript:void(0);"><i class="material-icons">search</i></a></li>
+            <!-- <li class="hide-on-small-only"><a class="waves-effect waves-block waves-light" href="#"><i class="material-icons">timer<small class="badge red circle notification-badge">5</small></i></a></li> -->
+            <li class="hide-on-small-only"><a class="waves-effect waves-block waves-light" href="#"><span><i class="material-icons">phone</i></a></li>
+              <li class="hide-on-small-only"><a class="waves-effect waves-block waves-light" href="#"><span><i class="material-icons">help</i></a></li>
+                <li>
+                  <a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);" data-target="profile-dropdown">
+                  <span class="avatar-status">
+                    <img src="assets/profile.png" alt="avatar">
+                  </span>
+                </a>
+              </li>
+              </ul>
+              <!-- profile-dropdown-->
+              <ul class="dropdown-content" id="profile-dropdown">
+                <li><a class="grey-text text-darken-1" href="#">Nikola Tesla Nikola Tesla</a></li>
+                <li id="profile-dropdown--unidade">
+                  <span class="p-4">
+                    <select class="browser-default" name="sss">
+                    <option value="">GDS-ATI</option>
+                    <option value="">DDs-ATI</option>
+                  </select>
+                  </span>
+                </li>
+                <li><a class="grey-text text-darken-1" href="#"><i class="material-icons">edit</i> Configuração pessoal</a></li>
+                <li><a class="red white-text text-darken-1" href="#"><i class="material-icons">keyboard_tab</i> Sair</a></li>
+              </ul>
+            </div>
+            <nav class="display-none search-sm">
+              <div class="nav-wrapper">
+                <form>
+                  <div class="input-field">
+                    <input class="search-box-sm" type="search" required="">
+                    <i class="material-icons search-sm-close">close</i>
+                  </div>
+                </form>
+              </div>
+            </nav>
+          </nav>
+        </div>
+      </header>
+      <!-- END: Header-->
+
+      <!-- BEGIN: SideNav-->
+      <aside class="sidenav-main transition-slide-right nav-expanded nav-lock nav-collapsible sidenav-dark sidenav-active-rounded">
+  <div class="brand-sidebar">
+    <h1 class="logo-wrapper"><a id="brasao-sgd-logo" class="brand-logo darken-1" href="home.html"><img src="images/brasao.svg" alt="Brasão do Governo do Tocantins"/><span class="logo-text hide-on-med-and-down">SGD</span></a><a class="navbar-toggler" href="#"><i class="material-icons">radio_button_checked</i></a></h1>
+  </div>
+  <ul class="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow" id="slide-out" data-menu="menu-navigation" data-collapsible="menu-accordion">
+    <li class="navigation-header"><a class="navigation-header-text">SGD </a><i class="navigation-header-icon material-icons">more_horiz</i>
+    </li>
+    <li class="bold"><a class="waves-effect waves-light " href="home.html"><i class="material-icons">settings_input_svideo</i><span class="menu-title" data-i18n="">Início</span><span class="badge new badge pill pink accent-2 float-right mr-10 hide">5</span></a>
+    </li>
+
+    <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i class="material-icons">folder</i><span class="menu-title" data-i18n="">Processos</span></a>
+      <div class="collapsible-body">
+        <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+
+          <li><a class="collapsible-body waves-effect waves-light" href="proc_cadastrar.html" data-i18n=""><i class="material-icons">add_circle_outlined</i><span>Incluir</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="processos.html" data-i18n=""><i class="material-icons">list</i><span>Listagem</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="proc_acompanhamento.html" data-i18n=""><i class="material-icons">dashboard</i><span>Painel de acompanhamento</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">search_plus</i><span>Busca avançada</span></a>
+          </li>
+          <li><a class="collapsible-body collapsible-header waves-effect waves-light" href="#" data-i18n="" tabindex="0"><i class="material-icons">radio_button_unchecked</i><span>Guias</span></a>
+            <div class="collapsible-body">
+              <ul class="collapsible" data-collapsible="accordion">
+                <li><a class="collapsible-body" href="ui-basic-buttons.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Guia de tramitação</span></a>
+                </li>
+                <li><a class="collapsible-body" href="ui-extended-buttons.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Guia de expedição</span></a>
+                </li>
+                <li><a class="collapsible-body" href="ui-extended-buttons.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Guia de expedição - outros protocolos</span></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i class="material-icons">insert_drive_file</i><span class="menu-title" data-i18n="">Documentos</span></a>
+      <div class="collapsible-body">
+        <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+
+          <li><a class="collapsible-body waves-effect waves-light" href="doc_cadastrar.html" data-i18n=""><i class="material-icons">add_circle_outlined</i><span>Incluir</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="documentos.html" data-i18n=""><i class="material-icons">list</i><span>Listagem</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="doc_acompanhamento.html" data-i18n=""><i class="material-icons">dashboard</i><span>Painel de acompanhamento</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">description</i><span>Modelos e minutas</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">search_plus</i><span>Busca avançada</span></a>
+          </li>
+          <li><a class="collapsible-body collapsible-header waves-effect waves-light" href="#" data-i18n="" tabindex="0"><i class="material-icons">radio_button_unchecked</i><span>Guias</span></a>
+            <div class="collapsible-body">
+              <ul class="collapsible" data-collapsible="accordion">
+                <li><a class="collapsible-body" href="ui-basic-buttons.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Guia de tramitação</span></a>
+                </li>
+                <li><a class="collapsible-body" href="ui-extended-buttons.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Guia de expedição</span></a>
+                </li>
+                <li><a class="collapsible-body" href="ui-extended-buttons.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Guia de expedição - outros protocolos</span></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i class="material-icons">storage</i><span class="menu-title" data-i18n="">Arquivos</span></a>
+      <div class="collapsible-body">
+        <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+
+          <li><a class="collapsible-body waves-effect waves-light" href="proc_cadastrar.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Alterar</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="processos.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Arquivo digital</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="proc_acompanhamento.html" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Arquivo setorial</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Comentar</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Criar caixa</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Emprestar</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Etiquetas</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Guia de transferência</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Lista de transferência</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Busca avançada</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">radio_button_unchecked</i><span>Pesquisa simples</span></a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i class="material-icons">work</i><span class="menu-title" data-i18n="">Mala Direta</span></a>
+      <div class="collapsible-body">
+        <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+
+          <li><a class="collapsible-body waves-effect waves-light" href="proc_cadastrar.html" data-i18n=""><i class="material-icons">group_add</i><span>Incluir grupo</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="processos.html" data-i18n=""><i class="material-icons">person_add</i><span>Incluir pessoa</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="proc_cadastrar.html" data-i18n=""><i class="material-icons">group</i><span>Grupos</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="processos.html" data-i18n=""><i class="material-icons">person</i><span>Pessoas</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">search_plus</i><span>Busca avançada</span></a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i class="material-icons">receipt</i><span class="menu-title" data-i18n="">Relatórios</span></a>
+      <div class="collapsible-body">
+        <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+
+          <li><a class="collapsible-body waves-effect waves-light" href="proc_cadastrar.html" data-i18n=""><i class="material-icons">folder</i><span>Processos</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="processos.html" data-i18n=""><i class="material-icons">insert_drive_file</i><span>Documentos</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="proc_acompanhamento.html" data-i18n=""><i class="material-icons">storage</i><span>Arquivos</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i class="material-icons">work</i><span>Mala direta</span></a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="bold"><a class="waves-effect waves-light " href="manuais.html" tabindex="0"><i class="material-icons">photo_filter</i><span class="menu-title" data-i18n="">Manuais e normas</span></a>
+    </li>
+
+    <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i class="material-icons">gesture</i><span class="menu-title" data-i18n="">Assinatura digital</span></a>
+      <div class="collapsible-body">
+        <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+          <li><a class="collapsible-body waves-effect waves-light" href="assinararquivo.html" data-i18n=""><i class="material-icons">create</i><span>Assinar arquivo</span></a>
+          </li>
+          <li><a class="collapsible-body waves-effect waves-light" href="assinaturadigital.html" data-i18n=""><i class="material-icons">gesture</i><span>Assinatura digital</span></a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+  
+
+
+  <div class="navigation-background"></div><a class="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only" href="#" data-target="slide-out"><i class="material-icons">menu</i></a>
+</aside>
+      <!-- END: SideNav-->
+
+
+      <div id="main">
+        <div class="row transition-fade">
+          <div class="col s12">
+            <div id="main-content" class="container transition-fade">
+              <div class="dashboard pt-1">
+                <div class="atalhos">
+                  <h5>Atalhos</h5>
+
+                  <div class="row">
+                    <div class="col s12">
+                      <div class="card-panel">
+                        <div class="atalhos-list">
+                          <a class="btn waves-effect waves-yellow" href="#">Anexar</a>
+                          <a class="btn waves-effect waves-yellow" href="#">Anexar</a>
+                          <a class="btn waves-effect waves-yellow" href="#">Anexar</a>
+                        </div>
+                        <div class="adicionar-atalho">
+                          <a href="#" class="btn waves-effect waves-light"><i class="material-icons">add_circle</i> Atalho</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s12 xl6">
+                    <h5>Processos</h5>
+                    <div class="processos_board">
+                      <div class="board_top">
+                        <div class="correntes">
+                          <a href="processos.html">
+                            <span class="correntes_number">35</span>
+                            correntes
+                          </a>
+                        </div>
+                        <div class="alltherest">
+                          <ul>
+                            <li><a href="#"><span>0</span>Expedição para recebimento</a></li>
+                            <li><a href="#"><span>0</span>Distribuições para recebimento</a></li>
+                            <li><a href="#"><span>0</span>Distribuições</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="board_bottom">
+                        <a class="bottom_item">
+                          <span class="bottom_item--number">10</span>
+                          <span class="bottom_item--text">Para recebimento</span>
+                        </a>
+                        <a class="bottom_item">
+                          <span class="bottom_item--number">10</span>
+                          <span class="bottom_item--text">Tramitados e <br/>não recebidos</span>
+                        </a>
+                        <a class="bottom_item">
+                          <span class="bottom_item--number">10</span>
+                          <span class="bottom_item--text">Tramitados e <br/>não recebidos <br/> + 24 horas</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col s12 xl6">
+                    <h5>Documentos</h5>
+                    <div class="documentos_board">
+                      <div class="board_top">
+                        <div class="correntes">
+                          <a href="documentos.html">
+                            <span class="correntes_number">35</span>
+                            correntes
+                          </a>
+                        </div>
+                        <div class="alltherest">
+                          <ul>
+                            <li><a href="#"><span class="green-text">0</span>Minutas</a></li>
+                            <li><a href="#"><span>0</span>Documentos para assinatura</a></li>
+                            <li><a href="#"><span>0</span>Expedição para recebimento</a></li>
+                            <li><a href="#"><span>0</span>Prazo de sobrestamento esgotado</a></li>
+                            <li><a href="#"><span>0</span>Distribuições para recebimento</a></li>
+                            <li><a href="#"><span>0</span>Distribuições</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="board_bottom">
+                        <a class="bottom_item">
+                          <span class="bottom_item--number">10</span>
+                          <span class="bottom_item--text">Para recebimento</span>
+                        </a>
+                        <a class="bottom_item">
+                          <span class="bottom_item--number">10</span>
+                          <span class="bottom_item--text">Tramitados e <br/>não recebidos</span>
+                        </a>
+                        <a class="bottom_item">
+                          <span class="bottom_item--number">10</span>
+                          <span class="bottom_item--text">Tramitados e <br/>não recebidos <br/> + 24 horas</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="acompanhamentos">
+                    <div class="col s12">
+                      <h5><i class="material-icons">notification_important</i> Acompanhamentos</h5>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Nº Processo / Assunto</th>
+                            <th>Localização</th>
+                            <th>Situação</th>
+                            <th>Permanência</th>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><a href="#">2019/26819/000240</a><br/>SOLICITAÇÃO DE AMBIENTE DE SERVIDOR</td>
+                          <td>GEPRO</td>
+                          <td>TRAMITANDO</td>
+                          <td class="verde-to-text">55 DIAS</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">2019/26819/000240</a><br/>SOLICITAÇÃO DE AMBIENTE DE SERVIDOR</td>
+                          <td>GEPRO</td>
+                          <td>TRAMITANDO</td>
+                          <td class="verde-to-text">55 DIAS</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">2019/26819/000240</a><br/>SOLICITAÇÃO DE AMBIENTE DE SERVIDOR</td>
+                          <td>GEPRO</td>
+                          <td>TRAMITANDO</td>
+                          <td class="verde-to-text">55 DIAS</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">2019/26819/000240</a><br/>SOLICITAÇÃO DE AMBIENTE DE SERVIDOR</td>
+                          <td>GEPRO</td>
+                          <td>TRAMITANDO</td>
+                          <td class="verde-to-text">55 DIAS</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">2019/26819/000240</a><br/>SOLICITAÇÃO DE AMBIENTE DE SERVIDOR</td>
+                          <td>GEPRO</td>
+                          <td>TRAMITANDO</td>
+                          <td class="verde-to-text">55 DIAS</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">2019/26819/000240</a><br/>SOLICITAÇÃO DE AMBIENTE DE SERVIDOR</td>
+                          <td>GEPRO</td>
+                          <td>TRAMITANDO</td>
+                          <td class="verde-to-text">55 DIAS</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">2019/26819/000240</a><br/>SOLICITAÇÃO DE AMBIENTE DE SERVIDOR</td>
+                          <td>GEPRO</td>
+                          <td>TRAMITANDO</td>
+                          <td class="verde-to-text">55 DIAS</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer footer footer-static footer-light navbar-border navbar-shadow">
+      <div class="footer-copyright">
+        <div class="container">Diretoria de Sistemas de Informação <span>&copy; 2019          <a href="http://www.ati.to.gov.br/" target="_blank">ATI</a></span></div>
+      </div>
+    </footer>
+
+
+    <!-- jquery -->
+    <script src="assets/vendors.min.js" type="text/javascript"></script>
+    <!-- Outros -->
+    <!-- <script src="assets/jquery-validation/jquery.validate.min.js"></script> -->
+    <script src="assets/plugins.js" type="text/javascript"></script>
+    <script src="assets/jquery.mask.min.js" type="text/javascript"></script>
+    <script src="assets/application.js" type="text/javascript"></script>
+    <script>
+//         $(document).ready(function(){
+//           var $table = $('.acompanhamentos table'),
+//           $bodyCells = $table.find('tbody tr:first').children(),
+//           colWidth;
+
+// // Get the tbody columns width array
+// colWidth = $bodyCells.map(function() {
+//   return $(this).width();
+// }).get();
+
+// // Set the width of thead columns
+// $table.find('thead tr').children().each(function(i, v) {
+//   $(v).width(colWidth[i]);
+// });   
+
+// });
+</script>
+</body>
+</html>

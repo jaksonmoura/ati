@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/materialize.min.css">
+        <link rel="stylesheet" href="assets/css/valegas.css">
+        <title>Programa Vale-Gás - Login</title>
+    </head>
+
+    <body class="login">
+        <div>
+            <script type="text/javascript" charset="utf-8" src="https://barra.to.gov.br/topo.js?k=mazcdx"></script>
+        </div>
+
+        <div id="main">
+            <div class="container center-align">
+                <a href="index.html"><img class="logo" src="assets/img/gas.svg" alt="Vale Gás"></a>
+                <div class="wizard-progress">
+                    <div class="step complete">
+                      NIS habilitado
+                      <div class="node"></div>
+                    </div>
+                    <div class="step complete">
+                      Verificação
+                      <div class="node"></div>
+                    </div>
+                    <div class="step in-progress">
+                      Cadastrar Conta
+                      <div class="node"></div>
+                    </div>
+                  </div>
+                <h1 class="white-text">Primeiro acesso</h1>
+                <div class="alert --info">
+                    <i class="material-icons">warning</i>
+                    <p>Preencha os dados abaixo para criar uma conta de acesso. <br/> Ela é necessária para que você possa solicitar os cupons.</p>
+                </div>
+                
+                <form class="left-align" action="dashboard.html">
+                    <div class="login-field">
+                        <label for="beneficiario">NIS ou CPF:</label>
+                        <input type="text" name="beneficiario" id="beneficiario">
+                    </div>
+                    <div class="login-field">
+                        <label for="beneficiario">Senha:</label>
+                        <input type="text" name="beneficiario" id="beneficiario">
+                    </div>
+                </form>
+                <button class="btn-step">Cadastrar</button>
+            </div>
+        </div>
+
+        <div class="vlib">
+			<div vw class="enabled">
+				<div vw-access-button class="active"></div>
+				<div vw-plugin-wrapper>
+					<div class="vw-plugin-top-wrapper"></div>
+				</div>
+			</div>
+			<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+			<script>
+				new window.VLibras.Widget('https://vlibras.gov.br/app');
+			</script>
+		</div>
+
+		<script type="text/javascript" charset="utf-8"
+			src="https://barra.web.secom.to.gov.br/base.js?k=v6nsbx"></script>
+        <script src="assets/js/materialize.js"></script>
+    </body>
+
+</html>

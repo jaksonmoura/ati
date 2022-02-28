@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Sistemas</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/public-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/application.css">
+  </head>
+
+  <body class="public-ps">
+    <header>
+      <div class="public-links">
+        <a class="right" href="/users/sign_in">
+          <i class="material-icons">settings</i>
+        </a>
+      </div>
+      <div class="main-content">
+
+        <h1>Portal de sistemas</h1>
+        <form action="/">
+          <input type="search" aria-label="Buscar sistema" id="public-search-ps" placeholder="Buscar sistema">
+          <button aria-label="Buscar"><i class="material-icons" aria-hidden="true">search</i></button>
+        </form>
+      </div>
+      <!-- <div class="brasao"><img src="assets/brasao_novo.svg" alt=""></div> -->
+    </header>
+
+    <section class="list-box-ps">
+      <h5>Mais novos</h5>
+      <!-- <div class="filters-ps">
+            <form action="/">
+                <div class="select-field">
+                    <label>Categorias</label>
+                    <select>
+                        <option value="" disabled selected>Todas</option>
+                        <option value="1">Categoria 1</option>
+                        <option value="2">Categoria 2</option>
+                        <option value="3">Categoria 3</option>
+                    </select>
+                </div>
+                <div class="select-field">
+                    <label>Órgãos</label>
+                    <select>
+                        <option value="" disabled selected>Todos</option>
+                        <option value="1">Órgão 1</option>
+                        <option value="2">Órgão 2</option>
+                        <option value="3">Órgão 3</option>
+                    </select>
+                </div>
+            </form>
+        </div> -->
+      <ul class="list-ps">
+        <li class="item-ps">
+          <a class="item-opensys-btn" href="#opensystem" aria-labelledby="system-title-123"></a>
+          <a href="#modal" class="modal-trigger" role="button" aria-haspopup="dialog" aria-labelledby="system-announce-123 system-title-123">
+            <div class="sr-only" id="system-announce-123">Informações rápidas de</div>
+            <div class="item-header-ps">
+              <h6 class="item-title-ps" id="system-title-123">SIGA <i class="material-icons" aria-hidden="true">launch</i></h6>
+            </div>
+            <div class="item-bottom-info">
+              <span class="item-orgao-ps">Vários</span>
+            </div>
+          </a>
+          <div class="item-more-details">
+            <a href="details.html" class="item-more-details-link">mais detalhes <i
+                class="material-icons">article</i></a>
+            <a href="#" class="item-open-link">abrir <i class="material-icons">launch</i></a>
+          </div>
+        </li>
+        <li class="item-ps">
+          <a class="item-opensys-btn" href="#opensystem" aria-labelledby="system-title-123"></a>
+          <a href="#modal" class="modal-trigger" role="button" aria-haspopup="dialog" aria-labelledby="system-announce-123 system-title-123">
+            <div class="sr-only" id="system-announce-123">Informações rápidas de</div>
+            <div class="item-header-ps">
+              <h6 class="item-title-ps" id="system-title-123">PORTAL DE SERVIÇOS COM MAIS TEXTO <i class="material-icons" aria-hidden="true">launch</i></h6>
+            </div>
+            <div class="item-bottom-info">
+              <span class="item-orgao-ps">Vários</span>
+            </div>
+          </a>
+          <div class="item-more-details">
+            <a href="details.html" class="item-more-details-link">mais detalhes <i
+                class="material-icons">article</i></a>
+            <a href="#" class="item-open-link">abrir <i class="material-icons">launch</i></a>
+          </div>
+        </li>
+        <li class="item-ps">
+          <a class="item-opensys-btn" href="#opensystem" aria-labelledby="system-title-123"></a>
+          <a href="#modal" class="modal-trigger" role="button" aria-haspopup="dialog" aria-labelledby="system-announce-123 system-title-123">
+            <div class="sr-only" id="system-announce-123">Informações rápidas de</div>
+            <div class="item-header-ps">
+              <h6 class="item-title-ps" id="system-title-123">SIGA <i class="material-icons" aria-hidden="true">launch</i></h6>
+            </div>
+            <div class="item-bottom-info">
+              <span class="item-orgao-ps">Vários</span>
+            </div>
+          </a>
+          <div class="item-more-details">
+            <a href="details.html" class="item-more-details-link">mais detalhes <i
+                class="material-icons">article</i></a>
+            <a href="#" class="item-open-link">abrir <i class="material-icons">launch</i></a>
+          </div>
+        </li>
+        <li class="item-ps">
+          <a class="item-opensys-btn" href="#opensystem" aria-labelledby="system-title-123"></a>
+          <a href="#modal" class="modal-trigger" role="button" aria-haspopup="dialog" aria-labelledby="system-announce-123 system-title-123">
+            <div class="sr-only" id="system-announce-123">Informações rápidas de</div>
+            <div class="item-header-ps">
+              <h6 class="item-title-ps" id="system-title-123">SIGA <i class="material-icons" aria-hidden="true">launch</i></h6>
+            </div>
+            <div class="item-bottom-info">
+              <span class="item-orgao-ps">Vários</span>
+            </div>
+          </a>
+          <div class="item-more-details">
+            <a href="details.html" class="item-more-details-link">mais detalhes <i
+                class="material-icons">article</i></a>
+            <a href="#" class="item-open-link">abrir <i class="material-icons">launch</i></a>
+          </div>
+        </li>
+        <li class="item-ps">
+          <a class="item-opensys-btn" href="#opensystem" aria-labelledby="system-title-123"></a>
+          <a href="#modal" class="modal-trigger" role="button" aria-haspopup="dialog" aria-labelledby="system-announce-123 system-title-123">
+            <div class="sr-only" id="system-announce-123">Informações rápidas de</div>
+            <div class="item-header-ps">
+              <h6 class="item-title-ps" id="system-title-123">SIGA <i class="material-icons" aria-hidden="true">launch</i></h6>
+            </div>
+            <div class="item-bottom-info">
+              <span class="item-orgao-ps">Vários</span>
+            </div>
+          </a>
+          <div class="item-more-details">
+            <a href="details.html" class="item-more-details-link">mais detalhes <i
+                class="material-icons">article</i></a>
+            <a href="#" class="item-open-link">abrir <i class="material-icons">launch</i></a>
+          </div>
+        </li>
+        <li class="item-ps">
+          <a class="item-opensys-btn" href="#opensystem" aria-labelledby="system-title-123"></a>
+          <a href="#modal" class="modal-trigger" role="button" aria-haspopup="dialog" aria-labelledby="system-announce-123 system-title-123">
+            <div class="sr-only" id="system-announce-123">Informações rápidas de</div>
+            <div class="item-header-ps">
+              <h6 class="item-title-ps" id="system-title-123">SIGA <i class="material-icons" aria-hidden="true">launch</i></h6>
+            </div>
+            <div class="item-bottom-info">
+              <span class="item-orgao-ps">Vários</span>
+            </div>
+          </a>
+          <div class="item-more-details">
+            <a href="details.html" class="item-more-details-link">mais detalhes <i
+                class="material-icons">article</i></a>
+            <a href="#" class="item-open-link">abrir <i class="material-icons">launch</i></a>
+          </div>
+        </li>
+
+      </ul>
+      <div class="mais-sistemas-btn">
+        <a href="/servicos" class="btn-ghost">Mais serviços</a>
+      </div>
+      <!-- <ul class="pagination center-align">
+            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!">2</a></li>
+            <li class="waves-effect"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!">4</a></li>
+            <li class="waves-effect"><a href="#!">5</a></li>
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul> -->
+    </section>
+
+    <section class="categorias">
+      <div class="row">
+        <div class="container">
+          <h5>Categorias</h5>
+          <ul class="categorias-wrapper">
+            <li class="categoria">
+              <a href="/servicos?categoria=Tr%C3%A2nsito+e+Transportes" >
+                <i class="categoria--icon material-icons" aria-hidden="true">traffic</i>
+                <div class="categoria--titulo">Trânsito e Transportes</div>
+              </a>
+            </li>
+            <li class="categoria">
+              <a href="/servicos?categoria=Trabalho" >
+                <i class="categoria--icon material-icons" aria-hidden="true">business_center</i>
+                <div class="categoria--titulo">Trabalho</div>
+              </a>
+            </li>
+            <li class="categoria">
+              <a href="/servicos?categoria=Sa%C3%BAde+e+Vigil%C3%A2ncia+Sanit%C3%A1ria">
+                <i class="categoria--icon material-icons" aria-hidden="true">enhanced_encryption</i>
+                <div class="categoria--titulo">Saúde e Vigilância Sanitária</div>
+              </a>
+            </li>
+            <li class="categoria">
+              <a href="/servicos?categoria=Regulariza%C3%A7%C3%A3o+Fundi%C3%A1ria+Urbana+e+Atividades+Imobili%C3%A1rias">
+                <i class="categoria--icon material-icons" aria-hidden="true">text_fields</i>
+                <div class="categoria--titulo">Regularização Fundiária Urbana e Atividades Imobiliárias</div>
+              </a>
+            </li>
+            <li class="categoria">
+              <a href="/servicos?categoria=Previd%C3%AAncia">
+                <i class="categoria--icon material-icons" aria-hidden="true">assignment_ind</i>
+                <div class="categoria--titulo">Previdência</div>
+              </a>
+            </li>
+            <li class="categoria">
+              <a href="/servicos?categoria=Justi%C3%A7a+e+Seguran%C3%A7a" >
+                <i class="categoria--icon material-icons" aria-hidden="true">gavel</i>
+                <div class="categoria--titulo">Justiça e Segurança</div>
+              </a>
+            </li>
+            <li class="categoria">
+              <a href="/servicos?categoria=Infraestrutura+P%C3%BAblica">
+                <i class="categoria--icon material-icons" aria-hidden="true">terrain</i>
+                <div class="categoria--titulo">Infraestrutura Pública</div>
+              </a>
+            </li>
+            <li class="categoria">
+              <a href="/servicos?categoria=For%C3%A7as+Armadas+e+Defesa+Civil">
+                <i class="categoria--icon material-icons" aria-hidden="true">security</i>
+                <div class="categoria--titulo">Forças Armadas e Defesa Civil</div>
+              </a>
+            </li>
+          </ul>
+          <a href="/categorias" class="btn-ghost">Mais categorias</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="orgaos">
+      <div class="row">
+        <div class="container">
+          <h5>Órgãos</h5>
+          <ul class="orgaos-wrapper">
+            <li class="orgao" id="27">
+              <a href="/servicos/orgao/27">
+                <div class="orgao--sigla">ATR</div>
+                <span class="orgao--nome">Ag Toc de Reg, Controle e Fisc Serv Público</span>
+              </a>
+            </li>
+            <li class="orgao" id="3">
+              <a href="/servicos/orgao/3">
+                <div class="orgao--sigla">AGETO</div>
+                <span class="orgao--nome">Agência Tocantinense de Transportes e Obras</span>
+              </a>
+            </li>
+            <li class="orgao" id="24">
+              <a href="/servicos/orgao/24">
+                <div class="orgao--sigla">ADAPEC</div>
+                <span class="orgao--nome">Agência de Def Agropecuária do Estado do Tocantins</span>
+              </a>
+            </li>
+            <li class="orgao" id="1007">
+              <a href="/servicos/orgao/1007">
+                <div class="orgao--sigla">FOMENTO</div>
+                <span class="orgao--nome">Agência de Fomento do Estado do Tocantins</span>
+              </a>
+            </li>
+            <li class="orgao" id="63">
+              <a href="/servicos/orgao/63">
+                <div class="orgao--sigla">AMETO</div>
+                <span class="orgao--nome">Agência de Mineração do Estado do Tocantins</span>
+              </a>
+            </li>
+            <li class="orgao" id="45">
+              <a href="/servicos/orgao/45">
+                <div class="orgao--sigla">CGE</div>
+                <span class="orgao--nome">Controladoria Geral do Estado</span>
+              </a>
+            </li>
+            <li class="orgao" id="46">
+              <a href="/servicos/orgao/46">
+                <div class="orgao--sigla">CBMTO</div>
+                <span class="orgao--nome">Corpo de Bombeiros Militares do Est do Tocantins</span>
+              </a>
+            </li>
+            <li class="orgao" id="28">
+              <a href="/servicos/orgao/28">
+                <div class="orgao--sigla">DETRAN</div>
+                <span class="orgao--nome">Departamento Estadual de Trânsito</span>
+              </a>
+            </li>
+            <li class="orgao" id="34">
+              <a href="/servicos/orgao/34">
+                <div class="orgao--sigla">IGEPREV</div>
+                <span class="orgao--nome">Instituto de Gest Previdenc do Estado do Tocantins</span>
+              </a>
+            </li>
+            <li class="orgao" id="38">
+              <a href="/servicos/orgao/38">
+                <div class="orgao--sigla">JUCETINS</div>
+                <span class="orgao--nome">Junta Comercial do Estado do Tocantins</span>
+              </a>
+            </li>
+            <li class="orgao" id="9">
+              <a href="/servicos/orgao/9">
+                <div class="orgao--sigla">PM</div>
+                <span class="orgao--nome">Polícia Militar do Estado do Tocantins</span>
+              </a>
+            </li>
+            <li class="orgao" id="2">
+              <a href="/servicos/orgao/2">
+                <div class="orgao--sigla">SECAD</div>
+                <span class="orgao--nome">Secretaria da Administração</span>
+              </a>
+            </li>
+          </ul>
+          <div>
+            <!--        <a href="" class="btn-ghost">Mais órgãos</a>-->
+            <a href="#" id="btn-all-orgaos" class="btn-ghost">Mais órgãos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="modal" class="modal modal-ps">
+      <div class="modal-content">
+        <div class="modal-ps-content-left">
+          <h4>SIGA</h4>
+          <p class="fullname-ps">Solução Integrada de Gestão Administrativa</p>
+          <a class="modal-ps-open-system hide-on-med-and-up" href="#"><i class="material-icons">link</i><span>Abrir
+              sistema</span></a>
+          <p class="description-ps">Este é um sistema usado por todo o setor administrativo do executivo tocantinense e
+            aqui eu poderia descrever mais se soubesse do sistema, mas como não sei apenas complemento com palavras
+            aleatórias.</p>
+          <a class="ps-help hide-on-med-and-up" href="#">Suporte <i class="material-icons">help</i></a>
+          <a href="#" class="more-details">Mais detalhes</a>
+        </div>
+        <div class="modal-ps-content-right">
+          <a class="modal-ps-open-system" href="#"><i class="material-icons" aria-hidden="true">link</i><span>Abrir sistema</span></a>
+          <a class="ps-help" href="#">Suporte <i class="material-icons" aria-hidden="true">help</i></a>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script src="assets/vendors.min.js"></script>
+    <script src="assets/plugins.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+
+      document.addEventListener("DOMContentLoaded", function(){
+        let lastFocus;
+        var modals = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(modals, {
+          onOpenStart: function(){
+            lastFocus = document.activeElement;
+          },
+          onCloseEnd: function(){
+            lastFocus.focus();
+          }
+        });
+
+
+      });
+
+      // $(document).ready(function () {
+      //   $('.modal').modal();
+
+      //   // var colorIsLight = function (color) {
+      //   //   var r, g, b;
+      //   //   // Counting the perceptive luminance
+      //   //   // human eye favors green color... 
+      //   //   color = color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/);
+
+      //   //   r = color[1];
+      //   //   g = color[2];
+      //   //   b = color[3];
+      //   //   var a = 1 - (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      //   //   return (a < 0.5);
+      //   // }
+
+      //   // $(".categoria").each(function () {
+      //   //   var color = $(this).find("a").css("background-color");  
+      //   //   var text_color = (colorIsLight(color) == true ? '#444' : '#fff');
+      //   //   $(this).find("a").css("color", text_color);
+      //   // });
+
+      // });
+    </script>
+  </body>
+
+</html>

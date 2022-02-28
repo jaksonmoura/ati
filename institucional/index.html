@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Portal do Tocantins</title>
+		<meta charset="utf-8">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,900&display=swap"
+			rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="assets/application.css">
+		<link rel="stylesheet" type="text/css" href="assets/institucional.css">
+		<script src="assets/js/vendors.min.js"></script>
+		<script src="assets/js/materialize.js"></script>
+		<style>
+			html.to-gov-barra {
+				font-size: 10px;
+				box-sizing: border-box
+			}
+
+			html.to-gov-barra * {
+				box-sizing: border-box
+			}
+
+			html.to-gov-barra *:before,
+			html.to-gov-barra *:after {
+				box-sizing: border-box
+			}
+
+			html.to-gov-barra body {
+				margin: 0px;
+				font-family: Roboto, Helvetica, Arial, sans-serif
+			}
+
+			@media screen and (max-width: 930px) {
+				html.to-gov-barra body {
+					overflow-x: hidden
+				}
+			}
+
+			.topo-togov-wrapper {
+				background: #fff;
+				color: #333;
+				text-transform: uppercase;
+				font-size: 14px;
+				width: 100%;
+				height: 80px;
+				box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1)
+			}
+
+			.topo-togov-wrapper .topo-togov-content {
+				display: grid;
+				grid-template-columns: auto 578px;
+				justify-content: space-between;
+				width: 100%;
+				max-width: 1640px;
+				margin: 0 auto;
+				height: 80px;
+				align-items: center;
+				padding: 0 10px
+			}
+
+			.topo-togov-wrapper .topo-togov-content .logo {
+				display: inline-flex;
+				align-items: center
+			}
+
+			.topo-togov-wrapper .topo-togov-content .logo span.logo--nome {
+				width: 100%;
+				max-width: 200px;
+				text-align: right;
+				margin-right: 16px;
+				font-weight: 400;
+				font-size: 15px
+			}
+
+			.topo-togov-wrapper .topo-togov-content .logo img {
+				height: 70px
+			}
+
+			.topo-togov-wrapper .topo-togov-content .logo img:first-of-type {
+				margin-right: 16px;
+				height: 60px
+			}
+
+			.topo-togov-wrapper .topo-togov-content .logo:hover {
+				background: none;
+				opacity: .8
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis i.menu-btn {
+				display: none
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis ul {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				display: inline-flex;
+				list-style-type: none;
+				float: right
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis ul li {
+				display: inline-flex;
+				align-items: center
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis ul li.menu-title {
+				display: none !important
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis ul li a {
+				padding: 16px 8px;
+				white-space: nowrap;
+				height: 49px;
+				position: relative;
+				z-index: 1;
+				overflow: hidden;
+				font-weight: 500
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis ul li a:before {
+				transition: all .3s ease-in-out;
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background: #ebb718;
+				z-index: -1;
+				top: 0;
+				left: 0;
+				transform: translateY(-100%)
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis ul li a:hover {
+				transition: all .3s ease-in-out
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis ul li a:hover:before {
+				transform: translateY(0)
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis ul li a.topo-togov-orgaos-trigger {
+				display: inline-flex;
+				align-items: center
+			}
+
+			.topo-togov-wrapper a {
+				color: #333;
+				text-decoration: none
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper {
+				top: 0px;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				background: #fff;
+				font-size: 16px;
+				overflow-y: scroll;
+				padding-bottom: 50px;
+				transform: translateY(-100%);
+				opacity: 0;
+				transition: all .3s ease-in-out;
+				z-index: 99
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper.show-all-orgaos {
+				opacity: 1;
+				transform: translateY(0%)
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper i#topo-togov-orgaos-close {
+				color: #888;
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				top: 35px;
+				right: 20px;
+				text-align: center;
+				position: absolute;
+				cursor: pointer !important
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgaos-content {
+				width: 100%;
+				max-width: 1640px;
+				padding: 10px;
+				margin: 0 auto;
+				position: relative
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgaos-filter {
+				width: 600px;
+				max-width: 80%;
+				margin: 20px auto 64px;
+				text-align: center;
+				position: relative
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgaos-filter input#topo-togov-orgaos-filter-field {
+				-moz-appearance: none;
+				-webkit-appearance: none;
+				appearance: none;
+				padding: 12px 14px;
+				font-size: 16px;
+				border-radius: 20px;
+				border: 2px solid #F6C62D;
+				width: 100%;
+				-moz-outline: none;
+				-webkit-outline: none;
+				outline: none
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgaos-filter input#topo-togov-orgaos-filter-field:focus {
+				box-shadow: 0 0 3px 2px #00B1FF inset
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgaos-filter i#topo-togov-orgaos-filter-btn {
+				position: absolute;
+				color: #666;
+				right: 10px;
+				top: 9px
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group {
+				width: 100%;
+				margin: 32px auto 80px auto;
+				max-width: 1200px
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group h2 {
+				font-weight: 700;
+				position: relative;
+				padding-left: 20px
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group h2:before {
+				content: "";
+				height: 100%;
+				width: 7px;
+				background: #F6C62D;
+				position: absolute;
+				top: 0;
+				left: 0
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list {
+				column-count: 3;
+				list-style-type: none;
+				margin: 50px 0 0 0;
+				padding: 0
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list li {
+				margin-bottom: 24px
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list li a {
+				position: relative;
+				z-index: 0;
+				text-decoration: none;
+				background-image: linear-gradient(#F6C62D, #F6C62D);
+				background-position: 0% 100%;
+				background-repeat: no-repeat;
+				background-size: 0% 8px;
+				transition: background-size .3s
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list li a:hover {
+				transition: all .3s ease-in-out;
+				background-size: 80% 8px
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list li a:hover:before {
+				width: 85%;
+				left: 0
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list a {
+				width: 100%;
+				margin-bottom: 10px
+			}
+
+			@media screen and (max-width: 930px) {
+				.topo-togov-wrapper {
+					height: 100px
+				}
+
+				.topo-togov-wrapper .topo-togov-content {
+					padding: 0 0 0 5px;
+					height: 100px;
+					grid-template-columns: calc(100% - 60px) 60px
+				}
+
+				.topo-togov-wrapper .topo-togov-content .logo {
+					position: relative;
+					justify-content: flex-start
+				}
+
+				.topo-togov-wrapper .topo-togov-content .logo:after {
+					content: "";
+					position: absolute;
+					width: 30px;
+					height: 30px;
+					top: 0px;
+					right: -30px;
+					z-index: 1
+				}
+
+				.topo-togov-wrapper .topo-togov-content .logo img {
+					height: 90px
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis {
+					background: #fff;
+					position: inherit;
+					display: inline-flex;
+					justify-content: center;
+					align-items: center
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis:before {
+					content: "";
+					position: absolute;
+					background: rgba(0, 0, 0, 0.5);
+					width: 100vw;
+					height: 100vh;
+					top: 0;
+					left: 0;
+					z-index: 98;
+					transform: translateX(100%);
+					opacity: 0
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis.active:before {
+					transform: translateX(0);
+					opacity: 1
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis.active ul {
+					transform: translateX(0);
+					opacity: 1
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis i.menu-btn {
+					display: block;
+					background: #F6C62D;
+					position: relative;
+					height: 60px;
+					font-size: 32px;
+					width: 60px;
+					display: inline-flex;
+					justify-content: center;
+					align-items: center;
+					cursor: pointer
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis ul {
+					position: absolute;
+					background: #fff;
+					width: 80vw;
+					height: 100vh;
+					top: 0;
+					right: 0;
+					flex-direction: column;
+					box-shadow: -3px 0 6px rgba(0, 0, 0, 0.1);
+					z-index: 99;
+					transform: translateX(100%);
+					opacity: 0;
+					transition: all .3s ease-in-out
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis ul li {
+					padding: 8px
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis ul li:first-of-type {
+					font-size: 20px;
+					font-weight: 600;
+					padding: 16px
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis ul li:last-of-type a {
+					padding-right: 5px
+				}
+			}
+
+			@media screen and (max-width: 600px) {
+				.topo-togov-wrapper .topo-togov-orgaos-wrapper i#topo-togov-orgaos-close {
+					top: 36px
+				}
+
+				.topo-togov-wrapper {
+					height: 124px
+				}
+
+				.topo-togov-wrapper .topo-togov-content {
+					padding: 0 0 0 5px;
+					height: 124px;
+					grid-template-columns: calc(100% - 60px) 60px
+				}
+
+				.topo-togov-wrapper .topo-togov-content .logo {
+					position: relative;
+					justify-content: center;
+					align-items: flex-start;
+					flex-direction: column-reverse;
+					margin-top: 8px
+				}
+
+				.topo-togov-wrapper .topo-togov-content .logo span {
+					text-align: left !important
+				}
+
+				.topo-togov-wrapper .topo-togov-content .logo:after {
+					content: "";
+					position: absolute;
+					width: 30px;
+					height: 30px;
+					top: 0px;
+					right: -30px;
+					z-index: 1
+				}
+
+				.topo-togov-wrapper .topo-togov-content .logo img {
+					height: 90px;
+					margin-bottom: 8px
+				}
+			}
+
+			@media screen and (max-width: 600px) {
+				.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgaos-filter {
+					text-align: left !important;
+					margin: 20px 0px 30px 0px !important
+				}
+			}
+
+			@media screen and (min-width: 600px) and (max-width: 1024px) {
+				.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list {
+					column-count: 2
+				}
+			}
+
+			@media screen and (max-width: 600px) {
+				.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list {
+					column-count: 1
+				}
+
+				.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list li {
+					margin-bottom: 26px !important
+				}
+			}
+		</style>
+	</head>
+
+	<body class="portal">
+
+		<!-- <script type="text/javascript" charset="utf-8" src="https://branca.web.secom.to.gov.br/?k=ati"></script> -->
+		<div class="topo-togov-wrapper">
+			<div class="topo-togov-content">
+				<a href="http://to.gov.br" class="logo">
+					<img src="imgs/logo_footer.png" alt="TOCANTINS">
+				</a>
+				<div class="topo-togov-links-uteis">
+					<i class="menu-btn material-icons">menu</i>
+					<ul>
+						<li class="menu-title">MENU</li>
+						<li><a href="#">Serviços</a></li>
+						<li><a href="http://transparencia.to.gov.br">Transparência</a></li>
+						<li><a href="#">Acesso a informação</a></li>
+						<li><a class="topo-togov-orgaos-trigger" href="#">Órgãos do Governo <i
+									class="material-icons">arrow_drop_down</i></a></li>
+					</ul>
+				</div>
+			</div>
+
+
+			<div class="topo-togov-orgaos-wrapper">
+				<div class="topo-togov-orgaos-content">
+					<i id="topo-togov-orgaos-close" class="material-icons">close</i>
+					<div class="topo-togov-orgaos-filter">
+						<input type="search" id="topo-togov-orgaos-filter-field" placeholder="Filtrar órgãos" />
+						<i id="topo-togov-orgaos-filter-btn" class="material-icons">search</i>
+					</div>
+					<div class="topo-togov-orgao-group">
+						<h2>Secretarias</h2>
+						<ul class="topo-togov-orgao-list">
+							<li><a href="#">Casa Civil</a></li>
+							<li><a href="#">Casa Militar</a></li>
+							<li><a href="#">Controladoria-Geral do Estado</a></li>
+							<li><a href="#">Corpo de Bombeiros Militar</a></li>
+							<li><a href="#">Polícia Militar</a></li>
+							<li><a href="#">Procuradoria-Geral do Estado</a></li>
+							<li><a href="#">Secretaria da Administração</a></li>
+							<li><a href="#">Secretaria da Agricultura, Pecuária e Aquicultura</a></li>
+							<li><a href="#">Secretaria da Cidadania e Justiça</a></li>
+							<li><a href="#">Secretaria da Comunicação</a></li>
+							<li><a href="#">Secretaria da Educação, Juventude e Esporte</a></li>
+							<li><a href="#">Secretaria da Fazenda e Planejamento</a></li>
+							<li><a href="#">Secretaria da Indústria, Comércio e Serviços</a></li>
+							<li><a href="#">Secretaria da Infraestrutura, Cidades e Habitação</a></li>
+							<li><a href="#">Secretaria da Saúde</a></li>
+							<li><a href="#">Secretaria da Segurança Pública</a></li>
+							<li><a href="#">Secretaria do Meio Ambiente e Recursos Hídricos</a></li>
+							<li><a href="#">Secretaria do Trabalho e Desenvolvimento Social</a></li>
+						</ul>
+					</div>
+
+
+					<div class="topo-togov-orgao-group">
+						<h2>Autarquias</h2>
+						<ul class="topo-togov-orgao-list">
+							<li><a href="#">Agência Tocantinense de Regulação, Controle e Fiscalização de Serviços
+									Públicos</a></li>
+							<li><a href="#">Agência Tocantinense de Saneamento</a></li>
+							<li><a href="#">Agência Universidade Estadual do Tocantins</a></li>
+							<li><a href="#">Agência de Defesa Agropecuária</a></li>
+							<li><a href="#">Agência de Fomento</a></li>
+							<li><a href="#">Agência de Metrologia</a></li>
+							<li><a href="#">Agência de Tecnologia da Informação</a></li>
+							<li><a href="#">Agência do Desenvolvimento do Turismo, Cultura e Economia Criativa</a></li>
+							<li><a href="#">Companhia Imobiliária do Tocantins</a></li>
+							<li><a href="#">Departamento Estadual de Trânsito</a></li>
+							<li><a href="#">Fundação de Amparo à Pesquisa</a></li>
+							<li><a href="#">Instituto Natureza do Tocantins</a></li>
+							<li><a href="#">Instituto de Desenvolvimento Rural</a></li>
+							<li><a href="#">Instituto de Gestão Previdenciária</a></li>
+							<li><a href="#">Instituto de Terras do Estado do Tocantins</a></li>
+							<li><a href="#">Junta Comercial</a></li>
+						</ul>
+					</div>
+
+					<div class="topo-togov-orgao-group">
+						<h2>Sites especiais</h2>
+						<ul class="topo-togov-orgao-list">
+							<li><a href="#">Congresso Saúde</a></li>
+							<li><a href="#">Feira de Tecnologia Agropecuária do Tocantins</a></li>
+							<li><a href="#">Jogos Estudantis do Tocantins</a></li>
+							<li><a href="#">Turismo</a></li>
+						</ul>
+					</div>
+
+
+				</div>
+			</div>
+
+		</div>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$(".topo-togov-orgaos-trigger").on("click", function () {
+					$(".topo-togov-orgaos-wrapper").addClass("show-all-orgaos");
+				});
+				$("#topo-togov-orgaos-close").on("click", function () {
+					$(".topo-togov-orgaos-wrapper").removeClass("show-all-orgaos");
+				});
+
+				$(".topo-togov-links-uteis i.menu-btn").on("click", function () {
+					$(".topo-togov-links-uteis").addClass("active");
+				});
+
+				$(window).on("click", function (e) {
+					if ($(e.target) != "ul" && $(e.target).hasClass("active")) {
+						$(".topo-togov-links-uteis").removeClass("active");
+					}
+				});
+
+
+
+
+
+				$(".topo-togov-links-uteis .scroll-btn").on("click", function () {
+					$(".topo-togov-links-uteis").animate({ scrollLeft: 800 }, '500');
+				});
+
+				$(".topo-togov-links-uteis").scroll(function (e) {
+					if ($(this).scrollLeft() > ($(document).width() - 80)) {
+						$(".topo-togov-links-uteis").removeClass("scroll");
+					}
+					else {
+						$(".topo-togov-links-uteis").addClass("scroll");
+					}
+				});
+
+
+			});
+		</script>
+		<!--  -->
+
+		<header class="header-gov-inst">
+			<div class="header-container">
+
+				<div class="row">
+					<!-- <div class="logo-gov"><img src="assets/img/logo_sec.png" alt=""><img src="assets/img/logo_to_mun.png" alt=""></div> -->
+					<div class="govnav">
+						<a class="govnav-orgao" href="#">Agência Tocantinense de Regulação, Controle e Fiscalização de Serviços Públicos</a>
+						<div class="search"><a href="#" data-target="search-menu" class="search-btn"><i
+									class="material-icons">search</i> busca</a></div>
+						<div class="menu-btn">
+							<a href="#" data-target="site-menu"><i class="material-icons">menu</i> menu</a>
+						</div>
+					</div>
+				</div>
+
+
+				<!-- Menu -->
+				<div class="menu">
+					<div id="site-menu">
+						<div class="menu-content">
+							<ul class="main-menu">
+								<li class="has-children"><div class="submenu-header"><a href="http://www.to.gov.br/ati/institucional/1xcpn9111f1d">Institucional</a><a href="#" class="submenu-accordion-switch" aria-label="Abrir/Fechar sub-menu Institucional"><i class="material-icons">keyboard_arrow_down</i></a></div><div class="children-content"><ul><li><a href="http://www.to.gov.br/ati/regimento-interno-ati/2si7gza408kh">Regimento Interno ATI</a></li><li><a href="http://www.to.gov.br/ati/estrutura/282sficwu8o1">Estrutura</a></li></ul></div></li><li><a href="http://www.to.gov.br/ati/legislacao/1bhxoqsb02g1">Legislação</a></li><li><a href="http://www.to.gov.br/ati/carta-de-servicos/49xkayuxxysh">Carta de Serviços</a></li><li class="has-children"><div class="submenu-header"><a href="http://www.to.gov.br/ati/servicos/4n8f9imn3dr5">Serviços</a><a href="#" class="submenu-accordion-switch" aria-label="Abrir/Fechar sub-menu Serviços"><i class="material-icons">keyboard_arrow_down</i></a></div><div class="children-content"><ul><li><a href="http://www.to.gov.br/ati/apoio-a-cotacao-de-aquisicoes-e-contratacoes-de-bens-e-servicos-de-ti/4o8u46fvs6a">Apoio a Cotação de Aquisições e Contratações de Bens e Serviços de TI</a></li><li><a href="http://www.to.gov.br/ati/acompanhamento-da-gestao-de-projetos-de-ti/12ciiwkbbnmq">Acompanhamento da Gestão de Projetos de TI</a></li><li><a href="http://www.to.gov.br/ati/solicitacao-de-operacoes-no-catalogo-de-servicos/ki1onrukvoi">Solicitação de Operações no Catálogo de Serviços</a></li><li><a href="http://www.to.gov.br/ati/vistoria-de-aquisicoes-de-bens-de-ti/7j0nf1jsloip">Vistoria de Aquisições de Bens de TI</a></li><li><a href="http://www.to.gov.br/ati/indicacao-de-fiscal-tecnico-e-substituto-de-fiscal-tecnico-para-contratos-de-ti/6x5oq2tt4orl">Indicação de Fiscal Técnico e Substituto de Fiscal Técnico para Contratos de TI</a></li><li><a href="http://www.to.gov.br/ati/consulta-para-renovacao-de-contratos-de-ti/6o3wps9cc2g1">Consulta para Renovação de Contratos de TI</a></li><li><a href="http://www.to.gov.br/ati/aquisicao-e-contratacao-de-bens-e-servicos-de-ti/5f9v7t1wycf5">Aquisição e Contratação de Bens e Serviços de TI</a></li><li><a href="http://www.to.gov.br/ati/dominio-togovbr/4vsyy6anjsrl">Domínio to.gov.br</a></li></ul></div></li><li class="has-children"><div class="submenu-header"><a href="http://www.to.gov.br/ati/gestao-de-ti/4q6ymu0az0il">Gestão de TI</a><a href="#" class="submenu-accordion-switch" aria-label="Abrir/Fechar sub-menu Gestão de TI"><i class="material-icons">keyboard_arrow_down</i></a></div><div class="children-content"><ul><li><a href="http://www.to.gov.br/ati/relatorios/7gpy7y7sctb4">Relatórios</a></li><li><a href="http://www.to.gov.br/ati/paineis/ha9tl55565d">Painéis</a></li><li><a href="http://www.to.gov.br/ati/inovacoes-tecnologicas/zfgbq8ek5lt">Inovações Tecnológicas</a></li><li><a href="http://www.to.gov.br/ati/catalogo-de-servicos/oibqn1lbxi9">Catálogo de Serviços</a></li><li><a href="http://www.to.gov.br/ati/processos/5di3nzq2bhi6">Processos</a></li><li><a href="http://www.to.gov.br/ati/atas-de-registro-de-precos/4wjdzrhajjh9">Atas de Registro de Preços</a></li></ul></div></li><li><a href="http://www.to.gov.br/ati/sistemas/3c8b633wfc69">Sistemas</a></li><li><a href="http://www.to.gov.br/ati/suporte/1nwpfemh1e8y">Suporte</a></li><li><a href="http://www.to.gov.br/ati/webmail/1xw2w0cqlraa">Webmail</a></li><li><a href="http://www.to.gov.br/ati/contato/359yejykaich">Contato</a></li><li><a href="http://www.to.gov.br/ati/ramais/3qz634sa73hd">Ramais</a></li><li><a href="http://www.to.gov.br/ati/enviar-curriculo/3k42apjlpra9">Enviar Currículo</a></li><li><a href="http://www.to.gov.br/ati/requerimentos-para-o-trabalho-remoto/4r1vbep8e736">Requerimentos para o trabalho remoto </a></li><li><a href="http://www.to.gov.br/ati/modelos-de-documentos-ati/5lqe20cnxwj">Modelos de Documentos ATI</a></li><li class="has-children"><div class="submenu-header"><a href="http://www.to.gov.br/ati/parcerias-ati/28k8jvx55lya">Parcerias ATI </a><a href="#" class="submenu-accordion-switch" aria-label="Abrir/Fechar sub-menu Parcerias ATI "><i class="material-icons">keyboard_arrow_down</i></a></div><div class="children-content"><ul><li><a href="http://www.to.gov.br/ati/scam-champions-team/4fnzf7i7i4pu">SCAM Champions Team</a></li><li><a href="http://www.to.gov.br/ati/aline-pires-odontologia-especializada/44bd963bxjdu">Aline Pires - Odontologia Especializada </a></li><li><a href="http://www.to.gov.br/ati/modacar-lava-jato/3suwhlrbohuq">Modacar Lava Jato</a></li><li><a href="http://www.to.gov.br/ati/jalapa-fisio-e-terapias-integrativas/3hmkikl4qoo2">Jalapa - Fisio e Terapias Integrativas</a></li><li><a href="http://www.to.gov.br/ati/casa-sao-paulo/30s5qvddyjc2">Casa São Paulo </a></li><li><a href="http://www.to.gov.br/ati/art-sport-fitness-club/2pdgfii42cf6">Art Sport Fitness Club</a></li><li><a href="http://www.to.gov.br/ati/pedro-restaurante/2enmv1eoypuq">Pedro Restaurante </a></li></ul></div></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- Fim Menu -->
+
+				<!-- Search -->
+				<div class="search-box">
+					<div class="search-content">
+						<form action="index.html">
+							<div class="search-field-box">
+								<input autofocus id="search-input" type="search"
+									placeholder="Buscar na Agência de Tecnologia da Informação">
+								<!-- <button class="search-submit"><i class="material-icons">search</i></button> -->
+							</div>
+
+						</form>
+					</div>
+				</div>
+				<!-- Fim search -->
+			</div>
+
+		</header>
+
+		<section class="top-news">
+			<div class="mainnews news1">
+				<a href="noticia.html">
+					<h1 class="headline">Tocantins participa da Jornada Técnica da Região Norte que trata de pragas dos
+						citros
+					</h1>
+					<img src="assets/img/news1.jpg" alt="">
+				</a>
+			</div>
+			<div class="banner-govto">
+				<img src="assets/img/banner.png" alt="BannerX">
+			</div>
+			<div class="row">
+				<div class="container">
+					<div class="col s12 m6">
+						<div class="mainnews news2">
+							<a href="noticia.html">
+								<img src="assets/img/news2.jpg" alt="">
+							</a>
+							<a href="noticia-categoria.html" class="categoria-news">Inovação</a>
+							<a href="noticia.html">
+								<div class="headline">Governo do Tocantins lançará oficialmente a campanha de vacinação
+									contra febre aftosa em Gurupi</div>
+							</a>
+						</div>
+					</div>
+					<div class="col s12 m6">
+						<div class="mainnews news3">
+							<a href="noticia.html">
+								<img src="assets/img/news3.jpg" alt="">
+							</a>
+							<a href="noticia-categoria.html" class="categoria-news">Inovação</a>
+							<a href="noticia.html">
+								<div class="headline">Tocantins participará de encontro sobre controle de agrotóxicos em
+									Santa Catarina</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="services-search">
+			<div class="row">
+				<div class="container">
+					<div class="col s12 m5 service-search-box">
+						<div class="service-search-content">
+							<h5 class="services-search-box--title">Serviços</h5>
+							<form action="index.html">
+								<div class="services-search-field-box">
+									<input id="services-search-input" type="search"
+										placeholder="Serviços em Agência de Tecnologia da Informação">
+									<button class="services-search-submit"><i class="material-icons">search</i></button>
+								</div>
+							</form>
+							<a href="#todosservicos" target="_blank">Ver todos <i id="services-search-submit-icons"
+									class="material-icons">open_in_new</i></a>
+						</div>
+					</div>
+					<div class="col s12 m7 servicos-list-box">
+						<div class="servico-card">
+							<a href="#servico1">
+								<h6 class="servico-card--titulo">Emissão Nota Fiscal Avulsa Eletrônica</h6>
+								<div class="servico-card--tipo">Presencial e online</div>
+								<div class="servico-card--desc">É o imposto sobre a propriedade de veículos automotores
+									que incide sobre a propriedade de veículo automotor aéreo, aquático ou terrestre,
+									quaisquer que sejam as suas espécies, ainda que o proprietário seja domiciliado no
+									exterior.</div>
+							</a>
+						</div>
+						<div class="servico-card">
+							<a href="#servico1">
+								<h6 class="servico-card--titulo">Emissão Nota Fiscal Avulsa Eletrônica</h6>
+								<div class="servico-card--tipo">Presencial e online</div>
+								<div class="servico-card--desc">É o imposto sobre a propriedade de veículos automotores
+									que incide sobre a propriedade de veículo automotor aéreo, aquático ou terrestre,
+									quaisquer que sejam as suas espécies, ainda que o proprietário seja domiciliado no
+									exterior.</div>
+							</a>
+						</div>
+						<div class="servico-card">
+							<a href="#servico1">
+								<h6 class="servico-card--titulo">Emissão Nota Fiscal Avulsa Eletrônica</h6>
+								<div class="servico-card--tipo">Presencial e online</div>
+								<div class="servico-card--desc">É o imposto sobre a propriedade de veículos automotores
+									que incide sobre a propriedade de veículo automotor aéreo, aquático ou terrestre,
+									quaisquer que sejam as suas espécies, ainda que o proprietário seja domiciliado no
+									exterior.</div>
+							</a>
+						</div>
+						<div class="servico-card">
+							<a href="#servico2">
+								<h6 class="servico-card--titulo">Emissão Nota Fiscal Avulsa Eletrônica</h6>
+								<div class="servico-card--tipo">Presencial e online</div>
+								<div class="servico-card--desc">É o imposto sobre a propriedade de veículos automotores
+									que incide sobre a propriedade de veículo automotor aéreo, aquático ou terrestre,
+									quaisquer que sejam as suas espécies, ainda que o proprietário seja domiciliado no
+									exterior.</div>
+							</a>
+						</div>
+						<div class="servico-card">
+							<a href="#servico3">
+								<h6 class="servico-card--titulo">Emissão Nota Fiscal Avulsa Eletrônica</h6>
+								<div class="servico-card--tipo">Presencial e online</div>
+								<div class="servico-card--desc">É o imposto sobre a propriedade de veículos automotores
+									que incide sobre a propriedade de veículo automotor aéreo, aquático ou terrestre,
+									quaisquer que sejam as suas espécies, ainda que o proprietário seja domiciliado no
+									exterior.</div>
+							</a>
+						</div>
+						<div class="servico-card">
+							<a href="#servico4">
+								<h6 class="servico-card--titulo">Emissão Nota Fiscal Avulsa Eletrônica</h6>
+								<div class="servico-card--tipo">Presencial e online</div>
+								<div class="servico-card--desc">É o imposto sobre a propriedade de veículos automotores
+									que incide sobre a propriedade de veículo automotor aéreo, aquático ou terrestre,
+									quaisquer que sejam as suas espécies, ainda que o proprietário seja domiciliado no
+									exterior.</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+		
+
+		<!-- <section class="banner"></section> -->
+
+		<section class="morenews">
+			<div class="row">
+				<div class="container">
+					<div class="col s12 m6 morenews-list">
+
+						<div class="morenews-card">
+							<a href="noticia.html" class="categoria-news">Conhecimento</a>
+							<a href="noticia.html">Palestra na UFT orienta estudantes sobre registro de estabelecimentos
+								no serviço de inspeção oficial e rotulagem de produtos de origem animal</a>
+						</div>
+						<div class="morenews-card">
+							<a href="noticia.html" class="categoria-news">Conhecimento</a>
+							<a href="noticia.html">Curso de Resenha é sucesso entre estudantes e profissionais</a>
+						</div>
+						<div class="morenews-card">
+							<a href="noticia.html" class="categoria-news">Serviços</a>
+							<a href="noticia.html">Produtor rural poderá declarar eletronicamente a vacinação contra
+								febre aftosa</a>
+						</div>
+
+						<div class="morenews-card">
+							<a href="noticia.html" class="categoria-news">Serviços</a>
+							<a href="noticia.html">Produtor rural poderá declarar eletronicamente a vacinação contra
+								febre aftosa</a>
+						</div>
+
+					</div>
+					<div class="col s12 m6">
+						<div class="news-with-img">
+							<a href="noticia.html">
+								<img src="assets/img/news3.jpg" alt="">
+							</a>
+							<a href="noticia-categoria.html" class="categoria-news">Inovação</a>
+							<a href="noticia.html">
+								<div class="headline">Tocantins participará de encontro sobre controle de agrotóxicos em
+									Santa Catarina</div>
+							</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<section class="newslist">
+			<div class="row">
+				<div class="container">
+					<div class="col s12 l10 offset-l1">
+						<div class="section-title-box">
+							<h2>Últimas notícias</h2>
+						</div>
+						<div class="news-card">
+							<div class="col s12 m4 xl3 pl-0">
+								<a href="noticia.html"><img class="responsive-img" src="assets/img/lastnews3.jpg"
+										alt=""></a>
+							</div>
+							<div class="col s12 m8 xl9 news-card--text">
+								<a class="categoria-tag" href="#"><span>Segurança Pública</span></a>
+								<span class="news-card--data"><i class="material-icons">today</i>10/03/2020 22:30</span>
+								<a href="noticia.html">
+									<h4 class="headline">Polícia Civil prende suspeitos de atrapalhar investigações na
+										operação Ongs de papel</h4>
+									<span class="blurb">Ações abordadas são importantes para o aprimoramento da Gestão
+										Pública Estadual</span>
+								</a>
+							</div>
+						</div>
+						<div class="news-card">
+							<div class="col s12 m4 xl3 pl-0">
+								<a href="noticia.html"><img class="responsive-img" src="assets/img/lastnews3.jpg"
+										alt=""></a>
+							</div>
+							<div class="col s12 m8 xl9 news-card--text">
+								<a class="categoria-tag" href="#"><span>Segurança Pública</span></a>
+								<span class="news-card--data"><i class="material-icons">today</i>10/03/2020 22:30</span>
+								<a href="noticia.html">
+									<h4 class="headline">Polícia Civil prende suspeitos de atrapalhar investigações na
+										operação Ongs de papel</h4>
+									<span class="blurb">Ações abordadas são importantes para o aprimoramento da Gestão
+										Pública Estadual</span>
+								</a>
+							</div>
+						</div>
+						<div class="news-card">
+							<div class="col s12 m4 xl3 pl-0">
+								<a href="noticia.html"><img class="responsive-img" src="assets/img/lastnews3.jpg"
+										alt=""></a>
+							</div>
+							<div class="col s12 m8 xl9 news-card--text">
+								<a class="categoria-tag" href="#"><span>Segurança Pública</span></a>
+								<span class="news-card--data"><i class="material-icons">today</i>10/03/2020 22:30</span>
+								<a href="noticia.html">
+									<h4 class="headline">Polícia Civil prende suspeitos de atrapalhar investigações na
+										operação Ongs de papel</h4>
+									<span class="blurb">Ações abordadas são importantes para o aprimoramento da Gestão
+										Pública Estadual</span>
+								</a>
+							</div>
+						</div>
+						<div class="news-card">
+							<div class="col s12 m4 xl3 pl-0">
+								<a href="noticia.html"><img class="responsive-img" src="assets/img/lastnews3.jpg"
+										alt=""></a>
+							</div>
+							<div class="col s12 m8 xl9 news-card--text">
+								<a class="categoria-tag" href="#"><span>Segurança Pública</span></a>
+								<span class="news-card--data"><i class="material-icons">today</i>10/03/2020 22:30</span>
+								<a href="noticia.html">
+									<h4 class="headline">Polícia Civil prende suspeitos de atrapalhar investigações na
+										operação Ongs de papel</h4>
+									<span class="blurb">Ações abordadas são importantes para o aprimoramento da Gestão
+										Pública Estadual</span>
+								</a>
+							</div>
+						</div>
+						<div class="news-card">
+							<div class="col s12 m4 xl3 pl-0">
+								<a href="noticia.html"><img class="responsive-img" src="assets/img/lastnews3.jpg"
+										alt=""></a>
+							</div>
+							<div class="col s12 m8 xl9 news-card--text">
+								<a class="categoria-tag" href="#"><span>Segurança Pública</span></a>
+								<span class="news-card--data"><i class="material-icons">today</i>10/03/2020 22:30</span>
+								<a href="noticia.html">
+									<h4 class="headline">Polícia Civil prende suspeitos de atrapalhar investigações na
+										operação Ongs de papel</h4>
+									<span class="blurb">Ações abordadas são importantes para o aprimoramento da Gestão
+										Pública Estadual</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col s12 l10 offset-l1 pt-5 center mb-3">
+						<a href="maisnoticias.html" class="btn-ghost">Mais notícias</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="systems-search">
+			<div class="row">
+				<div class="container">
+					<div class="system-bg">
+						<div class="col s12 m5 system-search-box">
+							<div class="system-search-content">
+								<h5 class="systems-search-box--title">Sistemas</h5>
+								<form action="index.html">
+									<div class="systems-search-field-box">
+										<input id="systems-search-input" type="search">
+										<button class="systems-search-submit"><i
+												class="material-icons">search</i></button>
+									</div>
+									<div class="input-group">
+										<label>
+											<input id="orgao-todos" type="radio" checked="">
+											<span><span class="center-content">Buscar em todos os órgãos</span></span>
+										</label>
+										<label>
+											<input id="orgao-especifico" type="radio">
+											<span><span class="center-content">Buscar apenas em SECAD</span></span>
+										</label>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="col s12 m7 systems-list-box">
+								<a class="system-card" href="#sistema1">
+									<h6 class="system-card--titulo">Portal do Servidor</h6>
+								</a>
+								<a class="system-card" href="#sistema1">
+									<h6 class="system-card--titulo">Servir</h6>
+								</a>
+								<a class="system-card" href="#sistema1">
+									<h6 class="system-card--titulo">SIGA - Almoxarifado</h6>
+								</a>
+								<a class="system-card" href="#sistema2">
+									<h6 class="system-card--titulo">Avaliação Periódica</h6>
+								</a>
+								<a class="system-card" href="#sistema3">
+									<h6 class="system-card--titulo">Portal do Servidor</h6>
+								</a>
+								<a class="system-card" href="#sistema4">
+									<h6 class="system-card--titulo">Arrocha o buriti</h6>
+								</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+
+		
+
+
+		<!-- <div class="vlib">
+			<div vw class="enabled">
+				<div vw-access-button class="active"></div>
+				<div vw-plugin-wrapper>
+					<div class="vw-plugin-top-wrapper"></div>
+				</div>
+			</div>
+			<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+			<script>
+				new window.VLibras.Widget('https://vlibras.gov.br/app');
+			</script>
+		</div> -->
+
+		<script src="assets/js/institucional.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/materialize.min.css">
+        <link rel="stylesheet" href="assets/css/valegas.css">
+        <title>Programa Vale-Gás - Painel do benefíciário</title>
+    </head>
+
+    <body class="dashboard">
+        <div>
+            <script type="text/javascript" charset="utf-8" src="https://barra.to.gov.br/topo.js?k=mazcdx"></script>
+        </div>
+
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#">CNPJ</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a class="logout" href="#!">Sair <i class="material-icons">logout</i></a></li>
+        </ul>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="index.html"><img class="logo" src="assets/img/gas.svg" alt="Vale Gás"></a>
+                <ul class="right">
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i
+                                class="material-icons">account_circle</i><i
+                                class="material-icons">arrow_drop_down</i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m8 offset-m2" style="margin-bottom: 2rem;">
+                        <h1>Confirmar Recebimento</h1>
+                        <form action="" class="fornecedor">
+                            <label for="cupom-beneficiario">Código</label>
+                            <input type="text" id="cupom-beneficiario" name="cupom">
+                            <button
+                                class="btn btn-flat light-blue lighten-5 modal-trigger indigo-text text-darken-4">Buscar
+                                código</button>
+                        </form>
+                    </div>
+
+                    <div class="col s12 m8 offset-m2" style="margin-bottom: 3rem;">
+
+                        <h6 class="card-title center-align green-text text-darken-2">Código 12345678 Encontrado!</h6>
+
+                        <table class="responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>NIS</th>
+                                    <th>Ref.</th>
+                                    <th>Mun. Resid.</th>
+                                    <th>Entrega</th>
+                                    <th>Data Limite</th>
+                                    <th>Distribuidora</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>321654987321654</td>
+                                    <td>referencia</td>
+                                    <td>Miraguacema</td>
+                                    <td>15/10 às 15:20</td>
+                                    <td>30/10</td>
+                                    <td>Tião Gás</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <div class="col s12 m8 offset-m2">
+                        <div class="card">
+                            <form action="" class="fornecedor">
+                                <div class="card-content">
+                                    <span class="card-title">Confirmar entrega de botijão</span>
+                                    <label for="codigo-beneficiario">Código do butijão:</label>
+                                    <input type="text" id="codigo-beneficiario" name="codigo">
+                                </div>
+                                <div class="card-action right-align">
+                                    <button
+                                        class="btn btn-flat green lighten-5 modal-trigger green-text text-darken-4">Confirmar
+                                        entrega</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h5>Confirmar entrega para o cupom 12345678</h5>
+                            <form action="" class="fornecedor">
+                                <label for="codigo-butijao">Código do butijão (obrigatório):</label>
+                                <input type="text" id="codigo-butijao" name="butijao" required>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!"
+                                class="modal-close waves-effect waves-green btn-flat green-text text-darken-2"><strong>Confirmar
+                                    entregua</strong></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vlib">
+                <div vw class="enabled">
+                    <div vw-access-button class="active"></div>
+                    <div vw-plugin-wrapper>
+                        <div class="vw-plugin-top-wrapper"></div>
+                    </div>
+                </div>
+                <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+                <script>
+                    new window.VLibras.Widget('https://vlibras.gov.br/app');
+                </script>
+            </div>
+
+            <script type="text/javascript" charset="utf-8"
+                src="https://barra.web.secom.to.gov.br/base.js?k=v6nsbx"></script>
+            <script src="assets/js/materialize.js"></script>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    var selects = document.querySelectorAll('select');
+                    var instancesselect = M.FormSelect.init(selects);
+                    var sidenavs = document.querySelectorAll('.sidenav');
+                    var instancesside = M.Sidenav.init(sidenavs);
+                    var dropdowns = document.querySelectorAll('.dropdown-trigger');
+                    var instancesdrop = M.Dropdown.init(dropdowns, {
+                        coverTrigger: false,
+                        alignment: 'right',
+                        constrainWidth: false
+                    });
+                    var modals = document.querySelectorAll('.modal');
+                    var instancesmodals = M.Modal.init(modals);
+                });
+            </script>
+    </body>
+
+</html>

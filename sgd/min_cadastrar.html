@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html class="loading" lang="pt-br" data-textdirection="ltr">
+  <!-- BEGIN: Head-->
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="SGD - Sistema de Gestão de Documentos">
+    <meta name="keywords" content="governo, tocantins">
+    <meta name="author" content="ATI - Agência de Tecnologia da Informação - TO">
+    <title>SGD</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/custom.css">
+    <link rel="stylesheet" type="text/css" href="assets/application.css">
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+  </head>
+  <!-- END: Head-->
+
+  <body class="vertical-layout page-header-light vertical-menu-collapsible 2-columns  " data-open="click"
+    data-menu="vertical-dark-menu" data-col="2-columns">
+
+
+    <!-- BEGIN: Header-->
+    <header class="page-topbar" id="header">
+      <div class="navbar navbar-fixed">
+        <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-light">
+          <div class="nav-wrapper">
+            <div class="header-search-wrapper hide-on-med-and-down"><i class="material-icons">search</i>
+              <input class="header-search-input z-depth-2" type="search" name="Search" placeholder="Busca rápida">
+            </div>
+            <ul class="navbar-list right">
+              <li class="hide-on-large-only"><a class="waves-effect waves-block waves-light search-button"
+                  href="javascript:void(0);"><i class="material-icons">search</i></a></li>
+              <li class="hide-on-small-only"><a class="waves-effect waves-block waves-light" href="#"><i
+                    class="material-icons">timer<small class="badge red circle notification-badge">5</small></i></a>
+              </li>
+              <li class="hide-on-small-only"><a class="waves-effect waves-block waves-light" href="#"><span><i
+                      class="material-icons">phone</i></a></li>
+              <li class="hide-on-small-only"><a class="waves-effect waves-block waves-light" href="#"><span><i
+                      class="material-icons">help</i></a></li>
+              <li><a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);"
+                  data-target="profile-dropdown"><span class="avatar-status"><img
+                      src="https://randomuser.me/api/portraits/men/78.jpg" alt="avatar"><i></i></span></a></li>
+            </ul>
+            <!-- profile-dropdown-->
+            <ul class="dropdown-content" id="profile-dropdown">
+              <li><a class="grey-text text-darken-1" href="user-profile-page.html"><i
+                    class="material-icons">person_outline</i> Perfil</a></li>
+              <li><a class="red white-text text-darken-1" href="#"><i class="material-icons">keyboard_tab</i> Sair</a>
+              </li>
+            </ul>
+          </div>
+          <nav class="display-none search-sm">
+            <div class="nav-wrapper">
+              <form>
+                <div class="input-field">
+                  <input class="search-box-sm" type="search" required="">
+                  <i class="material-icons search-sm-close">close</i>
+                </div>
+              </form>
+            </div>
+          </nav>
+        </nav>
+      </div>
+    </header>
+    <!-- END: Header-->
+
+    <!-- BEGIN: SideNav-->
+    <aside
+      class="sidenav-main transition-slide-right nav-expanded nav-lock nav-collapsible sidenav-dark sidenav-active-rounded">
+      <div class="brand-sidebar">
+        <h1 class="logo-wrapper"><a id="brasao-sgd-logo" class="brand-logo darken-1" href="home.html"><img
+              src="images/brasao.svg" alt="Brasão do Governo do Tocantins" /><span
+              class="logo-text hide-on-med-and-down">SGD</span></a><a class="navbar-toggler" href="#"><i
+              class="material-icons">radio_button_checked</i></a></h1>
+      </div>
+      <ul class="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow" id="slide-out"
+        data-menu="menu-navigation" data-collapsible="menu-accordion">
+        <li class="navigation-header"><a class="navigation-header-text">SGD </a><i
+            class="navigation-header-icon material-icons">more_horiz</i>
+        </li>
+        <li class="bold"><a class="waves-effect waves-light " href="home.html"><i
+              class="material-icons">settings_input_svideo</i><span class="menu-title" data-i18n="">Início</span><span
+              class="badge new badge pill pink accent-2 float-right mr-10 hide">5</span></a>
+        </li>
+
+        <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i
+              class="material-icons">folder</i><span class="menu-title" data-i18n="">Processos</span></a>
+          <div class="collapsible-body">
+            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+
+              <li><a class="collapsible-body waves-effect waves-light" href="proc_cadastrar.html" data-i18n=""><i
+                    class="material-icons">add_circle_outlined</i><span>Incluir</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="processos.html" data-i18n=""><i
+                    class="material-icons">list</i><span>Listagem</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="proc_acompanhamento.html" data-i18n=""><i
+                    class="material-icons">dashboard</i><span>Painel de acompanhamento</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i
+                    class="material-icons">search_plus</i><span>Busca avançada</span></a>
+              </li>
+              <li><a class="collapsible-body collapsible-header waves-effect waves-light" href="#" data-i18n=""
+                  tabindex="0"><i class="material-icons">radio_button_unchecked</i><span>Guias</span></a>
+                <div class="collapsible-body">
+                  <ul class="collapsible" data-collapsible="accordion">
+                    <li><a class="collapsible-body" href="ui-basic-buttons.html" data-i18n=""><i
+                          class="material-icons">radio_button_unchecked</i><span>Guia de tramitação</span></a>
+                    </li>
+                    <li><a class="collapsible-body" href="ui-extended-buttons.html" data-i18n=""><i
+                          class="material-icons">radio_button_unchecked</i><span>Guia de expedição</span></a>
+                    </li>
+                    <li><a class="collapsible-body" href="ui-extended-buttons.html" data-i18n=""><i
+                          class="material-icons">radio_button_unchecked</i><span>Guia de expedição - outros
+                          protocolos</span></a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i
+              class="material-icons">insert_drive_file</i><span class="menu-title" data-i18n="">Documentos</span></a>
+          <div class="collapsible-body">
+            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+
+              <li><a class="collapsible-body waves-effect waves-light" href="doc_cadastrar.html" data-i18n=""><i
+                    class="material-icons">add_circle_outlined</i><span>Incluir</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="documentos.html" data-i18n=""><i
+                    class="material-icons">list</i><span>Listagem</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="doc_acompanhamento.html" data-i18n=""><i
+                    class="material-icons">dashboard</i><span>Painel de acompanhamento</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i
+                    class="material-icons">description</i><span>Modelos e minutas</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i
+                    class="material-icons">search_plus</i><span>Busca avançada</span></a>
+              </li>
+              <li><a class="collapsible-body collapsible-header waves-effect waves-light" href="#" data-i18n=""
+                  tabindex="0"><i class="material-icons">radio_button_unchecked</i><span>Guias</span></a>
+                <div class="collapsible-body">
+                  <ul class="collapsible" data-collapsible="accordion">
+                    <li><a class="collapsible-body" href="ui-basic-buttons.html" data-i18n=""><i
+                          class="material-icons">radio_button_unchecked</i><span>Guia de tramitação</span></a>
+                    </li>
+                    <li><a class="collapsible-body" href="ui-extended-buttons.html" data-i18n=""><i
+                          class="material-icons">radio_button_unchecked</i><span>Guia de expedição</span></a>
+                    </li>
+                    <li><a class="collapsible-body" href="ui-extended-buttons.html" data-i18n=""><i
+                          class="material-icons">radio_button_unchecked</i><span>Guia de expedição - outros
+                          protocolos</span></a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i
+              class="material-icons">storage</i><span class="menu-title" data-i18n="">Arquivos</span></a>
+          <div class="collapsible-body">
+            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+
+              <li><a class="collapsible-body waves-effect waves-light" href="proc_cadastrar.html" data-i18n=""><i
+                    class="material-icons">radio_button_unchecked</i><span>Alterar</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="processos.html" data-i18n=""><i
+                    class="material-icons">radio_button_unchecked</i><span>Arquivo digital</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="proc_acompanhamento.html" data-i18n=""><i
+                    class="material-icons">radio_button_unchecked</i><span>Arquivo setorial</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i
+                    class="material-icons">radio_button_unchecked</i><span>Comentar</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i
+                    class="material-icons">radio_button_unchecked</i><span>Criar caixa</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i
+                    class="material-icons">radio_button_unchecked</i><span>Emprestar</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i
+                    class="material-icons">radio_button_unchecked</i><span>Etiquetas</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i
+                    class="material-icons">radio_button_unchecked</i><span>Guia de transferência</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i
+                    class="material-icons">radio_button_unchecked</i><span>Lista de transferência</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i
+                    class="material-icons">radio_button_unchecked</i><span>Busca avançada</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i
+                    class="material-icons">radio_button_unchecked</i><span>Pesquisa simples</span></a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i
+              class="material-icons">work</i><span class="menu-title" data-i18n="">Mala Direta</span></a>
+          <div class="collapsible-body">
+            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+
+              <li><a class="collapsible-body waves-effect waves-light" href="proc_cadastrar.html" data-i18n=""><i
+                    class="material-icons">group_add</i><span>Incluir grupo</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="processos.html" data-i18n=""><i
+                    class="material-icons">person_add</i><span>Incluir pessoa</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="proc_cadastrar.html" data-i18n=""><i
+                    class="material-icons">group</i><span>Grupos</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="processos.html" data-i18n=""><i
+                    class="material-icons">person</i><span>Pessoas</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i
+                    class="material-icons">search_plus</i><span>Busca avançada</span></a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i
+              class="material-icons">receipt</i><span class="menu-title" data-i18n="">Relatórios</span></a>
+          <div class="collapsible-body">
+            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+
+              <li><a class="collapsible-body waves-effect waves-light" href="proc_cadastrar.html" data-i18n=""><i
+                    class="material-icons">folder</i><span>Processos</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="processos.html" data-i18n=""><i
+                    class="material-icons">insert_drive_file</i><span>Documentos</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="proc_acompanhamento.html" data-i18n=""><i
+                    class="material-icons">storage</i><span>Arquivos</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="#" data-i18n=""><i
+                    class="material-icons">work</i><span>Mala direta</span></a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="bold"><a class="waves-effect waves-light " href="manuais.html" tabindex="0"><i
+              class="material-icons">photo_filter</i><span class="menu-title" data-i18n="">Manuais e normas</span></a>
+        </li>
+
+        <li class="bold"><a class="collapsible-header waves-effect waves-light " href="#" tabindex="0"><i
+              class="material-icons">gesture</i><span class="menu-title" data-i18n="">Assinatura digital</span></a>
+          <div class="collapsible-body">
+            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+              <li><a class="collapsible-body waves-effect waves-light" href="assinararquivo.html" data-i18n=""><i
+                    class="material-icons">create</i><span>Assinar arquivo</span></a>
+              </li>
+              <li><a class="collapsible-body waves-effect waves-light" href="assinaturadigital.html" data-i18n=""><i
+                    class="material-icons">gesture</i><span>Assinatura digital</span></a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+
+
+      <div class="navigation-background"></div><a
+        class="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only"
+        href="#" data-target="slide-out"><i class="material-icons">menu</i></a>
+    </aside>
+    <!-- END: SideNav-->
+
+
+
+    <div id="main" class="doc_form">
+      <div class="row transition-fade">
+        <div id="breadcrumbs-wrapper" class="pb-1">
+          <!-- Search for small screen-->
+          <div class="container">
+            <div class="row">
+              <div class="col s12 m6 l6 breadcrumbs-left">
+                <h5 class="breadcrumbs-title mt-0 mb-0 display-inline">Cadastrar Documento</h5>
+                <ol class="breadcrumbs mb-0 mt-1 hide-on-small-and-down">
+                  <li class="breadcrumb-item"><a href="index.html">Início</a>
+                  </li>
+                  <li class="breadcrumb-item"><a href="documentos.html">Documentos</a>
+                  </li>
+                  <li class="breadcrumb-item active">Cadastrar
+                  </li>
+                </ol>
+              </div>
+              <div class="col s12 m6 l6 page-actions">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12">
+          <div id="main-content" class="container">
+            <form action="#">
+              <div class="row">
+                <div class="col s12 m8">
+                  <div class="card-panel">
+
+                    <div class="row">
+                      <div class="col s12 m6">
+                        <div class="row">
+                          <label class="label-block" for="especie_documental">ESPÉCIE/TIPO DOCUMENTAL: <span
+                              class="red-text">*</span></label>
+                          <div class="col s12">
+                            <div class="input-btn btn-left">
+
+                              <div class="btn btn-large waves-effect btn-icon-only azul-to left"><i
+                                  class="material-icons">search</i></div>
+
+                              <select class="especie_documental">
+                                <option selected="selected" value="">SELECIONE</option>
+                                <option value="86">AJUDA DE CUSTO</option>
+                                <option value="81">ALVARÁ </option>
+                                <option value="107">ANÁLISE</option>
+                                <option value="61">ANEXO</option>
+                                <option value="159">ANEXO I</option>
+                                <option value="227">APOSTILA</option>
+                                <option value="14">ATA</option>
+                                <option value="54">ATA DE REGISTRO DE PREÇO</option>
+                                <option value="241">ATA DE RESULTADO FINAL</option>
+                                <option value="20">ATESTADO</option>
+                                <option value="154">ATESTADO TÉCNICO</option>
+                                <option value="203">ATO DE CONVOCAÇÃO</option>
+                                <option value="236">ATO DE DISPENSA</option>
+                                <option value="208">ATO DECLARATORIO</option>
+                                <option value="246">ATO DECLARATÓRIO DE EXTINÇÃO</option>
+                                <option value="252">ATO DECLARATÓRIO DE PRORROGAÇÃO</option>
+                                <option value="238">ATO MOTIVADO</option>
+                                <option value="181">AUTO DE APREENSÃO EM FLAGRANTE DE ATO INFRACIONAL</option>
+                                <option value="79">AUTO DE INFRAÇÃO</option>
+                                <option value="180">AUTO DE PRISÃO EM FLAGRANTE</option>
+                                <option value="85">AUTORIZAÇÃO</option>
+                                <option value="138">AUTORIZAÇÃO DE PAGAMENTO</option>
+                                <option value="105">BALANÇO</option>
+                                <option value="196">BANCO MUNDIAL - ENTRADA DADOS </option>
+                                <option value="210">BIRD - NÃO OBJEÇÃO</option>
+                                <option value="176">BOLETIM DE OCORRÊNCIA</option>
+                                <option value="177">BOLETIM DE OCORRÊNCIA CIRCUNSTANCIADO</option>
+                                <option value="165">BOLETIM METEOROLÓGICO </option>
+                                <option value="255">BOLETO</option>
+                                <option value="25">CARTA</option>
+                                <option value="18">CERTIDÃO</option>
+                                <option value="250">CERTIDÃO DE DÉBITO</option>
+                                <option value="26">CERTIFICADO</option>
+                                <option value="224">CERTIFICADO DE AUDITORIA</option>
+                                <option value="263">COMPROVANTE DE PAGAMENTO VOETUR</option>
+                                <option value="234">COMUNICADO INTERNO</option>
+                                <option value="40">CONCILIAÇÃO</option>
+                                <option value="52">CONTRATO</option>
+                                <option value="28">CONVÊNIO</option>
+                                <option value="27">CONVITE</option>
+                                <option value="245">DECISÃO</option>
+                                <option value="45">DECLARAÇÃO</option>
+                                <option value="216">DECLARAÇÃO ORÇAMENTARIA</option>
+                                <option value="152">DECRETO</option>
+                                <option value="219">DEMANDA OUVIDORIA / OGE</option>
+                                <option value="110">DEMONSTRATIVO</option>
+                                <option value="175">DENUNCIA</option>
+                                <option value="15">DESPACHO</option>
+                                <option value="128">DILIGÊNCIA</option>
+                                <option value="145">DISTRATO</option>
+                                <option value="192">DOCUMENTO DE ARRECADAÇÃO</option>
+                                <option value="260">DOCUMENTO TESTE - TALMON</option>
+                                <option value="221">DOSSIE DE SERVIDOR</option>
+                                <option value="53">EDITAL</option>
+                                <option value="233">EMAIL</option>
+                                <option value="243">EMENDA PARLAMENTAR</option>
+                                <option value="171">ENQUADRAMENTO</option>
+                                <option value="1">EXPOSIÇÃO DE MOTIVOS</option>
+                                <option value="235">EXTRATO</option>
+                                <option value="217">EXTRATO DE VEICULO</option>
+                                <option value="129">FATURA </option>
+                                <option value="261">FATURA VOETUR</option>
+                                <option value="29">FLUXOGRAMA</option>
+                                <option value="31">FOLDERS</option>
+                                <option value="153">FOLHA DE PAGAMENTO</option>
+                                <option value="30">FOLHA DE PONTO</option>
+                                <option value="71">FORMULÁRIO</option>
+                                <option value="148">FORMULÁRIO DE DIARIAS</option>
+                                <option value="68">FORMULÁRIO DE FÉRIAS</option>
+                                <option value="62">FREQUÊNCIA CONSOLIDADA</option>
+                                <option value="190">GUIA DE APRESENTAÇÃO DE PESSOA</option>
+                                <option value="191">GUIA DE RECOLHIMENTO DO PRESO</option>
+                                <option value="174">GUIA DE REMESSA</option>
+                                <option value="126">HISTÓRICO ESCOLAR</option>
+                                <option value="189">INQUÉRITO POLICIAL</option>
+                                <option value="120">INTIMAÇÃO</option>
+                                <option value="164">ITEM </option>
+                                <option value="13">JUSTIFICATIVA</option>
+                                <option value="237">JUSTIFICATIVA DE COMPRAS VIA INTERNET</option>
+                                <option value="42">LAUDO</option>
+                                <option value="251">LIMINAR</option>
+                                <option value="209">MALOTE</option>
+                                <option value="59">MANDADO</option>
+                                <option value="183">MANDADO DE BUSCA E APREENSÃO</option>
+                                <option value="187">MANDADO DE INTIMAÇÃO</option>
+                                <option value="182">MANDADO DE PRISÃO PREVENTIVA</option>
+                                <option value="231">MANIFESTAÇÃO</option>
+                                <option value="147">MANIFESTAÇÃO DE INTERESSE</option>
+                                <option value="72">MANUAL</option>
+                                <option value="34">MAPA DE PREÇO</option>
+                                <option value="5">MEMORANDO CIRCULAR</option>
+                                <option value="4">MEMORANDO TESTE MEMORANDO TESTE MEMORANDO TESTE MEMORANDO TESTE
+                                  MEMORANDO </option>
+                                <option value="228">MOVIMENTAÇÃO ORÇAMENTÁRIA</option>
+                                <option value="142">NOTA DE ATENDIMENTO</option>
+                                <option value="48">NOTA DE DOTAÇÃO</option>
+                                <option value="33">NOTA DE EMPENHO</option>
+                                <option value="226">NOTA DE INSTRUÇÃO</option>
+                                <option value="49">NOTA DE LANÇAMENTO</option>
+                                <option value="43">NOTA FISCAL</option>
+                                <option value="6">NOTA TÉCNICA</option>
+                                <option value="7">NOTIFICAÇÃO</option>
+                                <option value="271">NOVO DOCUMENTO - TALMON</option>
+                                <option value="269">NOVO TIPO DOCUMENTAL COM 100 CARACTERES.</option>
+                                <option value="8">OFÍCIO</option>
+                                <option value="9">OFÍCIO CIRCULAR</option>
+                                <option value="244">OFÍCIO CONJUNTO</option>
+                                <option value="150">OFÍCIO DE ENCAMINHAMENTO</option>
+                                <option value="253">OFÍCIO GRUPO GESTOR</option>
+                                <option value="36">ORÇAMENTO</option>
+                                <option value="201">ORDEM BANCARIA</option>
+                                <option value="179">ORDEM DE MISSÃO POLICIAL</option>
+                                <option value="167">ORDEM DE OPERAÇÃO</option>
+                                <option value="155">ORDEM DE PARALIZAÇÃO</option>
+                                <option value="156">ORDEM DE REINICIO</option>
+                                <option value="75">ORDEM DE SERVIÇO</option>
+                                <option value="169">ORDEM DE SERVIÇO CIRCULAR</option>
+                                <option value="11">PARECER</option>
+                                <option value="223">PARECER DE AUDITORIA</option>
+                                <option value="143">PARECER JURIDICO</option>
+                                <option value="69">PARECER TÉCNICO</option>
+                                <option value="168">PARTE</option>
+                                <option value="242">PEDIDO DE COMPRAS</option>
+                                <option value="56">PETIÇÃO</option>
+                                <option value="202">PLANO DE TRABALHO</option>
+                                <option value="37">PLANTA </option>
+                                <option value="47">PORTARIA</option>
+                                <option value="239">PORTARIA CONJUNTA</option>
+                                <option value="198">PROCEDIMENTO DE OUVIDORIA</option>
+                                <option value="274">PROCESSO</option>
+                                <option value="140">PROCURAÇÃO</option>
+                                <option value="90">PROGRAMAÇÃO DE DESEMBOLSO</option>
+                                <option value="12">PROJETO BÁSICO</option>
+                                <option value="248">PRONTUÁRIO MÉDICO</option>
+                                <option value="230">PRONUNCIAMENTO</option>
+                                <option value="41">PROPOSTA</option>
+                                <option value="195">PROPOSTA DE PORTARIA</option>
+                                <option value="199">RECIBO DE PAGAMENTO</option>
+                                <option value="149">RECONHECIMENTO DE DESPESA</option>
+                                <option value="57">RECURSO</option>
+                                <option value="264">Registro de Saída de Equipamentos</option>
+                                <option value="200">RELAÇÃO EXTERNA - RE</option>
+                                <option value="19">RELATÓRIO</option>
+                                <option value="207">RELATÓRIO DE AUDITORIA</option>
+                                <option value="197">RELATÓRIO DE OPERAÇÃO</option>
+                                <option value="188">RELATÓRIO POLICIAL</option>
+                                <option value="17">REQUERIMENTO</option>
+                                <option value="55">REQUISIÇÃO</option>
+                                <option value="82">REQUISIÇÃO DE PASSAGEM AÉREA</option>
+                                <option value="218">RESCISÃO CONTRATUAL</option>
+                                <option value="127">RESOLUÇÃO</option>
+                                <option value="249">RETIFICAÇÃO</option>
+                                <option value="38">SOLICITAÇÃO</option>
+                                <option value="118">SOLICITAÇÃO DE AÇÃO CORRETIVA</option>
+                                <option value="170">SOLICITAÇÃO DE COMPRAS</option>
+                                <option value="89">SOLICITAÇÃO DE DESPESAS</option>
+                                <option value="254">SOLICITAÇÃO DE ORÇAMENTO PARA EMPENHO</option>
+                                <option value="262">SOLICITAÇÃO DE PAGAMENTO VOETUR</option>
+                                <option value="272">SOLICITAÇÃO DE PARTICIPAÇÃO DE CAPACITAÇÃO E VIAGEM - SPCV</option>
+                                <option value="172">SOLUÇÃO DE SINDICÂNCIA</option>
+                                <option value="232">TELEGRAMA</option>
+                                <option value="44">TERMO</option>
+                                <option value="166">TERMO ADITIVO</option>
+                                <option value="178">TERMO CIRCUNSTANCIADO DE OCORRÊNCIA</option>
+                                <option value="119">TERMO DE ACEITE</option>
+                                <option value="158">TERMO DE ACORDO</option>
+                                <option value="65">TERMO DE ADESÃO</option>
+                                <option value="123">TERMO DE ANUÊNCIA</option>
+                                <option value="240">TERMO DE APOSTILAMENTO</option>
+                                <option value="78">TERMO DE APREENSÃO</option>
+                                <option value="114">TERMO DE APROVAÇÃO</option>
+                                <option value="247">TERMO DE AUTORIZAÇÃO DE USO DE BEM PÚBLICO</option>
+                                <option value="64">TERMO DE CESSAO DE USO</option>
+                                <option value="66">TERMO DE COMPROMISSO</option>
+                                <option value="225">TERMO DE CONCESSÃO DE BOLSA</option>
+                                <option value="146">TERMO DE CONCESSÃO DE USO</option>
+                                <option value="139">TERMO DE CONTRATO</option>
+                                <option value="185">TERMO DE DECLARAÇÃO</option>
+                                <option value="186">TERMO DE DEPOIMENTO</option>
+                                <option value="112">TERMO DE DESINTERDIÇÃO</option>
+                                <option value="173">TERMO DE DOAÇÃO</option>
+                                <option value="184">TERMO DE ENTREGA</option>
+                                <option value="194">TERMO DE FIANÇA</option>
+                                <option value="111">TERMO DE INTERDIÇÃO</option>
+                                <option value="193">TERMO DE INTERROGATÓRIO</option>
+                                <option value="76">TERMO DE INUTILIZAÇÃO</option>
+                                <option value="222">TERMO DE OUTORGA</option>
+                                <option value="144">TERMO DE PERMISSÃO DE USO</option>
+                                <option value="137">TERMO DE RECEBIMENTO</option>
+                                <option value="124">TERMO DE RECONHECIMENTO DE DESPESA</option>
+                                <option value="125">TERMO DE RECONHECIMENTO DE DÍVIDA</option>
+                                <option value="67">TERMO DE REFERENCIA</option>
+                                <option value="121">TERMO DE RERRATIFICAÇÃO</option>
+                                <option value="122">TERMO DE RESPONSABILIDADE</option>
+                                <option value="80">TERMO DE VISITA</option>
+                                <option value="270">Teste Thiago</option>
+                                <option value="141">TITULO DE TERRA</option>
+                                <option value="157">VISTORIA TÉCNICA</option>
+                                <option value="268">VOLUME DE PROCESSO</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col s12 m6">
+                        <div class="row">
+                          <label class="label-block" for="especie_documental">CLASSIFICAÇÃO ARQUIVÍSTICA: <span
+                              class="red-text">*</span></label>
+                          <div class="col s12">
+                            <div class="input-btn btn-left">
+
+                              <div class="btn btn-large waves-effect btn-icon-only azul-to left"><i
+                                  class="material-icons">search</i></div>
+
+                              <select class="class_arquivistica">
+                                <option value="">SELECIONE</option>
+                                <option value="318" style="background-color:#CCFFFF">000 - ADMINISTRAÇÃO GERAL</option>
+                                <option value="1" style="background-color:#FFFFFF">001 - MODERNIZAÇÃO E REFORMA
+                                  ADMINISTRATIVA</option>
+                                <option value="2" style="background-color:#FFFFFF">002 - PLANOS, PROGRAMAS E PROJETOS DE
+                                  TRABALHO</option>
+                                <option value="3" style="background-color:#FFFFFF">003 - RELATÓRIOS DE ATIVIDADES
+                                </option>
+                                <option value="4" style="background-color:#FFFFFF">004 - ACORDOS. AJUSTES. CONTRATOS.
+                                  CONVÊNIOS</option>
+                                <option value="5" style="background-color:#CCFFFF">010 - ORGANIZAÇÃO E FUNCIONAMENTO
+                                </option>
+                                <option value="6" style="background-color:#FFFFFF">010.1 - REGISTRO NOS ÓRGÃOS
+                                  COMPETENTES</option>
+                                <option value="7" style="background-color:#FFFFFF">010.2 - REGIMENTOS. REGULAMENTOS.
+                                  ESTATUTOS. ORGANOGRAMAS. ESTRUTURAS </option>
+                                <option value="8" style="background-color:#FFFFFF">010.3 - AUDIÊNCIAS. DESPACHOS.
+                                  REUNIÕES</option>
+                                <option value="9" style="background-color:#CCFFFF">011 - COMISSÕES. CONSELHOS. GRUPOS DE
+                                  TRABALHO. JUNTAS. COMITÊS</option>
+                                <option value="10384" style="background-color:#FFFFFF">011.1 - ATOS DE CRIAÇÃO, ATAS,
+                                  RELATÓRIOS</option>
+                                <option value="10" style="background-color:#CCFFFF">012 - COMUNICAÇÃO SOCIAL</option>
+                                <option value="11" style="background-color:#FFFFFF">012.1 - RELAÇÕES COM A IMPRENSA
+                                </option>
+                                <option value="12" style="background-color:#FFFFFF">012.11 - CREDENCIAMENTO DE
+                                  JORNALISTAS</option>
+                                <option value="13" style="background-color:#FFFFFF">012.12 - ENTREVISTAS. NOTICIÁRIOS.
+                                  REPORTAGENS. EDITORIAIS</option>
+                                <option value="14" style="background-color:#FFFFFF">012.2 - DIVULGAÇÃO INTERNA</option>
+                                <option value="15" style="background-color:#FFFFFF">012.3 - CAMPANHAS INSTITUCIONAIS.
+                                  PUBLICIDADE</option>
+                                <option value="16" style="background-color:#CCFFFF">019 - OUTROS ASSUNTOS REFERENTES À
+                                  ORGANIZAÇÃO E FUNCIONAMENTO</option>
+                                <option value="17" style="background-color:#FFFFFF">019.01 - INFORMAÇÕES SOBRE O ÓRGÃO
+                                </option>
+                                <option value="18" style="background-color:#CCFFFF">020 - PESSOAL</option>
+                                <option value="19" style="background-color:#FFFFFF">020.1 - LEGISLAÇÃO</option>
+                                <option value="10387" style="background-color:#FFFFFF">020.11 - BOLETINS ADMINISTRATIVO,
+                                  DE PESSOAL E DE SERVIÇO</option>
+                                <option value="20" style="background-color:#FFFFFF">020.2 - IDENTIFICAÇÃO FUNCIONAL
+                                </option>
+                                <option value="21" style="background-color:#FFFFFF">020.3 - OBRIGAÇÕES TRABALHISTAS E
+                                  ESTATUTÁRIAS. RELAÇÕES COM ÓRGÃOS NORMATIZADORES DA ADMINISTRAÇÃO PÚBLICA. LEI DOS
+                                  2/3. RAIS</option>
+                                <option value="22" style="background-color:#FFFFFF">020.31 - RELAÇÕES COM OS CONSELHOS
+                                  PROFISSIONAIS</option>
+                                <option value="23" style="background-color:#FFFFFF">020.4 - SINDICATOS. ACORDOS.
+                                  DISSÍDIOS</option>
+                                <option value="24" style="background-color:#FFFFFF">020.5 - ASSENTAMENTOS INDIVIDUAIS.
+                                  CADASTRO</option>
+                                <option value="25" style="background-color:#CCFFFF">021 - RECRUTAMENTO E SELEÇÃO
+                                </option>
+                                <option value="26" style="background-color:#FFFFFF">021.1 - CANDIDATOS A CARGO E EMPREGO
+                                  PÚBLICOS: INSCRIÇÃO E CURRICULUM VITAE</option>
+                                <option value="27" style="background-color:#FFFFFF">021.2 - EXAMES DE SELEÇÃO, PROVAS E
+                                  TÍTULOS, TESTES PSICOTÉCNICOS E EXAMES MÉDICOS</option>
+                                <option value="10385" style="background-color:#FFFFFF">021.21 - CONSTITUIÇÃO DE BANCAS
+                                  EXAMINADORAS, EDITAIS, EXEMPLARES ÚNICOS DE PROVAS, GABARITOS, RESULTADOS E RECURSOS
+                                </option>
+                                <option value="28" style="background-color:#CCFFFF">022 - APERFEIÇOAMENTO E TREINAMENTO
+                                </option>
+                                <option value="29" style="background-color:#CCFFFF">022.1 - CURSOS</option>
+                                <option value="30" style="background-color:#FFFFFF">022.11 - PROMOVIDOS PELA INSTITUIÇÃO
+                                </option>
+                                <option value="10460" style="background-color:#FFFFFF">022.111 - PROPOSTAS, ESTUDOS,
+                                  EDITAIS, PROGRAMAS, RELATÓRIOS FINAIS, EXEMPLARES ÚNICOS E EXERCÍCIOS, RELAÇÃO DE
+                                  PARTICIPANTES, AVALIAÇÃO E CONTROLE DE EXPEDIÇÃO DE CERTIFICADOS</option>
+                                <option value="31" style="background-color:#CCFFFF">022.12 - PROMOVIDOS POR OUTRAS
+                                  INSTITUIÇÕES</option>
+                                <option value="32" style="background-color:#FFFFFF">022.121 - NO BRASIL</option>
+                                <option value="33" style="background-color:#FFFFFF">022.122 - NO EXTERIOR</option>
+                                <option value="34" style="background-color:#CCFFFF">022.2 - ESTÁGIOS</option>
+                                <option value="35" style="background-color:#FFFFFF">022.21 - PROMOVIDOS PELA INSTITUIÇÃO
+                                </option>
+                                <option value="10386" style="background-color:#FFFFFF">022.211 - ESTUDOS, PROPOSTAS,
+                                  PROGRAMAS, RELATÓRIOS FINAIS, RELAÇÃO DE PARTICIPANTES, AVALIAÇÃO E DECLARAÇÃO DE
+                                  COMPROVAÇÃO DE ESTÁGIO</option>
+                                <option value="36" style="background-color:#CCFFFF">022.22 - PROMOVIDOS POR OUTRAS
+                                  INSTITUIÇÕES</option>
+                                <option value="37" style="background-color:#FFFFFF">022.221 - NO BRASIL</option>
+                                <option value="38" style="background-color:#FFFFFF">022.222 - NO EXTERIOR</option>
+                                <option value="39" style="background-color:#CCFFFF">022.9 - OUTROS ASSUNTOS REFERENTES A
+                                  APERFEIÇOAMENTO E TREINAMENTO</option>
+                                <option value="40" style="background-color:#CCFFFF">023 - QUADROS, TABELAS E POLÍTICA DE
+                                  PESSOAL</option>
+                                <option value="41" style="background-color:#FFFFFF">023.01 - ESTUDOS E PREVISÃO DE
+                                  PESSOAL</option>
+                                <option value="42" style="background-color:#FFFFFF">023.02 - CRIAÇÃO, CLASSIFICAÇÃO,
+                                  TRANSFORMAÇÃO, TRANSPOSIÇÃO E REMUNERAÇÃO DE CARGOS E FUNÇÕES</option>
+                                <option value="43" style="background-color:#FFFFFF">023.03 - REESTRUTURAÇÕES E
+                                  ALTERAÇÕES SALARIAIS</option>
+                                <option value="44" style="background-color:#CCFFFF">023.1 - MOVIMENTAÇÃO DE PESSOAL
+                                </option>
+                                <option value="45" style="background-color:#FFFFFF">023.11 - ADMISSÃO. APROVEITAMENTO.
+                                  CONTRATAÇÃO. NOMEAÇÃO. READMISSÃO. READAPTAÇÃO. RECONDUÇÃO. REINTEGRAÇÃO. REVERSÃO
+                                </option>
+                                <option value="46" style="background-color:#FFFFFF">023.12 - DEMISSÃO. DISPENSA.
+                                  EXONERAÇÃO. RESCISÃO CONTRATUAL. FALECIMENTO</option>
+                                <option value="47" style="background-color:#FFFFFF">023.13 - LOTAÇÃO. REMOÇÃO.
+                                  TRANSFERÊNCIA. PERMUTA</option>
+                                <option value="48" style="background-color:#FFFFFF">023.14 - DESIGNAÇÃO.
+                                  DISPONIBILIDADE. REDISTRIBUIÇÃO. SUBSTITUIÇÃO</option>
+                                <option value="49" style="background-color:#FFFFFF">023.15 - REQUISIÇÃO. CESSÃO</option>
+                                <option value="50" style="background-color:#CCFFFF">024 - DIREITOS, OBRIGAÇÕES E
+                                  VANTAGENS</option>
+                                <option value="51" style="background-color:#FFFFFF">024.1 - FOLHAS DE PAGAMENTO, FICHAS
+                                  FINANCEIRAS</option>
+                                <option value="52" style="background-color:#FFFFFF">024.11 - SALÁRIOS, VENCIMENTOS,
+                                  PROVENTOS E REMUNERAÇÕES</option>
+                                <option value="53" style="background-color:#FFFFFF">024.111 - SALÁRIO-FAMÍLIA</option>
+                                <option value="54" style="background-color:#FFFFFF">024.112 - ABONO OU PROVENTO
+                                  PROVISÓRIO</option>
+                                <option value="10470" style="background-color:#FFFFFF">024.113 - ABONO DE PERMANÊNCIA EM
+                                  SERVIÇO</option>
+                                <option value="55" style="background-color:#FFFFFF">024.119 - OUTROS SALÁRIOS,
+                                  VENCIMENTOS, PROVENTOS E REMUNERAÇÕES</option>
+                                <option value="56" style="background-color:#CCFFFF">024.12 - GRATIFICAÇÕES</option>
+                                <option value="57" style="background-color:#FFFFFF">024.121 - DE FUNÇÃO</option>
+                                <option value="58" style="background-color:#FFFFFF">024.122 - JETONS</option>
+                                <option value="59" style="background-color:#FFFFFF">024.123 - CARGOS EM COMISSÃO
+                                </option>
+                                <option value="60" style="background-color:#FFFFFF">024.124 - NATALINA</option>
+                                <option value="61" style="background-color:#FFFFFF">024.129 - OUTRAS GRATIFICAÇÕES
+                                </option>
+                                <option value="10164" style="background-color:#CCFFFF">024.13 - ADICIONAIS</option>
+                                <option value="62" style="background-color:#FFFFFF">024.131 - TEMPO DE SERVIÇO
+                                  (ANUÊNIOS, BIÊNIOS E QUINQUÊNIOS)</option>
+                                <option value="63" style="background-color:#FFFFFF">024.132 - NOTURNO</option>
+                                <option value="64" style="background-color:#FFFFFF">024.133 - PERICULOSIDADE</option>
+                                <option value="65" style="background-color:#FFFFFF">024.134 - INSALUBRIDADE</option>
+                                <option value="66" style="background-color:#FFFFFF">024.135 - ATIVIDADES PENOSAS
+                                </option>
+                                <option value="67" style="background-color:#FFFFFF">024.136 - SERVIÇOS EXTRAORDINÁRIOS,
+                                  HORAS EXTRAS</option>
+                                <option value="68" style="background-color:#FFFFFF">024.137 - FÉRIAS: ADICIONAL DE 1/3 E
+                                  ABONO PECUNIÁRIO</option>
+                                <option value="69" style="background-color:#FFFFFF">024.139 - OUTROS ADICIONAIS</option>
+                                <option value="70" style="background-color:#CCFFFF">024.14 - DESCONTOS</option>
+                                <option value="71" style="background-color:#FFFFFF">024.141 - CONTRIBUIÇÃO SINDICAL DO
+                                  SERVIDOR</option>
+                                <option value="72" style="background-color:#FFFFFF">024.142 - CONTRIBUIÇÃO PARA O PLANO
+                                  DE SEGURIDADE SOCIAL</option>
+                                <option value="73" style="background-color:#FFFFFF">024.143 - IMPOSTO DE RENDA RETIDO NA
+                                  FONTE (IRRF)</option>
+                                <option value="74" style="background-color:#FFFFFF">024.144 - PENSÕES ALIMENTÍCIAS
+                                </option>
+                                <option value="75" style="background-color:#FFFFFF">024.145 - CONSIGNAÇÕES</option>
+                                <option value="76" style="background-color:#FFFFFF">024.149 - OUTROS DESCONTOS</option>
+                                <option value="77" style="background-color:#CCFFFF">024.15 - ENCARGOS PATRONAIS.
+                                  RECOLHIMENTOS</option>
+                                <option value="78" style="background-color:#FFFFFF">024.151 - PROGRAMA DE FORMAÇÃO DO
+                                  PATRIMÔNIO DO SERVIDOR PÚBLICO (PASEP). PROGRAMA DE INTEGRAÇÃO SOCIAL (PIS)</option>
+                                <option value="79" style="background-color:#FFFFFF">024.152 - FUNDO DE GARANTIA POR
+                                  TEMPO DE SERVIÇO (FGTS)</option>
+                                <option value="80" style="background-color:#FFFFFF">024.153 - CONTRIBUIÇÃO SINDICAL DO
+                                  EMPREGADOR</option>
+                                <option value="81" style="background-color:#FFFFFF">024.154 - CONTRIBUIÇÃO PARA O PLANO
+                                  DE SEGURIDADE SOCIAL</option>
+                                <option value="82" style="background-color:#FFFFFF">024.155 - SALÁRIO MATERNIDADE
+                                </option>
+                                <option value="83" style="background-color:#FFFFFF">024.156 - IMPOSTO DE RENDA</option>
+                                <option value="84" style="background-color:#FFFFFF">024.2 - FÉRIAS</option>
+                                <option value="85" style="background-color:#FFFFFF">024.3 - LICENÇAS</option>
+                                <option value="86" style="background-color:#FFFFFF">024.4 - AFASTAMENTOS</option>
+                                <option value="87" style="background-color:#CCFFFF">024.5 - REEMBOLSO DE DESPESAS
+                                </option>
+                                <option value="88" style="background-color:#FFFFFF">024.51 - MUDANÇA DE DOMICÍLIO DE
+                                  SERVIDORES</option>
+                                <option value="89" style="background-color:#FFFFFF">024.52 - LOCOMOÇÃO</option>
+                                <option value="90" style="background-color:#FFFFFF">024.59 - OUTROS REEMBOLSOS</option>
+                                <option value="91" style="background-color:#CCFFFF">024.9 - OUTROS DIREITOS, OBRIGAÇÕES
+                                  E VANTAGENS</option>
+                                <option value="92" style="background-color:#FFFFFF">024.91 - CONCESSÕES</option>
+                                <option value="93" style="background-color:#FFFFFF">024.92 - AUXÍLIOS</option>
+                                <option value="94" style="background-color:#CCFFFF">025 - APURAÇÃO DE RESPONSABILIDADE E
+                                  AÇÃO DISCIPLINAR</option>
+                                <option value="95" style="background-color:#CCFFFF">025.1 - DENÚNCIAS. SINDICÂNCIAS.
+                                  INQUÉRITOS</option>
+                                <option value="96" style="background-color:#FFFFFF">025.11 - PROCESSOS DISCIPLINARES
+                                </option>
+                                <option value="97" style="background-color:#FFFFFF">025.12 - PENALIDADES DISCIPLINARES
+                                </option>
+                                <option value="98" style="background-color:#CCFFFF">026 - PREVIDÊNCIA, ASSISTÊNCIA E
+                                  SEGURIDADE SOCIAL</option>
+                                <option value="99" style="background-color:#FFFFFF">026.01 - PREVIDÊNCIA PRIVADA
+                                </option>
+                                <option value="100" style="background-color:#CCFFFF">026.1 - BENEFÍCIOS</option>
+                                <option value="101" style="background-color:#FFFFFF">026.11 - SEGUROS</option>
+                                <option value="102" style="background-color:#FFFFFF">026.12 - AUXÍLIOS</option>
+                                <option value="10389" style="background-color:#FFFFFF">026.121 - RECLUSÃO</option>
+                                <option value="103" style="background-color:#FFFFFF">026.13 - APOSENTADORIA</option>
+                                <option value="104" style="background-color:#FFFFFF">026.131 - CONTAGEM E AVERBAÇÃO DE
+                                  TEMPO DE SERVIÇO</option>
+                                <option value="105" style="background-color:#FFFFFF">026.132 - PENSÕES: PROVISÓRIA,
+                                  TEMPORÁRIA</option>
+                                <option value="10471" style="background-color:#FFFFFF">026.133 - PENSÃO VITALÍCIA
+                                </option>
+                                <option value="106" style="background-color:#CCFFFF">026.19 - OUTROS BENEFÍCIOS</option>
+                                <option value="107" style="background-color:#FFFFFF">026.191 - ADIANTAMENTOS E
+                                  EMPRÉSTIMOS A SERVIDORES</option>
+                                <option value="108" style="background-color:#FFFFFF">026.192 - ASSISTÊNCIA À SAÚDE
+                                </option>
+                                <option value="10388" style="background-color:#FFFFFF">026.192.1 - PRONTUÁRIO MÉDICO DO
+                                  SERVIDOR</option>
+                                <option value="109" style="background-color:#FFFFFF">026.193 - AQUISIÇÃO DE IMÓVEIS
+                                </option>
+                                <option value="110" style="background-color:#FFFFFF">026.194 - OCUPAÇÃO DE PRÓPRIOS DA
+                                  UNIÃO</option>
+                                <option value="111" style="background-color:#FFFFFF">026.195 - TRANSPORTES PARA
+                                  SERVIDORES</option>
+                                <option value="112" style="background-color:#FFFFFF">026.2 - HIGIENE E SEGURANÇA DO
+                                  TRABALHO</option>
+                                <option value="113" style="background-color:#FFFFFF">026.21 - PREVENÇÃO DE ACIDENTES DE
+                                  TRABALHO</option>
+                                <option value="10461" style="background-color:#FFFFFF">026.211 - COMISSÃO INTERNA DE
+                                  PREVENÇÃO DE ACIDENTES (CIPA)</option>
+                                <option value="10472" style="background-color:#FFFFFF">026.212 - CRIAÇÃO, DESIGNAÇÃO,
+                                  PROPOSTAS, RELATÓRIOS E ATAS</option>
+                                <option value="114" style="background-color:#FFFFFF">026.22 - REFEITÓRIOS, CANTINAS E
+                                  COPAS</option>
+                                <option value="115" style="background-color:#FFFFFF">026.23 - INSPEÇÕES PERIÓDICAS DE
+                                  SAÚDE</option>
+                                <option value="116" style="background-color:#CCFFFF">029 - OUTROS ASSUNTOS REFERENTES A
+                                  PESSOAL</option>
+                                <option value="117" style="background-color:#FFFFFF">029.1 - HORÁRIO DE EXPEDIENTE
+                                </option>
+                                <option value="118" style="background-color:#FFFFFF">029.11 - CONTROLE DE FREQUÊNCIA
+                                </option>
+                                <option value="119" style="background-color:#CCFFFF">029.2 - MISSÕES FORA DA SEDE,
+                                  VIAGENS A SERVIÇO</option>
+                                <option value="120" style="background-color:#FFFFFF">029.21 - NO PAÍS</option>
+                                <option value="121" style="background-color:#CCFFFF">029.22 - NO EXTERIOR</option>
+                                <option value="122" style="background-color:#FFFFFF">029.221 - SEM ÔNUS PARA A
+                                  INSTITUIÇÃO</option>
+                                <option value="123" style="background-color:#FFFFFF">029.222 - COM ÔNUS PARA A
+                                  INSTITUIÇÃO</option>
+                                <option value="124" style="background-color:#CCFFFF">029.3 - INCENTIVOS FUNCIONAIS
+                                </option>
+                                <option value="125" style="background-color:#FFFFFF">029.31 - PRÊMIOS</option>
+                                <option value="126" style="background-color:#FFFFFF">029.4 - DELEGAÇÕES DE COMPETÊNCIA.
+                                  PROCURAÇÃO</option>
+                                <option value="127" style="background-color:#FFFFFF">029.5 - SERVIÇOS PROFISSIONAIS
+                                  TRANSITÓRIOS: AUTÔNOMOS E COLABORADORES</option>
+                                <option value="128" style="background-color:#FFFFFF">029.6 - AÇÕES TRABALHISTAS.
+                                  RECLAMAÇÕES TRABALHISTAS</option>
+                                <option value="129" style="background-color:#FFFFFF">029.7 - MOVIMENTOS
+                                  REIVINDICATÓRIOS: GREVES E PARALISAÇÕES</option>
+                                <option value="130" style="background-color:#CCFFFF">030 - MATERIAL</option>
+                                <option value="131" style="background-color:#FFFFFF">030.1 - CADASTRO DE FORNECEDORES
+                                </option>
+                                <option value="132" style="background-color:#FFFFFF">031 - ESPECIFICAÇÃO. PADRONIZAÇÃO.
+                                  CODIFICAÇÃO. PREVISÃO. CATÁLOGO. IDENTIFICAÇÃO. CLASSIFICAÇÃO</option>
+                                <option value="133" style="background-color:#FFFFFF">032 - REQUISIÇÃO E CONTROLE DE
+                                  SERVIÇOS REPROGRÁFICOS</option>
+                                <option value="134" style="background-color:#CCFFFF">033 - AQUISIÇÃO</option>
+                                <option value="135" style="background-color:#FFFFFF">033.1 - MATERIAL PERMANENTE
+                                </option>
+                                <option value="136" style="background-color:#FFFFFF">033.11 - COMPRA</option>
+                                <option value="137" style="background-color:#FFFFFF">033.12 - ALUGUEL. COMODATO. LEASING
+                                </option>
+                                <option value="138" style="background-color:#FFFFFF">033.13 - EMPRÉSTIMO. CESSÃO
+                                </option>
+                                <option value="10398" style="background-color:#FFFFFF">033.14 - DOAÇÃO, PERMUTA</option>
+                                <option value="139" style="background-color:#CCFFFF">033.2 - MATERIAL DE CONSUMO
+                                </option>
+                                <option value="140" style="background-color:#FFFFFF">033.21 - COMPRA</option>
+                                <option value="141" style="background-color:#FFFFFF">033.22 - CESSÃO. DOAÇÃO. PERMUTA
+                                </option>
+                                <option value="142" style="background-color:#FFFFFF">033.23 - CONFECÇÃO DE IMPRESSOS
+                                </option>
+                                <option value="143" style="background-color:#CCFFFF">034 - MOVIMENTAÇÃO DE MATERIAL
+                                </option>
+                                <option value="144" style="background-color:#FFFFFF">034.01 - TERMOS DE RESPONSABILIDADE
+                                </option>
+                                <option value="145" style="background-color:#FFFFFF">034.1 - CONTROLE DE ESTOQUE
+                                </option>
+                                <option value="146" style="background-color:#FFFFFF">034.2 - EXTRAVIO. ROUBO.
+                                  DESAPARECIMENTO</option>
+                                <option value="147" style="background-color:#FFFFFF">034.3 - TRANSPORTE DE MATERIAL
+                                </option>
+                                <option value="148" style="background-color:#FFFFFF">034.4 - AUTORIZAÇÃO DE SAÍDA DE
+                                  MATERIAL</option>
+                                <option value="149" style="background-color:#FFFFFF">034.5 - RECOLHIMENTO DE MATERIAL AO
+                                  DEPÓSITO</option>
+                                <option value="150" style="background-color:#CCFFFF">035 - ALIENAÇÃO. BAIXA</option>
+                                <option value="151" style="background-color:#FFFFFF">035.1 - VENDA</option>
+                                <option value="152" style="background-color:#FFFFFF">035.2 - CESSÃO, DOAÇÃO, PERMUTA
+                                </option>
+                                <option value="153" style="background-color:#CCFFFF">036 - INSTALAÇÃO E MANUTENÇÃO
+                                </option>
+                                <option value="154" style="background-color:#FFFFFF">036.1 - REQUISIÇÃO E CONTRATAÇÃO DE
+                                  SERVIÇOS</option>
+                                <option value="155" style="background-color:#FFFFFF">036.2 - SERVIÇOS EXECUTADOS EM
+                                  OFICINAS DO ÓRGÃO</option>
+                                <option value="156" style="background-color:#CCFFFF">037 - INVENTÁRIO</option>
+                                <option value="157" style="background-color:#FFFFFF">037.1 - MATERIAL PERMANENTE
+                                </option>
+                                <option value="158" style="background-color:#FFFFFF">037.2 - MATERIAL DE CONSUMO
+                                </option>
+                                <option value="159" style="background-color:#CCFFFF">039 - OUTROS ASSUNTOS REFERENTES A
+                                  MATERIAL</option>
+                                <option value="160" style="background-color:#FFFFFF">040 - PATRIMÔNIO</option>
+                                <option value="161" style="background-color:#FFFFFF">041 - BENS IMÓVEIS</option>
+                                <option value="162" style="background-color:#CCFFFF">041.01 - FORNECIMENTO E MANUTENÇÃO
+                                  DE SERVIÇOS BÁSICOS</option>
+                                <option value="163" style="background-color:#FFFFFF">041.011 - ÁGUA E ESGOTO</option>
+                                <option value="164" style="background-color:#FFFFFF">041.012 - GÁS</option>
+                                <option value="165" style="background-color:#FFFFFF">041.013 - LUZ E FORÇA</option>
+                                <option value="166" style="background-color:#FFFFFF">041.02 - COMISSÃO INTERNA DE
+                                  CONSERVAÇÃO DE ENERGIA (CICE)</option>
+                                <option value="10397" style="background-color:#FFFFFF">041.021 - CRIAÇÃO, DESIGNAÇÃO,
+                                  PROPOSTAS DE REDUÇÃO DE GASTOS COM ENERGIA, RELATÓRIOS E ATAS</option>
+                                <option value="167" style="background-color:#FFFFFF">041.03 - CONDOMÍNIO</option>
+                                <option value="168" style="background-color:#CCFFFF">041.1 - AQUISIÇÃO</option>
+                                <option value="169" style="background-color:#FFFFFF">041.11 - COMPRA</option>
+                                <option value="170" style="background-color:#FFFFFF">041.12 - CESSÃO</option>
+                                <option value="171" style="background-color:#FFFFFF">041.13 - DOAÇÃO</option>
+                                <option value="172" style="background-color:#FFFFFF">041.14 - PERMUTA</option>
+                                <option value="173" style="background-color:#FFFFFF">041.15 - LOCAÇÃO. ARRENDAMENTO.
+                                  COMODATO</option>
+                                <option value="174" style="background-color:#ccffff">041.2 - ALIENAÇÃO</option>
+                                <option value="175" style="background-color:#FFFFFF">041.21 - VENDA</option>
+                                <option value="176" style="background-color:#FFFFFF">041.22 - CESSÃO</option>
+                                <option value="177" style="background-color:#FFFFFF">041.23 - DOAÇÃO</option>
+                                <option value="178" style="background-color:#FFFFFF">041.24 - PERMUTA</option>
+                                <option value="179" style="background-color:#FFFFFF">041.3 - DESAPROPRIAÇÃO.
+                                  REINTEGRAÇÃO DE POSSE. REIVINDICAÇÃO DE DOMÍNIO. TOMBAMENTO</option>
+                                <option value="180" style="background-color:#ccffff">041.4 - OBRAS</option>
+                                <option value="181" style="background-color:#FFFFFF">041.41 - REFORMA. RECUPERAÇÃO.
+                                  RESTAURAÇÃO</option>
+                                <option value="182" style="background-color:#FFFFFF">041.42 - CONSTRUÇÃO</option>
+                                <option value="183" style="background-color:#ccffff">041.5 - SERVIÇOS DE MANUTENÇÃO
+                                  (INCLUSIVE LICITAÇÕES)</option>
+                                <option value="184" style="background-color:#FFFFFF">041.51 - MANUTENÇÃO DE ELEVADORES
+                                </option>
+                                <option value="185" style="background-color:#FFFFFF">041.52 - MANUTENÇÃO DE AR
+                                  CONDICIONADO</option>
+                                <option value="186" style="background-color:#FFFFFF">041.53 - MANUTENÇÃO DE SUBESTAÇÕES
+                                  E GERADORES</option>
+                                <option value="187" style="background-color:#FFFFFF">041.54 - LIMPEZA. IMUNIZAÇÃO.
+                                  DESINFESTAÇÃO</option>
+                                <option value="188" style="background-color:#ccffff">041.59 - OUTROS SERVIÇOS DE
+                                  MANUTENÇÃO</option>
+                                <option value="189" style="background-color:#ccffff">042 - VEÍCULOS</option>
+                                <option value="190" style="background-color:#ccffff">042.1 - AQUISIÇÃO</option>
+                                <option value="191" style="background-color:#FFFFFF">042.11 - COMPRA</option>
+                                <option value="192" style="background-color:#FFFFFF">042.12 - ALUGUEL</option>
+                                <option value="193" style="background-color:#FFFFFF">042.13 - CESSÃO. DOAÇÃO. PERMUTA.
+                                  TRANSFERÊNCIA</option>
+                                <option value="194" style="background-color:#FFFFFF">042.2 - CADASTRO. LICENCIAMENTO.
+                                  EMPLACAMENTO. TOMBAMENTO</option>
+                                <option value="195" style="background-color:#ccffff">042.3 - ALIENAÇÃO</option>
+                                <option value="196" style="background-color:#FFFFFF">042.31 - VENDA</option>
+                                <option value="197" style="background-color:#FFFFFF">042.32 - CESSÃO. DOAÇÃO. PERMUTA.
+                                  TRANSFERÊNCIA</option>
+                                <option value="198" style="background-color:#FFFFFF">042.4 - ABASTECIMENTO. LIMPEZA.
+                                  MANUTENÇÃO. REPARO</option>
+                                <option value="199" style="background-color:#FFFFFF">042.5 - ACIDENTES. INFRAÇÕES.
+                                  MULTAS</option>
+                                <option value="200" style="background-color:#ccffff">042.9 - OUTROS ASSUNTOS REFERENTES
+                                  A VEÍCULOS</option>
+                                <option value="201" style="background-color:#FFFFFF">042.91 - CONTROLE DE USO DE
+                                  VEÍCULOS</option>
+                                <option value="202" style="background-color:#FFFFFF">042.911 - REQUISIÇÃO</option>
+                                <option value="203" style="background-color:#FFFFFF">042.912 - AUTORIZAÇÃO PARA USO FORA
+                                  DO HORÁRIO DE EXPEDIENTE</option>
+                                <option value="204" style="background-color:#FFFFFF">042.913 - ESTACIONAMENTO. GARAGEM
+                                </option>
+                                <option value="205" style="background-color:#ccffff">043 - BENS SEMOVENTES</option>
+                                <option value="206" style="background-color:#FFFFFF">044 - INVENTÁRIO (INCLUSIVE
+                                  RELATÓRIO DE MOVIMENTAÇÃO DE BENS IMÓVEIS)</option>
+                                <option value="207" style="background-color:#ccffff">049 - OUTROS ASSUNTOS REFERENTES A
+                                  PATRIMÔNIO</option>
+                                <option value="208" style="background-color:#FFFFFF">049.1 - GUARDA E SEGURANÇA</option>
+                                <option value="209" style="background-color:#FFFFFF">049.11 - SERVIÇOS DE VIGILÂNCIA
+                                </option>
+                                <option value="210" style="background-color:#FFFFFF">049.12 - SERVIÇOS</option>
+                                <option value="211" style="background-color:#FFFFFF">049.13 - PREVENÇÃO DE INCÊNDIO
+                                </option>
+                                <option value="10390" style="background-color:#FFFFFF">049.131 - CONSTITUIÇÃO DE
+                                  BRIGADAS DE INCÊNDIOS, PLANOS, PROJETOS E RELATÓRIOS</option>
+                                <option value="212" style="background-color:#FFFFFF">049.14 - SINISTRO</option>
+                                <option value="213" style="background-color:#FFFFFF">049.15 - CONTROLE DE PORTARIA
+                                </option>
+                                <option value="10391" style="background-color:#FFFFFF">049.151 - REGISTRO DE OCORRÊNCIAS
+                                </option>
+                                <option value="214" style="background-color:#ccffff">049.2 - MUDANÇAS</option>
+                                <option value="215" style="background-color:#FFFFFF">049.21 - PARA OUTROS IMÓVEIS
+                                </option>
+                                <option value="216" style="background-color:#FFFFFF">049.22 - DENTRO DO MESMO IMÓVEL
+                                </option>
+                                <option value="217" style="background-color:#FFFFFF">049.3 - USO DE DEPENDÊNCIAS
+                                </option>
+                                <option value="218" style="background-color:#FFFFFF">050 - ORÇAMENTO E FINANÇAS</option>
+                                <option value="219" style="background-color:#FFFFFF">050.1 - AUDITORIA</option>
+                                <option value="220" style="background-color:#ccffff">051 - ORÇAMENTO</option>
+                                <option value="221" style="background-color:#ccffff">051.1 - PROGRAMAÇÃO ORÇAMENTÁRIA
+                                </option>
+                                <option value="222" style="background-color:#FFFFFF">051.11 - PREVISÃO ORÇAMENTÁRIA
+                                </option>
+                                <option value="223" style="background-color:#FFFFFF">051.12 - PROPOSTA ORÇAMENTÁRIA
+                                </option>
+                                <option value="224" style="background-color:#FFFFFF">051.13 - QUADRO DE DETALHAMENTO DE
+                                  DESPESA (QDD)</option>
+                                <option value="225" style="background-color:#FFFFFF">051.14 - CRÉDITOS ADICIONAIS
+                                </option>
+                                <option value="226" style="background-color:#ccffff">051.2 - EXECUÇÃO ORÇAMENTÁRIA
+                                </option>
+                                <option value="227" style="background-color:#FFFFFF">051.21 - DESCENTRALIZAÇÃO DE
+                                  RECURSOS (DISTRIBUIÇÃO ORÇAMENTÁRIA)</option>
+                                <option value="228" style="background-color:#FFFFFF">051.22 - ACOMPANHAMENTO DE DESPESA
+                                  MENSAL (PESSOAL/DÍVIDA)</option>
+                                <option value="229" style="background-color:#FFFFFF">051.23 - PLANO OPERATIVO.
+                                  CRONOGRAMA DE DESEMBOLSO</option>
+                                <option value="230" style="background-color:#ccffff">052 - FINANÇAS</option>
+                                <option value="231" style="background-color:#FFFFFF">052.1 - PROGRAMAÇÃO FINANCEIRA DE
+                                  DESEMBOLSO</option>
+                                <option value="232" style="background-color:#ccffff">052.2 - EXECUÇÃO FINANCEIRA
+                                </option>
+                                <option value="233" style="background-color:#FFFFFF">052.21 - RECEITA</option>
+                                <option value="234" style="background-color:#FFFFFF">052.22 - DESPESA</option>
+                                <option value="235" style="background-color:#FFFFFF">053 - FUNDOS ESPECIAIS</option>
+                                <option value="236" style="background-color:#FFFFFF">054 - ESTÍMULOS FINANCEIROS E
+                                  CREDITÍCIOS</option>
+                                <option value="237" style="background-color:#ccffff">055 - OPERAÇÕES BANCÁRIAS</option>
+                                <option value="238" style="background-color:#FFFFFF">055.01 - PAGAMENTOS EM MOEDA
+                                  ESTRANGEIRA</option>
+                                <option value="239" style="background-color:#FFFFFF">055.1 - CONTA ÚNICA</option>
+                                <option value="240" style="background-color:#FFFFFF">055.2 - OUTRAS CONTAS: TIPO B, C E
+                                  D</option>
+                                <option value="241" style="background-color:#FFFFFF">056 - BALANÇOS. BALANCETES</option>
+                                <option value="242" style="background-color:#FFFFFF">057 - TOMADA DE CONTAS. PRESTAÇÃO
+                                  DE CONTAS</option>
+                                <option value="243" style="background-color:#FFFFFF">059 - OUTROS ASSUNTOS REFERENTES A
+                                  ORÇAMENTO E FINANÇAS</option>
+                                <option value="244" style="background-color:#FFFFFF">059.1 - TRIBUTOS (IMPOSTOS E TAXAS)
+                                </option>
+                                <option value="245" style="background-color:#ccffff">060 - DOCUMENTAÇÃO E INFORMAÇÃO
+                                </option>
+                                <option value="246" style="background-color:#FFFFFF">060.1 - PUBLICAÇÃO DE MATÉRIAS NO
+                                  DIÁRIO OFICIAL</option>
+                                <option value="247" style="background-color:#FFFFFF">060.2 - PUBLICAÇÃO DE MATÉRIAS NOS
+                                  BOLETINS ADMINISTRATIVO, DE PESSOAL E DE SERVIÇO</option>
+                                <option value="248" style="background-color:#FFFFFF">060.3 - PUBLICAÇÃO DE MATÉRIAS EM
+                                  OUTROS PERIÓDICOS</option>
+                                <option value="249" style="background-color:#ccffff">061 - PRODUÇÃO EDITORIAL</option>
+                                <option value="250" style="background-color:#FFFFFF">061.1 - EDITORAÇÃO. PROGRAMAÇÃO
+                                  VISUAL</option>
+                                <option value="251" style="background-color:#FFFFFF">061.2 - DISTRIBUIÇÃO. PROMOÇÃO.
+                                  DIVULGAÇÃO</option>
+                                <option value="252" style="background-color:#ccffff">062 - DOCUMENTAÇÃO BIBLIOGRÁFICA
+                                  (LIVROS, PERIÓDICOS, FOLHETOS E AUDIOVISUAIS)</option>
+                                <option value="253" style="background-color:#FFFFFF">062.01 - NORMAS E MANUAIS</option>
+                                <option value="254" style="background-color:#ccffff">062.1 - AQUISIÇÃO</option>
+                                <option value="255" style="background-color:#FFFFFF">062.11 - COMPRA (INCLUSIVE
+                                  ASSINATURAS DE PERIÓDICOS)</option>
+                                <option value="256" style="background-color:#FFFFFF">062.12 - DOAÇÃO</option>
+                                <option value="257" style="background-color:#FFFFFF">062.13 - PERMUTA</option>
+                                <option value="258" style="background-color:#FFFFFF">062.2 - REGISTRO</option>
+                                <option value="259" style="background-color:#FFFFFF">062.3 - CATALOGAÇÃO. CLASSIFICAÇÃO.
+                                  INDEXAÇÃO</option>
+                                <option value="260" style="background-color:#FFFFFF">062.4 - REFERÊNCIA E CIRCULAÇÃO
+                                </option>
+                                <option value="261" style="background-color:#FFFFFF">062.5 - INVENTÁRIO</option>
+                                <option value="262" style="background-color:#CCFFFF">063 - DOCUMENTAÇÃO ARQUIVÍSTICA:
+                                  GESTÃO DE DOCUMENTOS E SISTEMA DE ARQUIVOS</option>
+                                <option value="263" style="background-color:#FFFFFF">063.01 - NORMAS E MANUAIS</option>
+                                <option value="264" style="background-color:#FFFFFF">063.1 - PRODUÇÃO DE DOCUMENTOS.
+                                  LEVANTAMENTO. FLUXO</option>
+                                <option value="10399" style="background-color:#FFFFFF">063.11 - DIAGNÓSTICO</option>
+                                <option value="265" style="background-color:#FFFFFF">063.2 - PROTOCOLO: RECEPÇÃO,
+                                  TRAMITAÇÃO E EXPEDIÇÃO DE DOCUMENTOS</option>
+                                <option value="266" style="background-color:#FFFFFF">063.3 - ASSISTÊNCIA TÉCNICA
+                                </option>
+                                <option value="267" style="background-color:#FFFFFF">063.4 - CLASSIFICAÇÃO E
+                                  ARQUIVAMENTO</option>
+                                <option value="10395" style="background-color:#FFFFFF">063.41 - CÓDIGO DE CLASSIFICAÇÃO
+                                  DE DOCUMENTOS</option>
+                                <option value="268" style="background-color:#FFFFFF">063.5 - POLÍTICA DE ACESSO AOS
+                                  DOCUMENTOS</option>
+                                <option value="269" style="background-color:#FFFFFF">063.51 - CONSULTAS. EMPRÉSTIMOS
+                                </option>
+                                <option value="270" style="background-color:#ccffff">063.6 - DESTINAÇÃO DE DOCUMENTOS
+                                </option>
+                                <option value="271" style="background-color:#FFFFFF">063.61 - ANÁLISE. AVALIAÇÃO.
+                                  SELEÇÃO</option>
+                                <option value="10462" style="background-color:#FFFFFF">063.611 - TABELA DE TEMPORALIDADE
+                                </option>
+                                <option value="272" style="background-color:#FFFFFF">063.62 - ELIMINAÇÃO</option>
+                                <option value="273" style="background-color:#FFFFFF">063.63 - TRANSFERÊNCIA.
+                                  RECOLHIMENTO</option>
+                                <option value="274" style="background-color:#ccffff">064 - DOCUMENTAÇÃO MUSEOLÓGICA
+                                </option>
+                                <option value="275" style="background-color:#FFFFFF">065 - REPRODUÇÃO DE DOCUMENTOS
+                                </option>
+                                <option value="276" style="background-color:#ccffff">066 - CONSERVAÇÃO DE DOCUMENTOS
+                                </option>
+                                <option value="277" style="background-color:#FFFFFF">066.1 - DESINFESTAÇÃO. HIGIENIZAÇÃO
+                                </option>
+                                <option value="278" style="background-color:#FFFFFF">066.2 - ARMAZENAMENTO. DEPÓSITO
+                                </option>
+                                <option value="279" style="background-color:#FFFFFF">066.3 - RESTAURAÇÃO DE DOCUMENTOS
+                                  (INCLUSIVE ENCARDENAÇÃO)</option>
+                                <option value="280" style="background-color:#ccffff">067 - INFORMÁTICA</option>
+                                <option value="281" style="background-color:#FFFFFF">067.1 - PLANOS E PROJETOS</option>
+                                <option value="282" style="background-color:#FFFFFF">067.2 - PROGRAMAS. SISTEMAS. REDES
+                                  (INCLUSIVE LICENÇA E REGISTRO DE USO E COMPRA)</option>
+                                <option value="283" style="background-color:#FFFFFF">067.21 - MANUAIS TÉCNICOS</option>
+                                <option value="284" style="background-color:#FFFFFF">067.22 - MANUAIS DO USUÁRIO
+                                </option>
+                                <option value="285" style="background-color:#FFFFFF">067.3 - ASSISTÊNCIA TÉCNICA
+                                </option>
+                                <option value="286" style="background-color:#FFFFFF">069 - OUTROS ASSUNTOS REFERENTES À
+                                  DOCUMENTAÇÃO E INFORMAÇÃO</option>
+                                <option value="287" style="background-color:#FFFFFF">070 - COMUNICAÇÕES</option>
+                                <option value="288" style="background-color:#ccffff">071 - SERVIÇO POSTAL</option>
+                                <option value="289" style="background-color:#ccffff">071.1 - SERVIÇOS DE ENTREGA
+                                  EXPRESSA</option>
+                                <option value="290" style="background-color:#FFFFFF">071.11 - NACIONAL</option>
+                                <option value="291" style="background-color:#FFFFFF">071.12 - INTERNACIONAL</option>
+                                <option value="292" style="background-color:#FFFFFF">071.2 - SERVIÇOS DE COLETA,
+                                  TRANSPORTE E ENTREGA DE CORRESPONDÊNCIA AGRUPADA À MALOTE</option>
+                                <option value="293" style="background-color:#FFFFFF">071.3 - MALA OFICIAL</option>
+                                <option value="294" style="background-color:#FFFFFF">071.9 - OUTROS SERVIÇOS POSTAIS
+                                </option>
+                                <option value="295" style="background-color:#FFFFFF">072 - SERVIÇO DE RÁDIO</option>
+                                <option value="296" style="background-color:#FFFFFF">072.1 - INSTALAÇÃO. MANUTENÇÃO.
+                                  REPARO</option>
+                                <option value="297" style="background-color:#FFFFFF">073 - SERVIÇO DE TELEX</option>
+                                <option value="298" style="background-color:#FFFFFF">073.1 - INSTALAÇÃO. MANUTENÇÃO.
+                                  REPARO</option>
+                                <option value="299" style="background-color:#FFFFFF">074 - SERVIÇO TELEFÔNICO.
+                                  FAC-SÍMILE (FAX)</option>
+                                <option value="300" style="background-color:#FFFFFF">074.1 - INSTALAÇÃO. TRANSFERÊNCIA.
+                                  MANUTENÇÃO. REPARO</option>
+                                <option value="301" style="background-color:#FFFFFF">074.2 - LISTAS TELEFÔNICAS INTERNAS
+                                </option>
+                                <option value="302" style="background-color:#FFFFFF">074.3 - CONTAS TELEFÔNICAS</option>
+                                <option value="303" style="background-color:#FFFFFF">075 - SERVIÇO DE TRANSMISSÃO DE
+                                  DADOS, VOZ E IMAGEM</option>
+                                <option value="304" style="background-color:#FFFFFF">079 - OUTROS ASSUNTOS REFERENTES A
+                                  COMUNICAÇÕES</option>
+                                <option value="10473" style="background-color:#CCFFFF">080 - PESSOAL MILITAR</option>
+                                <option value="10474" style="background-color:#FFFFFF">080.1 - LEGISLAÇÃO MILITAR
+                                </option>
+                                <option value="10475" style="background-color:#CCFFFF">080.2 - IDENTIFICAÇÃO MILITAR
+                                </option>
+                                <option value="10476" style="background-color:#FFFFFF">080.21 - IDENTIDADE MILITAR.
+                                  CARTEIRA. CARTÃO</option>
+                                <option value="10477" style="background-color:#FFFFFF">080.22 - CONCESSÃO DE PASSAPORTE:
+                                  DIPLOMÁTICO E/ OU OFICIAL</option>
+                                <option value="10478" style="background-color:#FFFFFF">080.3 - ASSENTAMENTOS INDIVIDUAIS
+                                  MILITAR. CADASTRO</option>
+                                <option value="10479" style="background-color:#CCFFFF">081 - INGRESSO NAS FORÇAS ARMADAS
+                                </option>
+                                <option value="10480" style="background-color:#FFFFFF">081.1 - RECRUTAMENTO. SELEÇÃO
+                                </option>
+                                <option value="10481" style="background-color:#FFFFFF">081.2 - INCORPORAÇÃO</option>
+                                <option value="10482" style="background-color:#FFFFFF">081.3 - MATRÍCULA</option>
+                                <option value="10483" style="background-color:#FFFFFF">081.4 - NOMEAÇÃO</option>
+                                <option value="10484" style="background-color:#FFFFFF">081.5 - EXERCÍCIOS DE
+                                  MOBILIZAÇÃO/APRESENTAÇÃO</option>
+                                <option value="10485" style="background-color:#CCFFFF">081.9 - OUTROS ASSUNTOS
+                                  REFERENTES A INGRESSO NAS FORÇAS ARMADAS</option>
+                                <option value="10486" style="background-color:#CCFFFF">082 - PLANO DE CARREIRA</option>
+                                <option value="10487" style="background-color:#FFFFFF">082.1 - PROMOÇÃO</option>
+                                <option value="10488" style="background-color:#CCFFFF">082.2 - CURSOS MILITAR</option>
+                                <option value="10489" style="background-color:#FFFFFF">082.21 - FORMAÇÃO. ADAPTAÇÃO
+                                </option>
+                                <option value="10490" style="background-color:#FFFFFF">082.22 - APERFEIÇOAMENTO.
+                                  ESPECIALIZAÇÃO</option>
+                                <option value="10491" style="background-color:#FFFFFF">082.23 - ESTADO-MAIOR</option>
+                                <option value="10492" style="background-color:#CCFFFF">082.24 - ALTOS ESTUDOS MILITARES
+                                </option>
+                                <option value="10493" style="background-color:#FFFFFF">082.3 - AVALIAÇÃO</option>
+                                <option value="10494" style="background-color:#FFFFFF">082.4 - REQUISITOS ESPECÍFICOS DE
+                                  CARREIRA</option>
+                                <option value="10495" style="background-color:#CCFFFF">082.5 - CURSOS COMPLEMENTARES
+                                </option>
+                                <option value="10496" style="background-color:#FFFFFF">082.51 - ADESTRAMENTO</option>
+                                <option value="10497" style="background-color:#FFFFFF">082.52 - PÓS-GRADUAÇÃO LATO SENSU
+                                  (APERFEIÇOAMENTO E ESPECIALIZAÇÃO)</option>
+                                <option value="10498" style="background-color:#FFFFFF">082.53 - QUALIFICAÇÃO TÉCNICA
+                                  ESPECIAL</option>
+                                <option value="10499" style="background-color:#FFFFFF">082.54 - PÓS-GRADUAÇÃO STRICTO
+                                  SENSU (MESTRADO E DOUTORADO)</option>
+                                <option value="10500" style="background-color:#FFFFFF">082.55 - PÓS-DOUTORADO</option>
+                                <option value="10501" style="background-color:#FFFFFF">082.6 - PRORROGAÇÃO DE TEMPO DE
+                                  SERVIÇO. REENGAJAMENTO</option>
+                                <option value="10502" style="background-color:#FFFFFF">082.7 - TRANSPOSIÇÃO DE QUADRO
+                                </option>
+                                <option value="10503" style="background-color:#CCFFFF">082.9 - OUTROS ASSUNTOS
+                                  REFERENTES A PLANO DE CARREIRA</option>
+                                <option value="10504" style="background-color:#FFFFFF">083 - MOVIMENTAÇÃO. DESTAQUE.
+                                  ADIÇÃO. EXCLUSÃO DO SERVIÇO ATIVO.</option>
+                                <option value="10505" style="background-color:#CCFFFF">083.1 - MOVIMENTAÇÃO</option>
+                                <option value="10506" style="background-color:#FFFFFF">083.11 - MOTIVO DE SAÚDE</option>
+                                <option value="10507" style="background-color:#FFFFFF">083.12 - INTERESSE DO MILITAR
+                                </option>
+                                <option value="10508" style="background-color:#FFFFFF">083.13 - NECESSIDADE DO SERVIÇO
+                                </option>
+                                <option value="10509" style="background-color:#FFFFFF">083.14 - MOTIVO DE JUSTIÇA
+                                </option>
+                                <option value="10510" style="background-color:#FFFFFF">083.2 - DESTAQUE. ADIÇÃO</option>
+                                <option value="10511" style="background-color:#FFFFFF">083.3 - EXCLUSÃO DO SERVIÇO ATIVO
+                                </option>
+                                <option value="10512" style="background-color:#FFFFFF">083.9 - OUTROS ASSUNTOS
+                                  REFERENTES À MOVIMENTAÇÃO. DESTAQUE. ADIÇÃO. EXCLUSÃO DO SERVIÇO ATIVO.</option>
+                                <option value="10513" style="background-color:#CCFFFF">084 - VIOLAÇÃO DAS OBRIGAÇÕES E
+                                  DOS DEVERES</option>
+                                <option value="10514" style="background-color:#FFFFFF">084.1 - TRANSGRESSÕES E/OU
+                                  CONTRAVENÇÕES DISCIPLINARES</option>
+                                <option value="10515" style="background-color:#FFFFFF">084.2 - CRIMES MILITARES</option>
+                                <option value="10516" style="background-color:#CCFFFF">084.3 - CONSELHOS</option>
+                                <option value="10517" style="background-color:#FFFFFF">084.31 - DE DISCIPLINA</option>
+                                <option value="10518" style="background-color:#FFFFFF">084.32 - DE JUSTIFICAÇÃO</option>
+                                <option value="10519" style="background-color:#CCFFFF">085 - DIREITOS E PRERROGATIVAS
+                                </option>
+                                <option value="10520" style="background-color:#FFFFFF">085.1 - RECOMPENSAS. DISTINÇÕES.
+                                  HORANRIAS</option>
+                                <option value="10521" style="background-color:#FFFFFF">085.2 - LICENÇAS MILITAR</option>
+                                <option value="10522" style="background-color:#FFFFFF">085.3 - AFASTAMENTOS MILITAR
+                                </option>
+                                <option value="10523" style="background-color:#FFFFFF">085.4 - DISPENSAS DE SERVIÇO
+                                </option>
+                                <option value="10524" style="background-color:#FFFFFF">085.62 - PROVENTOS NA INATIVIDADE
+                                </option>
+                                <option value="10525" style="background-color:#FFFFFF">085.621 - ADICIONAIS MILITAR
+                                </option>
+                                <option value="10526" style="background-color:#FFFFFF">085.629 - OUTROS DIREITOS
+                                  PECUNIÁRIOS NA INATIVIDADE</option>
+                                <option value="10527" style="background-color:#CCFFFF">085.63 - DESCONTOS MILITAR
+                                </option>
+                                <option value="10528" style="background-color:#FFFFFF">085.631 - OBRIGATÓRIOS</option>
+                                <option value="10529" style="background-color:#FFFFFF">085.632 - AUTORIZADOS</option>
+                                <option value="10530" style="background-color:#CCFFFF">086 - INATIVOS E PENSIONISTAS
+                                </option>
+                                <option value="10531" style="background-color:#CCFFFF">086.1 - INATIVOS</option>
+                                <option value="10532" style="background-color:#CCFFFF">086.11 - RESERVA</option>
+                                <option value="10533" style="background-color:#FFFFFF">086.111 - REMUNERADA</option>
+                                <option value="10534" style="background-color:#FFFFFF">086.112 - NÃO REMUNERADA</option>
+                                <option value="10535" style="background-color:#CCFFFF">086.12 - REFORMA</option>
+                                <option value="10536" style="background-color:#FFFFFF">086.121 - POR INVALIDEZ</option>
+                                <option value="10537" style="background-color:#FFFFFF">086.122 - POR IDADES-LIMITE
+                                </option>
+                                <option value="10538" style="background-color:#FFFFFF">086.13 - DESIGNAÇÃO PARA O
+                                  SERVIÇO ATIVO</option>
+                                <option value="10539" style="background-color:#FFFFFF">086.14 - TAREFA POR TEMPO CERTO
+                                </option>
+                                <option value="10540" style="background-color:#CCFFFF">086.2 - PENSIONISTAS</option>
+                                <option value="10541" style="background-color:#CCFFFF">086.21 - PENSÕES</option>
+                                <option value="10542" style="background-color:#FFFFFF">086.211 - TEMPORÁRIA</option>
+                                <option value="10543" style="background-color:#FFFFFF">086.212 - VITALÍCIA</option>
+                                <option value="10544" style="background-color:#FFFFFF">086.213 - ESPECIAL</option>
+                                <option value="10545" style="background-color:#CCFFFF">087 - ASSISTÊNCIA</option>
+                                <option value="10546" style="background-color:#CCFFFF">087.1 - MÉDICA</option>
+                                <option value="10547" style="background-color:#FFFFFF">087.11 - HOSPITALAR</option>
+                                <option value="10548" style="background-color:#FFFFFF">087.12 - PERICIAL</option>
+                                <option value="10549" style="background-color:#FFFFFF">087.2 - SOCIAL</option>
+                                <option value="10550" style="background-color:#FFFFFF">087.3 - JURÍDICA</option>
+                                <option value="10551" style="background-color:#FFFFFF">087.4 - PSICOLÓGICA</option>
+                                <option value="10552" style="background-color:#FFFFFF">087.5 - RELIGIOSA</option>
+                                <option value="10553" style="background-color:#CCFFFF">088 - (VAGA)</option>
+                                <option value="10554" style="background-color:#CCFFFF">089 - OUTROS ASSUNTOS REFERENTES
+                                  A PESSOAL MILITAR</option>
+                                <option value="10555" style="background-color:#FFFFFF">089.1 - SERVIÇOS DE ESCALA
+                                </option>
+                                <option value="10556" style="background-color:#FFFFFF">089.2 - TABELAS MESTRAS</option>
+                                <option value="10557" style="background-color:#FFFFFF">089.3 - CONTROLE DE FREQUÊNCIA
+                                  MILITAR</option>
+                                <option value="10558" style="background-color:#FFFFFF">089.4 - DELEGAÇÕES DE COMPETÊNCIA
+                                </option>
+                                <option value="305" style="background-color:#FFFFFF">090 - OUTROS ASSUNTOS REFERENTES À
+                                  ADMINISTRAÇÃO GERAL</option>
+                                <option value="306" style="background-color:#FFFFFF">091 - AÇÕES JUDICIAIS</option>
+                                <option value="10561" style="background-color:#FFFFFF">134 - AUTORIZAÇÃO DE EXPLORAÇÃO
+                                  FLORESTAL
+                                </option>
+                                <option value="10562" style="background-color:#FFFFFF">140 - CADASTRO AMBIENTAL RURAL
+                                </option>
+                                <option value="10560" style="background-color:#FFFFFF">312 - LICENCIAMENTO
+                                </option>
+                                <option value="10379" style="background-color:#ccffff">900 - ASSUNTOS DIVERSOS</option>
+                                <option value="307" style="background-color:#FFFFFF">910 - SOLENIDADES. COMEMORAÇÕES.
+                                  HOMENAGENS</option>
+                                <option value="10463" style="background-color:#FFFFFF">910.1 - PLANEJAMENTO,
+                                  PROGRAMAÇÃO, DISCURSOS, PALESTRAS E TRABALHOS APRESENTADOS POR TÉCNICOS DO ÓRGÃO
+                                </option>
+                                <option value="308" style="background-color:#FFFFFF">920 - CONGRESSOS. CONFERÊNCIAS.
+                                  SEMINÁRIOS. SIMPÓSIOS. ENCONTROS. CONVENÇÕES. CICLOS DE PALESTRAS. MESAS REDONDAS
+                                </option>
+                                <option value="10392" style="background-color:#FFFFFF">920.1 - PLANEJAMENTO,
+                                  PROGRAMAÇÃO, DISCURSOS, PALESTRAS E TRABALHOS APRESENTADOS POR TÉCNICOS DO ÓRGÃO
+                                </option>
+                                <option value="309" style="background-color:#FFFFFF">930 - FEIRAS. SALÕES. EXPOSIÇÕES.
+                                  MOSTRAS. CONCURSOS. FESTAS</option>
+                                <option value="10393" style="background-color:#FFFFFF">930.1 - PLANEJAMENTO,
+                                  PROGRAMAÇÃO, DISCURSOS, PALESTRAS E TRABALHOS APRESENTADOS POR TÉCNICOS DO ORGÃO
+                                </option>
+                                <option value="10464" style="background-color:#FFFFFF">931 - CONCURSOS</option>
+                                <option value="10465" style="background-color:#FFFFFF">931.1 - PLANEJAMENTO, NORMAS,
+                                  EDITAIS,HABILITAÇÃO DOS CANDIDATOS, JULGAMENTO DA BANCA, TRABALHOS CONCORRENTES,
+                                  PREMIAÇÃO E RECURSOS</option>
+                                <option value="310" style="background-color:#FFFFFF">940 - VISITAS E VISITANTES</option>
+                                <option value="311" style="background-color:#ccffff">990 - ASSUNTOS TRANSITÓRIOS
+                                </option>
+                                <option value="312" style="background-color:#FFFFFF">991 - APRESENTAÇÃO. RECOMENDAÇÃO
+                                </option>
+                                <option value="313" style="background-color:#FFFFFF">992 - COMUNICADOS E INFORMES
+                                </option>
+                                <option value="314" style="background-color:#FFFFFF">993 - AGRADECIMENTOS. CONVITES.
+                                  FELICITAÇÕES. PÊSAMES</option>
+                                <option value="315" style="background-color:#FFFFFF">994 - PROTESTOS. REIVINDICAÇÕES.
+                                  SUGESTÕES</option>
+                                <option value="316" style="background-color:#FFFFFF">995 - PEDIDOS, OFERECIMENTOS E
+                                  INFORMAÇÕES DIVERSAS</option>
+                                <option value="317" style="background-color:#FFFFFF">996 - ASSOCIAÇÕES: CULTURAIS, DE
+                                  AMIGOS E DE SERVIDORES</option>
+                                <option value="10000" style="background-color:#FFFFFF">999 - NÃO IDENTIFICADO</option>
+                                <option value="10559" style="background-color:#0000FF">SGD TESTE - TESTES</option>
+
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <div class="col s12">
+                        <label class="label-block">DESCRIÇÃO: <span class="red-text">*</span></label>
+                        <textarea class="materialize-textarea" name="assunto" rows="3"
+                          style="height: 123px !important;"></textarea>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <label class="label-block">INTERESSADOS: <span class="red-text">*</span></label>
+                      <div class="col s12 grey lighten-3 box-with-popup-add">
+                        <a class="btn btn-small btn-icon-only white black-text btn-open-popup" href="#"><i
+                            class="material-icons">add_circle_outline</i></a>
+                        <div class="interessados">
+                          <div class="chip">
+                            <span class="truncate">Nome do Interessado 1</span>
+                            <i class="close material-icons">close</i>
+                          </div>
+                          <div class="chip">
+                            <span class="truncate">Nome do Interessado Com texto maior</span>
+                            <i class="close material-icons">close</i>
+                          </div>
+                          <div class="chip">
+                            <span class="truncate">Nome do Interessado com texto maior só que aumentado ainda mais para
+                              ver a quebra.</span>
+                            <i class="close material-icons">close</i>
+                          </div>
+                          <div class="chip">
+                            <span class="truncate">Nome do Interessado 4</span>
+                            <i class="close material-icons">close</i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+                  </div>
+                  
+                </div>
+                    <div class="col s12 m4">
+                      <div class="arquivos-digitais-box">
+                        <div class="card-panel">
+                          <div class="arquivo-digital-upload-form" style="display: block;">
+                            <div class="upload-form--file">
+                              <label class="label-block">ARQUIVO: <span class="red-text">*</span></label>
+                              <div class="file-field input-field">
+                                <div class="btn azul-to right">
+                                  <span><i class="material-icons">attach_file</i></span>
+                                  <input type="file">
+                                </div>
+                                <div class="file-path-wrapper">
+                                  <input class="file-path validate" type="text">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row mt-2">
+                            <div class="col s12 grey lighten-3 box-with-popup-add">
+                              <div class="arquivos-digitais-list">
+                                <div class="chip">
+                                  Nome_do_Interessado_1.pdf
+                                  <i class="close material-icons">close</i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="btn-submit-form btn verde-to btn-icon-only right"><i
+                        class="material-icons">add</i> INCLUIR</button>
+                    </div>
+              </div>
+
+
+
+            </form>
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer footer footer-static footer-light navbar-border navbar-shadow">
+      <div class="footer-copyright">
+        <div class="container">Diretoria de Sistemas de Informação <span>&copy; 2019 <a href="http://www.ati.to.gov.br/"
+              target="_blank">ATI</a></span></div>
+      </div>
+    </footer>
+
+
+    <!-- jquery -->
+    <script src="assets/vendors.min.js" type="text/javascript"></script>
+    <!-- Outros -->
+    <script src="assets/jquery.mask.min.js" type="text/javascript"></script>
+    <script src="assets/application.js" type="text/javascript"></script>
+    <script src="assets/plugins.js" type="text/javascript"></script>
+    <script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".tabs-content").height($(".tab-body.show-tab").outerHeight());
+        $(".horizontal-tabs .tabs-title a").on('click', function () {
+          $(".horizontal-tabs .tabs-title li").removeClass("active");
+          $(this).parent().addClass("active");
+
+          var tabcontent = $(this).attr('href');
+          $(".tabs-content .tab-body").removeClass("show-tab");
+          $(tabcontent).addClass("show-tab");
+          $(".tabs-content").height($(tabcontent).outerHeight());
+        });
+
+
+
+        $(".datatabled table").DataTable({
+          retrieve: true,
+          language: {
+            "sEmptyTable": "Nenhum registro encontrado",
+            "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+            "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+            "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+            "sInfoPostFix": "",
+            "sInfoThousands": ".",
+            "sLengthMenu": "_MENU_ resultados por página",
+            "sLoadingRecords": "Carregando...",
+            "sProcessing": "Processando...",
+            "sZeroRecords": "Nenhum registro encontrado",
+            "sSearch": "Buscar",
+            "oPaginate": {
+              "sNext": "Próximo",
+              "sPrevious": "Anterior",
+              "sFirst": "Primeiro",
+              "sLast": "Último"
+            },
+            "oAria": {
+              "sSortAscending": ": Ordenar colunas de forma ascendente",
+              "sSortDescending": ": Ordenar colunas de forma descendente"
+            },
+            "select": {
+              "rows": {
+                "_": "Selecionado %d linhas",
+                "0": "Nenhuma linha selecionada",
+                "1": "Selecionado 1 linha"
+              }
+            }
+          }
+        });
+      });
+//           var $table = $('.acompanhamentos table'),
+//           $bodyCells = $table.find('tbody tr:first').children(),
+//           colWidth;
+
+// // Get the tbody columns width array
+// colWidth = $bodyCells.map(function() {
+//   return $(this).width();
+// }).get();
+
+// // Set the width of thead columns
+// $table.find('thead tr').children().each(function(i, v) {
+//   $(v).width(colWidth[i]);
+// });   
+
+// });
+    </script>
+  </body>
+
+</html>

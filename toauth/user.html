@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOAUTH / Usuários</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/application.css">
+    <link rel="stylesheet" href="assets/css/toauth.css">
+</head>
+<body>
+
+    <header>
+        <div class="brand_name"><a href="dashboard.html" title="Início">TOAUTH </a> <span class="page">Alterar usuário</span></div>
+        <a href="#userconfig" class="user" tabindex="1">
+            <img src="assets/imgs/user.jpg" alt="FOTO DE NOME DO USUÁRIO" title="NOME DO USUÁRIO" class="user__photo">
+            <i class="material-icons">keyboard_arrow_down</i>
+        </a>
+    </header>
+
+    <div class="user-profile">
+        <div class="user-main">
+            <img src="assets/imgs/user.jpg" alt="FOTO DO USUÁRIO" class="user-main__photo">
+            <div class="user-main__info">
+                <h4 class="user-main__name">FULANO DE BELTRANO E TAL</h4>
+                <span class="user-main__cpf">005.669.789-12</span>
+                <span class="user-main__type">Concursado</span>
+            </div>
+            <div class="user-main__actions">
+                <a class="btn btn-edituser white grey-text text-darken-2" href="edit.html"><i class="material-icons">vpn_key</i> Alterar senha</a>
+                <a class="btn btn-logout materialize-red darken-1" href="#logout"><i class="material-icons">login</i> Sair</a>
+            </div>
+        </div>
+        <div class="user-data">
+            <div class="user-data__email">
+                <i class="material-icons">email</i>
+                <p>fulanobeltrano@to.gov.br</p>
+            </div>
+            <div class="user-data__phone">
+                <i class="material-icons">phone</i>
+                <p>(63) 98888-9987</p>
+            </div>
+            <div class="user-data__datein">
+                <i class="material-icons">today</i>
+                <p>01/04/1500</p>
+            </div>
+        </div>
+        <div class="user-lotacao">
+            <h4>Lotação</h4>
+            <div class="card">
+                <div class="card__title">Gerência de Assuntos Sigilosos</div>
+                <div class="card__body">
+                    <h5>Responsável pelo setor</h5>
+                    <h6>Cicrano Sipriano</h6>
+                    <p><i class="material-icons">phone</i> (63) 98888-9987</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="user-profile-overlay"></div>
+
+    <section class="page --small">
+        <div class="container">
+            <div class="page__header">
+                <h1>Alterar configurações de acesso</h1>
+            </div>
+
+            <div class="page__body">
+                
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="user-data">
+
+                            <img src="assets/imgs/user.jpg" alt="" class="user-data__photo">
+                            <span class="user-data__name">MARIA LUCIA BORGES DOS SANTOS DE OLIVEIRA</span>
+                            <span class="user-data__cpf">049.636.831-13</span>
+                            <span class="user-data__numfunc">11186240-1</span>
+                            <span class="user-data__entrada">Desde 27/01/2020</span>
+                        </div>
+                    </div>
+                    <div class="col s12 m8">
+                        <h5 class="mb-5 azul-to-text"><i class="material-icons left mr-2">security</i> Credênciais</h5>
+                        <form action="">
+                            <div class="row">
+                                    <div class="col s12 input-field">
+                                        <input id="email" type="email" value="email@email.com">
+                                        <label for="email">Email</label>
+                                    </div>
+                                    <div class="col s12 select-field">
+                                        <label for="perfil">Perfil</label>
+                                        <select name="" id="perfil">
+                                            <option value="">Servidor</option>
+                                            <option value="">Gestor</option>
+                                            <option value="">Administrador</option>
+                                        </select>
+                                    </div>
+                                    <div class="col s12 input-field">
+                                        <input id="novasenha" type="password">
+                                        <label for="novasenha">Nova senha</label>
+                                    </div>
+                            </div>
+                            <button class="btn verde-to right"><i class="material-icons left mr-2">save</i> Salvar</button>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/vendors.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+            
+            document.querySelector("header a.user").addEventListener("click", function (e) {
+                this.classList.toggle("active");
+                document.querySelector(".user-profile").classList.toggle("show");
+                document.querySelector(".user-profile-overlay").classList.toggle("show");
+                document.querySelector("body").style.overflow = "hidden";
+                e.preventDefault();
+            });
+
+            document.addEventListener("click", function (e) {
+                var btn = document.querySelector("a.user");
+                var card = document.querySelector(".user-profile.show");
+                // Se não é o card com .show nem nada dentro do card
+                if (!Object.is(e.target, card)
+                    && !Object.is(e.target, btn) 
+                    && e.composedPath().indexOf(card) < 0
+                    && e.composedPath().indexOf(btn) < 0
+                    ) {
+                        document.querySelector(".user-profile").classList.remove("show");
+                        document.querySelector(".user-profile-overlay").classList.remove("show");
+                        document.querySelector("body").style = "";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

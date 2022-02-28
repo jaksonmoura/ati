@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html class="loading" lang="pt-br" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="SGD - Sistema de Gestão de Documentos">
+  <meta name="keywords" content="governo, tocantins">
+  <meta name="author" content="ATI - Agência de Tecnologia da Informação - TO">
+  <title>SGD</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/login.css">
+  <link rel="stylesheet" type="text/css" href="assets/application.css">
+</head>
+
+<body class="login-sgd-page">
+
+  <section class="login-wrapper">
+    <div class="login-box">
+      <div class="login-avisos">
+        <div class="show-avisos-trigger"></div>
+        <h2>Avisos</h2>
+        <div class="login-avisos--content">
+          <p>Prezados colegas servidores,
+
+            Informamos que de acordo com a Resolução nº 01/2018/CGPAE do Comitê Gestor do PAE, publicada no DOE 5.086, os seguintes tipos de processos são obrigatórios serem autuados no suporte digital, dispensando o uso do papel, desde 02/04/2018:
+
+            Folha de pagamento;
+            Aquisição menor que 8 mil - cota (valor atualizado para 17,6 mil, conforme decreto federal 9.412/2018);
+            Diárias;
+            Suprimento de fundos;
+            Auxílio Natalidade;
+            Auxílio funeral;
+            Histórico funcional;
+            Indenização de férias suspensas;
+            Atenção:
+
+            Desde então, todos os órgãos já podem fazer no suporte digital qualquer tipo de processo, independente do seu fluxo, à exceção dos processos que vão para junta médica e contrato de pessoal.
+            SEPLAN, CGE e REDESAT desde janeiro/2018 não autuam mais processo em suporte papel. Já estão trabalhando com tudo digital!
+            O processo de suprimento de fundos poderá ser único, ou seja, apenas um processo para conceder o adiantamento e fazer a prestação de contas. Se ater aos tipos documentais corretos no momento do cadastro no SGD, utilizar: Solicitação de Concessão de Adiantamento - SCA, Plano de Aplicação e Portaria de Concessão de Adiantamento, esta última com numeração sequencial única dentro do órgão.
+            Os documentos que compõem o processo eletrônico deverão ser preferencialmente, documentos natos digitais, ou seja, assinados eletronicamente. Digitalizar apenas documentos externos que farão parte do processo e que chegarem em papel.
+            O usuário deve se atentar para a correta classificação arquivística dos processos. Se identificar que a mesma está errada, para alterá-la basta que o processo esteja na sua unidade de trabalho.
+            Em breve o Comitê Gestor do PAE publicará nova resolução tornando obrigatória a autuação dos seguintes tipos de processos no suporte digital:
+
+            1.  Afastamento para Estudo em outra Unidade da Federação ou no Exterior;
+            2.  Afastamento para Exercício de Mandato Eletivo;
+            3.  Afastamento para Participar de Curso de Formação;
+            4.  Licença para Atividade Política;
+            5.  Licença para Capacitação ou Especialização;
+            6.  Licença para o Serviço Militar;
+            7.  Licença para Tratar de Interesses Particulares;
+            8.  Interrupção de Licença para Tratar de Interesses Particulares;
+            9.  Licença por Motivo de Adoção;
+            10. Licença por Motivo de Afastamento do Cônjuge;
+            11. Interrupção de Licença por Motivo de Afastamento do Cônjuge;
+            12. Licença-Prêmio por Assiduidade;
+            13. Contagem em Dobro de Licença-Prêmio por Assiduidade, não gozada;
+            14. Prorrogação de licença para tratar de interesses particulares;
+            15. Contratação de serviços de fornecimento de energia elétrica;
+            16. Contratação de serviços de fornecimento de água potável e tratamento de esgoto;
+            17. Contratação de serviços de fornecimento de vale transporte;
+            18. Pagamento de auxílio alimentação;
+            19. Locação de imóvel;
+          20. Pagamento de licenciamento anual, seguro DPVAT, taxas, impostos e multas referentes a veículos da frota do Estado.</p>
+        </div>
+      </div>
+      <div class="login-form">
+        <div class="logo"><img src="images/logo_to.svg" alt=""><h1>Sistema de Gestão de Documentos</h1></div>
+        <form action="home.html">
+          <div class="input identificacao">
+            <label for="identificacao">Identificação:</label>
+            <input type="text" name="identificacao">
+          </div>
+          <div class="input senha">
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha">
+          </div>
+          <button class="btn azul-to wave-effect wave-light right">Entrar</button>
+        </form>
+        <div class="assinatura">
+          <a href="#"><span>Assinar arquivo</span></a><a href="#"><span>Verificar assinatura</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="assets/vendors.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.show-avisos-trigger').on('click', function(){
+        if($('.login-avisos').hasClass('show-avisos')){
+          $('.login-avisos').removeClass('show-avisos');
+        } else {
+        $('.login-avisos').addClass('show-avisos');
+        }
+      });
+    })
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,142 @@
+$amarelo-to: #FEC30B;
+
+  body.nav-mobile-open:before{
+    content: '';
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        opacity: .5;
+        z-index: 500;
+  }
+  .nav-observatorio {
+
+    display: inline-flex !important;
+    justify-content: center !important;
+    height: 60px !important;
+    line-height: 60px;
+    float: left;
+    width: 100% !important;
+    i {
+      line-height: 60px !important;
+    }
+
+    ul a:hover{
+      color: $amarelo-to !important;
+    }
+    
+    a {
+      font-size: 15px;
+      color: #fff !important;
+    }
+
+    @media screen and (max-width: 992px) {
+      justify-content: flex-end !important;
+      padding-right: 10px;
+      line-height: 60px;
+      i {
+        line-height: 60px !important;
+      }
+    }
+
+    &-mobile {
+      transform: translateX(110%);
+      transition: all .3s ease-in-out;
+      width: 100%;
+      max-width: 400px;
+      height: 100vh;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: -5px 0px 10px  rgba(black, .2);
+      z-index: 9999;
+      overflow-y: auto;
+
+      &.open {
+        transform: translateX(0%);
+
+      }
+
+     
+
+      ul {
+        background: #fff !important;
+
+        &>li {
+          height: auto;
+          overflow: hidden;
+          
+          a {
+            display: inline-flex;
+            width: 100%;
+            height: 64px;
+            align-items: center;
+            justify-content: space-between;
+            color: #333;
+            padding: 0 10px;
+            
+          }
+          
+          ul {
+            padding-left: 16px;
+            max-height: 0px;
+            transition:  all .3s ease-in-out;
+            height: auto;
+          
+          }
+
+          &.open {
+            ul {
+              max-height: 100vh;
+            
+            }            
+
+            &>a {
+              background: rgba(black, .1);
+            }
+          }
+        }
+      }
+    }
+
+    .btn-mobile-menu {
+      display: inline-flex;
+      text-transform: uppercase;
+      font-size: 14px;
+
+      i {
+        margin-right: 8px;
+      }
+    }
+
+    .dropdown-content{
+      background: #222 !important;
+      min-width: 250px !important;
+
+      li.divider{
+        background-color: rgba(white, .1) !important;
+      }
+    }
+
+    .dropdown-content li:hover{
+      background: rgba(white, .1) !important;
+      
+    }
+
+    
+    .dropdown-content li>a {
+      color: #666;
+
+      &:hover{
+        background: transparent !important;
+      }
+    }
+  }
+
+
+
+  

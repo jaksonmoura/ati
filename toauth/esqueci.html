@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TOAUTH</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,900&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/application.css">
+        <link rel="stylesheet" href="assets/css/toauth.css">
+    </head>
+
+    <body class="login-page --nomsg">
+        <div class="login-page__container">
+            <div class="container">
+
+                <div class="login-box">
+                    <div class="logo"><img src="assets/imgs/brasao_texto.svg" alt="Governo do Tocantins"></div>
+                    <h1>Esqueci a senha</h1>
+                    <form action="login.html">
+                        <div class="login-inputs">
+                            <div class="col s12">
+                                <label>Email</label>
+                                <input type="email" autofocus>
+                            </div>
+                        </div>
+                        <div class="login-buttons">
+                            <a class="btn-flat waves-effect btn-large transparent white-text" href="login.html"><i class="material-icons">keyboard_arrow_left</i> Voltar</a>
+                            <button>Recuperar senha</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+
+            <footer>
+                <script type="text/javascript" charset="utf-8" src="https://barra.to.gov.br/base_sistemas.js?k=ybxj6x"></script>
+            </footer>
+        </div>
+
+
+        <script src="assets/js/vendors.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelector(".msg-box.--text").addEventListener("click", function(){
+                    this.classList.toggle("open");
+                });
+            });
+        </script>
+    </body>
+
+</html>

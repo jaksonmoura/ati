@@ -1,0 +1,169 @@
+html.to-gov-barra {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+html.to-gov-barra * {
+  box-sizing: border-box;
+}
+html.to-gov-barra *:before, html.to-gov-barra *:after {
+  box-sizing: border-box;
+}
+html.to-gov-barra body {
+  margin: 0px;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+footer.rodape_togov {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  background: #fff;
+  height: 350px;
+  float: left;
+  width: 100%;
+  opacity: 1;
+  margin-top: 100px;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+footer.rodape_togov a {
+  text-decoration: none;
+}
+footer.rodape_togov ul {
+  list-style-type: none;
+}
+footer.rodape_togov .logo_footer {
+  float: left;
+  width: 100%;
+  height: 100px;
+}
+footer.rodape_togov .logo_footer .content {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 20px 100px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer.rodape_togov .logo_footer img {
+  height: 60px;
+}
+footer.rodape_togov .logo_footer .desenvolvido-por {
+  text-transform: initial;
+  display: inline-flex;
+  align-items: center;
+}
+footer.rodape_togov .logo_footer .desenvolvido-por span {
+  width: 83px;
+  text-align: right;
+  margin-right: 10px;
+  line-height: 14px;
+}
+footer.rodape_togov .logo_footer .desenvolvido-por img {
+  width: 90px;
+  height: 51px;
+}
+footer.rodape_togov .links_footer {
+  float: left;
+  width: 100%;
+  background: #2E3092;
+  height: 250px;
+  padding: 80px 200px;
+}
+@media screen and (max-width: 600px) {
+  footer.rodape_togov .links_footer {
+    height: 260px !important;
+  }
+}
+@media screen and (max-width: 1200px) {
+  footer.rodape_togov .links_footer {
+    padding: 80px 80px;
+  }
+}
+footer.rodape_togov .links_footer a {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+}
+footer.rodape_togov .links_footer a i {
+  font-size: 40px;
+  color: #FEC30B;
+  margin-bottom: 16px;
+}
+footer.rodape_togov .links_footer ul {
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+}
+footer.rodape_togov .links_footer ul li {
+  width: calc(100%/4);
+  padding: 0 8px;
+}
+footer.rodape_togov .links_footer ul li:last-of-type {
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 768px) {
+  footer.rodape_togov {
+    overflow-y: hidden;
+  }
+  footer.rodape_togov .logo_footer {
+    width: 100% !important;
+    height: 100px !important;
+    margin-bottom: 20px;
+    overflow-y: hidden;
+  }
+  footer.rodape_togov .logo_footer .content {
+    float: left !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 20px 16px !important;
+  }
+  footer.rodape_togov .logo_footer .content img {
+    float: unset !important;
+    clear: both;
+  }
+  footer.rodape_togov .logo_footer .content address {
+    width: 100%;
+    font-size: 2rem !important;
+    margin-bottom: 40px;
+  }
+  footer.rodape_togov .links_footer {
+    padding-bottom: 10px;
+    overflow: hidden;
+    width: 100% !important;
+    padding: 20px 80px;
+  }
+  footer.rodape_togov .links_footer ul {
+    display: block !important;
+  }
+  footer.rodape_togov .links_footer ul li {
+    float: left;
+    width: calc(100%/2) !important;
+    padding: 16px;
+  }
+  footer.rodape_togov .links_footer ul li a {
+    font-size: 14px !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .links_footer {
+    padding: 0px 4px !important;
+  }
+  .links_footer ul {
+    display: block !important;
+  }
+  .links_footer ul li {
+    float: left;
+    width: calc(100%/2) !important;
+    padding: 16px;
+  }
+  .links_footer ul li a {
+    font-size: 14px !important;
+  }
+}/*# sourceMappingURL=rodape.css.map */

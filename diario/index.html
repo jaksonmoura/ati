@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Portal do Tocantins</title>
+		<meta charset="utf-8">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,700,900&display=swap"
+			rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="assets/diariooficial.css">
+		<link rel="stylesheet" type="text/css" href="assets/application.css">
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="assets/js/vendors.min.js"></script>
+		<script src="assets/js/materialize.js"></script>
+		<style>
+			html.to-gov-barra {
+				font-size: 10px;
+				box-sizing: border-box
+			}
+
+			html.to-gov-barra * {
+				box-sizing: border-box
+			}
+
+			html.to-gov-barra *:before,
+			html.to-gov-barra *:after {
+				box-sizing: border-box
+			}
+
+			html.to-gov-barra body {
+				margin: 0px;
+				font-family: Roboto, Helvetica, Arial, sans-serif
+			}
+
+			@media screen and (max-width: 930px) {
+				html.to-gov-barra body {
+					overflow-x: hidden;
+					width: 100%
+				}
+			}
+
+			.topo-togov-wrapper {
+				background: #fff;
+				color: #333;
+				text-transform: uppercase;
+				font-size: 14px;
+				width: 100%;
+				height: 80px;
+				box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1)
+			}
+
+			.topo-togov-wrapper .topo-togov-content {
+				display: grid;
+				grid-template-columns: auto 578px;
+				justify-content: space-between;
+				width: 100%;
+				max-width: 1640px;
+				margin: 0 auto;
+				height: 80px;
+				align-items: center;
+				padding: 0 10px
+			}
+
+			.topo-togov-wrapper .topo-togov-content .logo {
+				display: inline-flex;
+				align-items: center
+			}
+
+			.topo-togov-wrapper .topo-togov-content .logo span.logo--nome {
+				width: 100%;
+				max-width: 200px;
+				text-align: right;
+				margin-right: 16px;
+				font-weight: 400;
+				font-size: 15px
+			}
+
+			.topo-togov-wrapper .topo-togov-content .logo img {
+				height: 70px
+			}
+
+			.topo-togov-wrapper .topo-togov-content .logo img:first-of-type {
+				margin-right: 16px;
+				height: 60px
+			}
+
+			.topo-togov-wrapper .topo-togov-content .logo:hover {
+				background: none;
+				opacity: 0.8
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis i.menu-btn {
+				display: none
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis ul.nav-social-links {
+				margin: 0;
+				padding: 0;
+				display: inline-flex;
+				list-style-type: none;
+				float: right;
+				margin-bottom: 4px
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis ul.nav-social-links li {
+				display: inline-flex;
+				align-items: center;
+				margin-right: 8px
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis ul.nav-social-links li img {
+				height: 32px;
+				width: 32px
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis .nav-main-links ul {
+				margin: 0;
+				padding: 0;
+				display: inline-flex;
+				list-style-type: none;
+				float: right
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis .nav-main-links ul li {
+				display: inline-flex;
+				align-items: center
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis .nav-main-links ul li.menu-title {
+				display: none !important
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis .nav-main-links ul li a {
+				padding: 12px 8px;
+				white-space: nowrap;
+				height: 40px;
+				position: relative;
+				z-index: 1;
+				overflow: hidden;
+				font-weight: 500
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis .nav-main-links ul li a:before {
+				transition: all 0.3s ease-in-out;
+				content: "";
+				position: absolute;
+				width: 10%;
+				height: 2px;
+				background: #ebb718;
+				z-index: -1;
+				bottom: 5px;
+				left: 45%;
+				opacity: 0
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis .nav-main-links ul li a:hover {
+				transition: all 0.3s ease-in-out
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis .nav-main-links ul li a:hover:before {
+				opacity: 1;
+				width: 80%;
+				left: 10%
+			}
+
+			.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis .nav-main-links ul li a.topo-togov-orgaos-trigger {
+				display: inline-flex;
+				align-items: center
+			}
+
+			.topo-togov-wrapper a {
+				color: #333;
+				text-decoration: none
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper {
+				top: 0px;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				background: #fff;
+				font-size: 16px;
+				overflow-y: scroll;
+				padding-bottom: 50px;
+				transform: translateY(-100%);
+				opacity: 0;
+				transition: all 0.3s ease-in-out;
+				z-index: 99;
+				pointer-events: none;
+				user-focus: none
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper.show-all-orgaos {
+				opacity: 1;
+				transform: translateY(0%);
+				pointer-events: all
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper i#topo-togov-orgaos-close {
+				color: #888;
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				top: 35px;
+				right: 20px;
+				text-align: center;
+				position: absolute;
+				cursor: pointer !important
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgaos-content {
+				width: 100%;
+				max-width: 1640px;
+				padding: 10px;
+				margin: 0 auto;
+				position: relative
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgaos-filter {
+				width: 600px;
+				max-width: 80%;
+				margin: 20px auto 64px;
+				text-align: center;
+				position: relative
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgaos-filter input#topo-togov-orgaos-filter-field {
+				-moz-appearance: none;
+				-webkit-appearance: none;
+				appearance: none;
+				padding: 12px 14px;
+				font-size: 16px;
+				border-radius: 20px;
+				border: 2px solid #f6c62d;
+				width: 100%;
+				-moz-outline: none;
+				-webkit-outline: none;
+				outline: none
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgaos-filter input#topo-togov-orgaos-filter-field:focus {
+				box-shadow: 0 0 3px 2px #00b1ff inset
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgaos-filter i#topo-togov-orgaos-filter-btn {
+				position: absolute;
+				color: #666;
+				right: 10px;
+				top: 9px
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group {
+				width: 100%;
+				margin: 32px auto 80px auto;
+				max-width: 1200px
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group h2 {
+				font-weight: 700;
+				position: relative;
+				padding-left: 20px
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group h2:before {
+				content: "";
+				height: 100%;
+				width: 7px;
+				background: #f6c62d;
+				position: absolute;
+				top: 0;
+				left: 0
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list {
+				column-count: 3;
+				list-style-type: none;
+				margin: 50px 0 0 0;
+				padding: 0
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list li {
+				margin-bottom: 24px
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list li a {
+				position: relative;
+				z-index: 0;
+				text-decoration: none;
+				background-image: linear-gradient(#f6c62d, #f6c62d);
+				background-position: 0% 100%;
+				background-repeat: no-repeat;
+				background-size: 0% 8px;
+				transition: background-size 0.3s
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list li a:hover {
+				transition: all 0.3s ease-in-out;
+				background-size: 80% 8px
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list li a:hover:before {
+				width: 85%;
+				left: 0
+			}
+
+			.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list a {
+				width: 100%;
+				margin-bottom: 10px
+			}
+
+			@media screen and (max-width: 572px) {
+				.topo-togov-wrapper .topo-togov-orgaos-wrapper i#topo-togov-orgaos-close {
+					top: 36px
+				}
+
+				.topo-togov-wrapper {
+					height: fit-content;
+					width: 100%;
+					overflow: hidden
+				}
+
+				.topo-togov-wrapper .topo-togov-content {
+					height: fit-content;
+					width: 100%
+				}
+
+				.topo-togov-wrapper .topo-togov-content .logo {
+					position: relative;
+					margin-top: 4px
+				}
+
+				.topo-togov-wrapper .topo-togov-content .logo span {
+					text-align: left !important
+				}
+
+				.topo-togov-wrapper .topo-togov-content .logo:after {
+					content: "";
+					position: absolute;
+					width: 30px;
+					height: 30px;
+					top: 0px;
+					right: -30px;
+					z-index: 1
+				}
+
+				.topo-togov-wrapper .topo-togov-content .logo img {
+					height: 90px;
+					margin-bottom: 8px
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis .nav-main-links {
+					overflow-x: scroll;
+					width: 100%
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis .nav-main-links ul {
+					display: block !important;
+					white-space: nowrap
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis .nav-main-links ul li:last-of-type {
+					padding-right: 80px
+				}
+			}
+
+			@media screen and (max-width: 600px) {
+				.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgaos-filter {
+					text-align: left !important;
+					margin: 20px 0px 30px 0px !important
+				}
+			}
+
+			@media screen and (min-width: 600px) and (max-width: 1024px) {
+				.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list {
+					column-count: 2
+				}
+			}
+
+			@media screen and (max-width: 600px) {
+				.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list {
+					column-count: 1
+				}
+
+				.topo-togov-wrapper .topo-togov-orgaos-wrapper .topo-togov-orgao-group .topo-togov-orgao-list li {
+					margin-bottom: 26px !important
+				}
+			}
+
+			@media screen and (max-width: 930px) {
+				.topo-togov-wrapper {
+					height: 180px
+				}
+
+				.topo-togov-wrapper .topo-togov-content {
+					padding: 0;
+					grid-template-columns: 1fr;
+					grid-template-rows: 80px auto
+				}
+
+				.topo-togov-wrapper .topo-togov-content .logo {
+					position: relative;
+					align-items: center;
+					justify-content: center;
+					padding: 0 10px;
+					grid-row-start: 2;
+					height: 100px
+				}
+
+				.topo-togov-wrapper .topo-togov-content .logo img {
+					height: 90px
+				}
+
+				.topo-togov-wrapper .topo-togov-content .logo img:last-of-type {
+					margin-left: 8px
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis {
+					display: inline-flex;
+					flex-direction: column-reverse;
+					overflow-x: auto
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis .nav-main-links ul {
+					background: #dde1e6;
+					position: inherit;
+					display: inline-flex;
+					justify-content: center;
+					align-items: center;
+					width: 100%
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis .nav-main-links ul li {
+					background: #dde1e6
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis .nav-main-links ul li a {
+					height: 40px !important;
+					padding: 0 8px !important;
+					line-height: 40px !important;
+					white-space: nowrap
+				}
+
+				.topo-togov-wrapper .topo-togov-content .topo-togov-links-uteis ul.nav-social-links {
+					height: 40px;
+					position: inherit;
+					display: inline-flex;
+					justify-content: center;
+					align-items: center
+				}
+			}
+		</style>
+	</head>
+
+	<body class="portal">
+
+		<div class="topo-togov-wrapper">
+			<div class="topo-togov-content">
+				<a href="http://to.gov.br" class="logo">
+					<img src="imgs/ati.png" alt="ATI"><img src="imgs/logo_footer.png" alt="TOCANTINS">
+					<!-- <span class="logo--nome">SECRETARIA DA EDUCAÇÃO, <br><strong>CULTURA E ESPORTES</strong></span><img src="imgs/logo_footer.png" alt="TOCANTINS"> -->
+				</a>
+				<div class="topo-togov-links-uteis">
+					<!-- <i class="menu-btn material-icons">menu</i> -->
+					<ul class="nav-social-links">
+						<li><a href="#"><img src="imgs/facebook.svg" alt="Facebook" title="Facebook"></a></li>
+						<li><a href="#"><img src="imgs/instagram.svg" alt="Instagram" title="Instagram"></a></li>
+						<li><a href="#"><img src="imgs/twitter.svg" alt="Twitter" title="Twitter"></a></li>
+						<li><a href="#"><img src="imgs/youtube.svg" alt="Youtube" title="Youtube"></a></li>
+						<li><a href="#"><img src="imgs/flickr.svg" alt="Flickr" title="Flickr"></a></li>
+					</ul>
+					<div class="nav-main-links">
+						<ul>
+							<li><a href="#">Serviços</a></li>
+							<li><a href="http://transparencia.to.gov.br">Transparência</a></li>
+							<li><a href="#">Acesso a informação</a></li>
+							<li><a class="topo-togov-orgaos-trigger" href="#">Órgãos do Governo <i
+										class="material-icons">arrow_drop_down</i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="topo-togov-orgaos-wrapper">
+				<div class="topo-togov-orgaos-content">
+					<i id="topo-togov-orgaos-close" class="material-icons">close</i>
+					<div class="topo-togov-orgaos-filter">
+						<input type="search" id="topo-togov-orgaos-filter-field" placeholder="Filtrar órgãos" />
+						<i id="topo-togov-orgaos-filter-btn" class="material-icons">search</i>
+					</div>
+					<div class="topo-togov-orgao-group">
+						<h2>Secretarias</h2>
+						<ul class="topo-togov-orgao-list">
+							<li><a href="#">Casa Civil</a></li>
+							<li><a href="#">Casa Militar</a></li>
+							<li><a href="#">Controladoria-Geral do Estado</a></li>
+							<li><a href="#">Corpo de Bombeiros Militar</a></li>
+							<li><a href="#">Polícia Militar</a></li>
+							<li><a href="#">Procuradoria-Geral do Estado</a></li>
+							<li><a href="#">Secretaria da Administração</a></li>
+							<li><a href="#">Secretaria da Agricultura, Pecuária e Aquicultura</a></li>
+							<li><a href="#">Secretaria da Cidadania e Justiça</a></li>
+							<li><a href="#">Secretaria da Comunicação</a></li>
+							<li><a href="#">Secretaria da Educação, Juventude e Esporte</a></li>
+							<li><a href="#">Secretaria da Fazenda e Planejamento</a></li>
+							<li><a href="#">Secretaria da Indústria, Comércio e Serviços</a></li>
+							<li><a href="#">Secretaria da Infraestrutura, Cidades e Habitação</a></li>
+							<li><a href="#">Secretaria da Saúde</a></li>
+							<li><a href="#">Secretaria da Segurança Pública</a></li>
+							<li><a href="#">Secretaria do Meio Ambiente e Recursos Hídricos</a></li>
+							<li><a href="#">Secretaria do Trabalho e Desenvolvimento Social</a></li>
+						</ul>
+					</div>
+
+
+					<div class="topo-togov-orgao-group">
+						<h2>Autarquias</h2>
+						<ul class="topo-togov-orgao-list">
+							<li><a href="#">Agência Tocantinense de Regulação, Controle e Fiscalização de Serviços
+									Públicos</a></li>
+							<li><a href="#">Agência Tocantinense de Saneamento</a></li>
+							<li><a href="#">Agência Universidade Estadual do Tocantins</a></li>
+							<li><a href="#">Agência de Defesa Agropecuária</a></li>
+							<li><a href="#">Agência de Fomento</a></li>
+							<li><a href="#">Agência de Metrologia</a></li>
+							<li><a href="#">Agência de Tecnologia da Informação</a></li>
+							<li><a href="#">Agência do Desenvolvimento do Turismo, Cultura e Economia Criativa</a></li>
+							<li><a href="#">Companhia Imobiliária do Tocantins</a></li>
+							<li><a href="#">Departamento Estadual de Trânsito</a></li>
+							<li><a href="#">Fundação de Amparo à Pesquisa</a></li>
+							<li><a href="#">Instituto Natureza do Tocantins</a></li>
+							<li><a href="#">Instituto de Desenvolvimento Rural</a></li>
+							<li><a href="#">Instituto de Gestão Previdenciária</a></li>
+							<li><a href="#">Instituto de Terras do Estado do Tocantins</a></li>
+							<li><a href="#">Junta Comercial</a></li>
+						</ul>
+					</div>
+
+					<div class="topo-togov-orgao-group">
+						<h2>Sites especiais</h2>
+						<ul class="topo-togov-orgao-list">
+							<li><a href="#">Congresso Saúde</a></li>
+							<li><a href="#">Feira de Tecnologia Agropecuária do Tocantins</a></li>
+							<li><a href="#">Jogos Estudantis do Tocantins</a></li>
+							<li><a href="#">Turismo</a></li>
+						</ul>
+					</div>
+
+
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+		<header class="header-gov-inst">
+			<div class="header-container">
+
+				<div class="row">
+					<div class="govnav">
+						<a class="govnav-orgao" href="#">Diário Oficial do Tocantins</a>
+						<div class="search"><a href="#" role="button" tabindex="1" data-target="search-menu" class="search-btn"><i
+									class="material-icons">search</i> busca</a></div>
+						<div class="menu-btn">
+							<a href="#" role="button" tabindex="2" data-target="site-menu"><i class="material-icons">menu</i> menu</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Menu -->
+				<div class="menu">
+					<div id="site-menu">
+						<!-- style="display: none" -->
+						<div class="menu-content">
+							<ul class="main-menu" role="menu">
+								<li class="has-children">
+									<div class="submenu-header">
+										<a role="menuitem" href="#">Educação 2222222</a>
+										<a role="menuitem" href="#" class="submenu-accordion-switch"
+											aria-label="Abrir/Fechar sub-menu"><i
+												class="material-icons">keyboard_arrow_down</i></a>
+									</div>
+									<div class="children-content">
+										<h5 class="submenu-title"><a role="menuitem" href="#">Tudo em educação sanitária</a></h5>
+										<ul>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+											<li class="has-children">
+												<a role="menuitem" href="#">Subitem</a>
+												<ul>
+													<li><a role="menuitem" href="nociai.html">Child aaaaaa 3</a></li>
+													<li><a role="menuitem" href="#">Child 3</a></li>
+												</ul>
+											</li>
+											<li class="has-children">
+												<a role="menuitem" href="#">Subitem</a>
+												<ul>
+													<li><a role="menuitem" href="nociai.html">Child aaaaaa 3</a></li>
+													<li><a role="menuitem" href="#">Child 3</a></li>
+												</ul>
+											</li>
+											<li class="has-children">
+												<a role="menuitem" href="#">Subitem</a>
+												<ul>
+													<li><a role="menuitem" href="nociai.html">Child aaaaaa 3</a></li>
+													<li><a role="menuitem" href="#">Child 3</a></li>
+												</ul>
+											</li>
+											<li class="has-children">
+												<a role="menuitem" href="#">Subitem</a>
+												<ul>
+													<li><a role="menuitem" href="nociai.html">Child aaaaaa 3</a></li>
+													<li><a role="menuitem" href="#">Child 3</a></li>
+												</ul>
+											</li>
+											<li class="has-children">
+												<a role="menuitem" href="#">Subitem</a>
+												<ul>
+													<li><a role="menuitem" href="nociai.html">Child aaaaaa 3</a></li>
+													<li><a role="menuitem" href="#">Child 3</a></li>
+												</ul>
+											</li>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="has-children">
+									<div class="submenu-header">
+										<a role="menuitem" href="#">Educação 2222222</a>
+										<a role="menuitem" href="#" class="submenu-accordion-switch"
+											aria-label="Abrir/Fechar sub-menu"><i
+												class="material-icons">keyboard_arrow_down</i></a>
+									</div>
+									<div class="children-content">
+										<h5 class="submenu-title"><a role="menuitem" href="#">Tudo em educação sanitária</a></h5>
+										<ul>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+											<li class="has-children">
+												<a role="menuitem" href="#">Subitem</a>
+												<ul>
+													<li><a role="menuitem" href="nociai.html">Child aaaaaa 3</a></li>
+													<li><a role="menuitem" href="#">Child 3</a></li>
+												</ul>
+											</li>
+											<li class="has-children">
+												<a role="menuitem" href="#">Subitem</a>
+												<ul>
+													<li><a role="menuitem" href="nociai.html">Child aaaaaa 3</a></li>
+													<li><a role="menuitem" href="#">Child 3</a></li>
+												</ul>
+											</li>
+											<li class="has-children">
+												<a role="menuitem" href="#">Subitem</a>
+												<ul>
+													<li><a role="menuitem" href="nociai.html">Child aaaaaa 3</a></li>
+													<li><a role="menuitem" href="#">Child 3</a></li>
+												</ul>
+											</li>
+											<li class="has-children">
+												<a role="menuitem" href="#">Subitem</a>
+												<ul>
+													<li><a role="menuitem" href="nociai.html">Child aaaaaa 3</a></li>
+													<li><a role="menuitem" href="#">Child 3</a></li>
+												</ul>
+											</li>
+											<li class="has-children">
+												<a role="menuitem" href="#">Subitem</a>
+												<ul>
+													<li><a role="menuitem" href="nociai.html">Child aaaaaa 3</a></li>
+													<li><a role="menuitem" href="#">Child 3</a></li>
+												</ul>
+											</li>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+											<li><a role="menuitem" href="#">Subitem</a></li>
+										</ul>
+									</div>
+								</li>
+								<li><a role="menuitem" href="#">Denuncie</a></li>
+								<li><a role="menuitem" href="#">Notícias</a></li>
+							</ul>
+							<div class="banner-menu">
+								<a href="#banner-menu"><img src="assets/img/banner_menu.png" alt=""></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Fim Menu -->
+
+			</div>
+			<!-- Search -->
+			<div class="search-box">
+				<div class="search-box-overlay"></div>
+				<div class="search-content">
+					<div class="search-tabs" role="radiogroup">
+						<label aria-labelledby="portexto" class="checked">
+							<input class="with-gap tab-switch" name="busca" data-tab="formportexto" type="radio" checked />
+							<span id="portexto">Por texto</span>
+						  </label>
+						  <label aria-labelledby="pordoc">
+							<input class="with-gap tab-switch" name="busca" data-tab="formpordocumento" type="radio" />
+							<span id="pordoc">Por documento</span>
+						  </label>
+					</div>
+					<form id="formportexto" action="index.html">
+						<div class="form-group">
+							<label for="texto-exato">Texto exato</label>
+							<input id="texto-exato" name="texto-exato" type="search">
+						</div>
+						<div class="form-group">
+							<div class="form-columns">
+								<div class="form-field">
+									<label for="periodo">Data inicial</label>
+									<input id="periodo" name="periodo" type="date">
+								</div>
+								<div class="form-field">
+									<label for="periodo">Data final</label>
+									<input id="periodo" name="periodo" type="date">
+								</div>
+							</div>
+						</div>
+						<div class="btn-wrapper">
+							<button class="search-submit"><i class="material-icons left">search</i> Buscar
+								texto</button>
+						</div>
+
+					</form>
+					<form id="formpordocumento" action="index.html" style="display: none;">
+						<div class="form-group">
+							<label for="tipo-documento">Tipo de documento</label>
+							<select name="tipo-documento">
+								<option value="" disabled selected>Escolha um tipo de documento</option>
+								<option value="1">Decretos</option>
+								<option value="2">Leis</option>
+								<option value="3">Emenda Constitucional</option>
+								<option value="4">Lei Complementar</option>
+								<option value="5">Medida Provisória</option>
+								<option value="6">Atos</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="num_doc">Número documento</label>
+							<input id="num_doc" type="search" placeholder="1234">
+						</div>
+						<div class="btn-wrapper">
+							<button class="search-submit"><i class="material-icons left">search</i> Buscar
+								documento</button>
+						</div>
+				</div>
+
+				</form>
+			</div>
+			<!-- Fim search -->
+
+		</header>
+
+
+		<section class="diario-oficial-callout" aria-labelledby="latest-heading">
+			<div class="container">
+				<div class="row">
+					<div class="doe-latest">
+						<h2 id="latest-heading">ÚLTIMA EDIÇÃO</h2>
+						<div class="diariooficial">
+							<div class="numerodoe" id="numerodoe"><span aria-label="número">Nº</span> 5399</div>
+							<div class="imgdoe"><img src="https://doe.to.gov.br/diario/3925/imagem"></div>
+							<button class="downloaddoe" aria-labelledby="downloaddoe numerodoe edicaodoe"><i
+									class="material-icons left" aria-hidden="true">arrow_downward</i>
+								Baixar</button>
+							<div class="edicaodoe" id="edicaodoe"><span class="sr-only">de </span>16/07/19</div>
+							<span class="sr-only" id="downloaddoe">Baixar edição</span>
+						</div>
+					</div>
+					<section aria-labelledby="doe-last-edition-title" class="doe-last-editions">
+						<h3 id="doe-last-edition-title">Edições anteriores</h3>
+						<ul>
+							<li><a href="#"><span><span aria-label="edição">Nº</span> 5632</span><span><span
+											class="sr-only">de </span>17/15/20</span></a></li>
+							<li class="suplemento"><a href="#"><span><span aria-label="edição">Nº</span> 5632
+										(suplemento)</span><span><span class="sr-only">de </span>17/15/20</span></a>
+							</li>
+							<li><a href="#"><span><span aria-label="edição">Nº</span> 5632</span><span><span
+											class="sr-only">de </span>17/15/20</span></a></li>
+							<li><a href="#"><span><span aria-label="edição">Nº</span> 5632</span><span><span
+											class="sr-only">de </span>17/15/20</span></a></li>
+							<li><a href="#"><span><span aria-label="edição">Nº</span> 5632</span><span><span
+											class="sr-only">de </span>17/15/20</span></a></li>
+							<li><a href="#"><span><span aria-label="edição">Nº</span> 5632</span><span><span
+											class="sr-only">de </span>17/15/20</span></a></li>
+							<li><a href="#"><span><span aria-label="edição">Nº</span> 5632</span><span><span
+											class="sr-only">de </span>17/15/20</span></a></li>
+							<li><a href="#"><span><span aria-label="edição">Nº</span> 5632</span><span><span
+											class="sr-only">de </span>17/15/20</span></a></li>
+							<li><a href="#"><span><span aria-label="edição">Nº</span> 5632</span><span><span
+											class="sr-only">de </span>17/15/20</span></a></li>
+							<li><a href="#"><span><span aria-label="edição">Nº</span> 5632</span><span><span
+											class="sr-only">de </span>17/15/20</span></a></li>
+						</ul>
+						<form id="buscaporedicao" action="buscaporedicao">
+							<label for="edicao_num">Busca por <span class="sr-only">número de </span>edição:</label>
+							<input type="number" id="edicao_num" placeholder="1000" min="1">
+							<button class="btn amarelo-to black-text btn-edicao"><i class="material-icons left"
+									aria-hidden="true">arrow_downward</i> Ver edição</button>
+						</form>
+					</section>
+				</div>
+			</div>
+		</section>
+
+
+
+		<section class="banner"></section>
+
+		<section class="newslist">
+			<div class="container">
+				<div class="row">
+					<div class="col s12 l10 offset-l1">
+						<div class="row">
+							<div class="section-title-box">
+								<h2>Últimas notícias</h2>
+							</div>
+							<div class="news-card">
+								<div class="col s12 m4 xl3 pl-0 pr-0">
+									<a href="noticia.html" tabindex="-1"><img class="responsive-img" src="assets/img/lastnews1.jpg"
+											alt=""></a>
+								</div>
+								<div class="col s12 m8 xl9 news-card--text">
+									<a class="categoria-tag" href="#"><span>Segurança Pública</span></a>
+									<span class="news-card--data"><i class="material-icons">today</i>10/03/2020
+										22:30</span>
+									<a href="noticia.html">
+										<h4 class="headline">Polícia Civil prende suspeitos de atrapalhar investigações
+											na
+											operação Ongs de papel</h4>
+										<span class="blurb">Ações abordadas são importantes para o aprimoramento da
+											Gestão
+											Pública Estadual</span>
+									</a>
+								</div>
+							</div>
+							<div class="news-card">
+								<div class="col s12 m4 xl3 pl-0 pr-0">
+									<a tabindex="-1" href="noticia.html"><img class="responsive-img"
+											src="assets/img/lastnews2.jpg" alt=""></a>
+								</div>
+								<div class="col s12 m8 xl9 news-card--text">
+									<a class="categoria-tag" href="#"><span>Segurança Pública</span></a>
+									<span class="news-card--data"><i class="material-icons">today</i>10/03/2020
+										22:30</span>
+									<a href="noticia.html">
+										<h4 class="headline">Mais de mil pessoas privadas de liberdade no estado se
+											preparam
+											para o Encceja 2019</h4>
+									</a>
+								</div>
+							</div>
+							<div class="news-card">
+								<div class="col s12 m4 xl3 pl-0 pr-0">
+									<a tabindex="-1" href="noticia.html"><img class="responsive-img"
+											src="assets/img/lastnews3.jpg" alt=""></a>
+								</div>
+								<div class="col s12 m8 xl9 news-card--text">
+									<a class="categoria-tag" href="#"><span>Segurança Pública</span></a>
+									<span class="news-card--data"><i class="material-icons">today</i>10/03/2020
+										22:30</span>
+									<a href="noticia.html">
+										<h4 class="headline">Polícia Civil prende suspeitos de atrapalhar investigações
+											na
+											operação Ongs de papel</h4>
+									</a>
+								</div>
+							</div>
+							<div class="news-card">
+								<div class="col s12 m4 xl3 pl-0 pr-0">
+									<a tabindex="-1" href="noticia.html"><img class="responsive-img"
+											src="assets/img/lastnews4.jpg" alt=""></a>
+								</div>
+								<div class="col s12 m8 xl9 news-card--text">
+									<a class="categoria-tag" href="#"><span>Segurança Pública</span></a>
+									<span class="news-card--data"><i class="material-icons">today</i>10/03/2020
+										22:30</span>
+									<a href="noticia.html">
+										<h4 class="headline">Com foco na prevenção pela educação Proerd Comunitário tem
+											novos
+											formandos em Barra do Ouro</h4>
+									</a>
+								</div>
+							</div>
+							<div class="news-card">
+								<div class="col s12 m4 xl3 pl-0 pr-0">
+									<a tabindex="-1" href="noticia.html"><img class="responsive-img"
+											src="assets/img/lastnews1.jpg" alt=""></a>
+								</div>
+								<div class="col s12 m8 xl9 news-card--text">
+									<a class="categoria-tag" href="#"><span>Segurança Pública</span></a>
+									<span class="news-card--data"><i class="material-icons">today</i>10/03/2020
+										22:30</span>
+									<a href="noticia.html">
+										<h4 class="headline">Centro Especializado em Reabilitação de Palmas altera local
+											de
+											atendimento em virtude de ampliação</h4>
+									</a>
+								</div>
+							</div>
+							<div class="news-card">
+								<div class="col s12 m4 xl3 pl-0 pr-0">
+									<a tabindex="-1" href="noticia.html"><img class="responsive-img"
+											src="assets/img/lastnews2.jpg" alt=""></a>
+								</div>
+								<div class="col s12 m8 xl9 news-card--text">
+
+									<a class="categoria-tag" href="#"><span>Segurança Pública</span></a>
+									<span class="news-card--data"><i class="material-icons">today</i>10/03/2020
+										22:30</span>
+									<a href="noticia.html">
+										<h4 class="headline">Mais de mil pessoas privadas de liberdade no estado se
+											preparam
+											para o Encceja 2019</h4>
+									</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="col s12 l10 offset-l1 pt-3 pb-5 center">
+					<a href="maisnoticias.html" class="btn-ghost">Mais notícias</a>
+				</div>
+			</div>
+
+		</section>
+
+
+
+
+
+		<footer class="footer">
+
+		</footer>
+
+		<div class="vlib">
+			<div vw class="enabled">
+				<div vw-access-button class="active"></div>
+				<div vw-plugin-wrapper>
+					<div class="vw-plugin-top-wrapper"></div>
+				</div>
+			</div>
+			<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+			<script>
+				new window.VLibras.Widget('https://vlibras.gov.br/app');
+			</script>
+		</div>
+
+		<script src="assets/js/plugins.js"></script>
+		<script src="assets/js/diariooficial.js"></script>
+		<!-- <script>
+			$(document).ready(function () {
+				let isDesktop = window.matchMedia("only screen and (min-width: 800px)").matches;
+
+				$(".search-btn").on("click", function () {
+					$(".search-box").addClass("show-search-box");
+					$("html, body").css("overflow", "hidden");
+					$("input#search-input").focus();
+				});
+
+				$(".search-box .close-search-box").on("click", function () {
+					$(".search-box").removeClass("show-search-box");
+					$("html, body").css("overflow", "auto");
+				});
+
+				$("header.header-gov-inst .menu-btn").on('click', function (e) {
+					e.preventDefault();
+					$(this).toggleClass("show-menu");
+					var menu = $("header.header-gov-inst .menu");
+					$(menu).toggleClass("show-menu");
+					if (!$(menu).hasClass("show-menu")) {
+						$("li.has-children").removeClass("show-submenu");
+						hideMenu(menu);
+					}
+				});
+
+				$(document).click(function (e) {
+					var menu = $("header.header-gov-inst .menu");
+					var menubtn = $("header.header-gov-inst .menu-btn");
+					if (!menu.is(e.target)
+						&& !menubtn.is(e.target)
+						&& menubtn.has(e.target).length === 0
+						&& menu.has(e.target).length === 0
+						&& $(menu).hasClass("show-menu")) {
+						e.preventDefault();
+						$("header.header-gov-inst .menu-btn").removeClass("show-menu");
+						$(menu).removeClass("show-menu");
+						$("li.has-children").removeClass("show-submenu");
+						hideMenu(menu);
+					}
+				});
+
+
+				$("header.header-gov-inst .menu-content .main-menu li.has-children").on({
+					click: function (e) {
+						if (!isDesktop) {
+							e.preventDefault();
+							$("li.has-children").not($(this)).removeClass("show-submenu");
+							$(this).toggleClass("show-submenu");
+
+							gotoSubitem($('.menu'), $(this));
+
+						}
+					}
+				});
+
+
+
+				$("header.header-gov-inst .menu-content .main-menu li.has-children").on({
+					mouseenter: function () {
+						if (isDesktop) {
+							$(this).addClass("show-submenu");
+							gotoSubitem($('.children-content'), $(this).find("h5.submenu-title").first(), 0);
+						}
+					},
+					mouseleave: function () {
+						if (isDesktop) {
+							$(this).removeClass("show-submenu");
+						}
+					}
+				});
+
+				$("header.header-gov-inst .children-content").on({
+					mouseenter: function () {
+						if (isDesktop) {
+							$(this).parent().addClass("show-submenu");
+						}
+					},
+					mouseleave: function () {
+						if (isDesktop) {
+							$(this).parent().removeClass("show-submenu");
+						}
+					}
+				});
+
+				function hideMenu(menu) {
+					$(menu).addClass("hide-menu");
+					setTimeout(function () { $(menu).removeClass("hide-menu"); }, 300);
+				}
+
+				function gotoSubitem(box, subitem, speedanimation) {
+					if (speedanimation === undefined) {
+						speedanimation = 300
+					}
+					var $container = $(box), $scrollTo = $(subitem);
+					$container.animate({
+						scrollTop: $scrollTo.offset().top - $container.offset().top + $container.scrollTop()
+					}, speedanimation)
+				}
+
+				$(".search-box .search-tabs a").on("click", function () {
+					var doetab = $(this).attr("data-tab");
+					$(".search-box .search-tabs a").removeClass("checked").find("i").text("radio_button_unchecked");
+					$(this).addClass("checked").find("i").text("radio_button_checked");
+					$("form").hide();
+					$("form#" + doetab).fadeIn(300);
+				});
+
+			});
+		</script> -->
+	</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Audiências Públicas do Projeto de Concessão de Serviços Turísticos em núcleos do Parque Estadual do
+            Jalapão</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/materialize.css">
+        <link rel="stylesheet" href="assets/css/audiencias.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m8 offset-m2 xl6 offset-xl3">
+
+                    <header>
+                        <a href="index.html">
+                            <img src="assets/img/brasao.svg" alt="Governo do Tocantins">
+                            <h1>
+                                Audiências Públicas do Projeto de Concessão de Serviços Turísticos em núcleos do Parque
+                                Estadual do
+                                Jalapão
+                            </h1>
+                        </a>
+                    </header>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="page_head">
+                    <h4>Inscrição #1234567 <span class="badge materialize-red white-text">cancelada</span> <span class="badge verde-to white-text">efetivada</span> <span class="badge grey lighten-2 black-text">cadastro</span> </h4>
+                </div>
+                <div class="card-panel --tight">
+                    <div class="row">
+                        <div class="col s12 l8">
+                            <h5>Dados da inscrição</h5>
+                            <div class="row">
+                                <div class="col s12">
+                                    <label>Categoria:</label><br>
+                                    <p>Representantes das organizações privadas do comércio e/ou serviços e/ou turismo</p>
+                                </div>
+                                <div class="col s12 m6">
+                                    <label>Nome:</label><br>
+                                    <p>Marluce</p>
+                                </div>
+                                <div class="col s12 m6">
+                                    <label>CPF:</label><br>
+                                    <p>020.475.711-89</p>
+                                </div>
+                                <div class="col s12 m6">
+                                    <label>E-mail:</label><br>
+                                    <p>dalvino.nery@ati.to.gov.br</p>
+                                </div>
+                                <div class="col s12 m6">
+                                    <label>Cargo/Função:</label><br>
+                                    <p>Auditor</p>
+                                </div>
+                                <div class="col s12 m6">
+                                    <label>Instituição:</label><br>
+                                    <p>Empresa Teste</p>
+                                </div>
+                                <div class="col s12 m6">
+                                    <label>CNPJ:</label><br>
+                                    <p>16.142.019/0001-02</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s12 l4">
+                            <h5>Documentos</h5>
+                            <div class="row">
+                                <div class="col s12">
+                                    <div class="card-panel grey lighten-3">
+                                        <a href="#" class="black-text" style="width: 100%; display: inline-block;"
+                                            title="Baixar documento">
+                                            <i class="material-icons left">picture_as_pdf</i>
+                                            <span>lalala.pdf</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col s12">
+                                    <div class="card-panel grey lighten-3">
+                                        <a href="#" class="black-text" style="width: 100%; display: inline-block;"
+                                            title="Baixar documento">
+                                            <i class="material-icons left">picture_as_pdf</i>
+                                            <span>lalala</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row right-align">
+                    <a href="#" class="btn red white-text">Cancelar</a>
+                </div>
+                <div class="card-panel --tight">
+                    <h5>Motivo do cancelamento</h5>
+                    <div class="row">
+                    <form action="">
+                        <textarea name="" id="" cols="30" rows="30"></textarea>
+                        <button class="btn azul-to right">Confirmar cancelamento</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/bin/materialize.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var droppers = document.querySelectorAll('.dropdown-trigger');
+                var selects = document.querySelectorAll('select');
+                var instancesdrop = M.Dropdown.init(droppers, {
+                    coverTrigger: false,
+                    alignment: 'right'
+                });
+
+                var instancesselect = M.FormSelect.init(selects, {
+                    coverTrigger: false
+                });
+            });
+
+        </script>
+    </body>
+
+</html>
